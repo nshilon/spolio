@@ -1,7 +1,7 @@
-import Button from '../ui/button.tsx';
-import Icon from '../ui/icon.tsx';
 import { useTheme } from './theme-context';
 import './theme-switcher.scss';
+import {Button, Icon} from "@/components";
+
 
 interface ThemeSwitcherProps {
   className?: string;

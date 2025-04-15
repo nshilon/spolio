@@ -3,7 +3,7 @@ import { create } from '@storybook/theming/create';
 
 
 // Create custom light Storybook theme
-const simpleUITheme = create({
+const lightUITheme = create({
   base: 'light',
 
   // Brand
@@ -13,7 +13,7 @@ const simpleUITheme = create({
   brandTarget: '_self',
 
   // UI
-  appBg: '#fafafa',
+  appBg: '#fff',
   appContentBg: '#ffffff',
   appBorderColor: '#e5e5e5',
   appBorderRadius: 8,
@@ -30,7 +30,7 @@ const simpleUITheme = create({
   // Toolbar default and active colors
   barTextColor: '#171717',
   barSelectedColor: '#8A4DFF',
-  barBg: '#fafafa',
+  barBg: '#fff',
 
   // Form colors
   inputBg: '#ffffff',
@@ -41,28 +41,27 @@ const simpleUITheme = create({
   // Colors
   colorPrimary: '#8A4DFF',
   colorSecondary: '#6F3AFF',
+
+  bgPrimary: '#ffffff',
+  bgSecondary: '#ffffff',
 });
+
 
 // Add a theme toggle button to Storybook
 addons.setConfig({
-  theme: simpleUITheme,
+  theme: lightUITheme,
   sidebar: {
     showRoots: true,
+    showPanel: true,
+    showNav: true,
+    showToolbar: false,
   },
   toolbar: {
-    title: { hidden: false },
-    zoom: { hidden: false },
-    eject: { hidden: false },
+    title: {
+      hidden: false },
+    zoom: { hidden: true },
+    eject: { hidden: true },
     copy: { hidden: false },
-    fullscreen: { hidden: false },
-    'storybook/theme-toggle': {
-      icon: 'sun',
-      title: 'Toggle Storybook theme',
-      onClick: () => {
-        const currentTheme = addons.getConfig().theme;
-        const nextTheme = currentTheme.base === 'dark' ? simpleUITheme : entaUIDarkTheme;
-        addons.setConfig({ theme: nextTheme });
-      },
-    },
+    fullscreen: { hidden: true },
   },
 });
