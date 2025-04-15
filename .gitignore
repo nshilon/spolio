@@ -25,3 +25,4 @@ dist-ssr
 __docs__
 
 *storybook.log
+storybook-static
