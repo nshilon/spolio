@@ -21,34 +21,25 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
 
-      # Add steps to install dependencies and build Storybook
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+# List of jobs
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      # Manual Checkout
+      - uses: actions/checkout@v4
         with:
-          node-version: '22'
-      - name: Install dependencies
-        run: npm install
-      - name: Build Storybook
-        run: npm run build-storybook
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          fetch-depth: 0
+      # Set up Node
+      - uses: actions/setup-node@v4
         with:
-          # Upload entire repository
-          path: 'storybook-static'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          node-version: '20'
+      #👇 Add Storybook build and deploy to GitHub Pages as a step in the workflow
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
+        with:
+          install_command: yarn install # default: npm ci
+          build_command: yarn build-storybook # default: npm run build-storybook
+          path: storybook-static # default: dist/storybook
+          checkout: false # default: true
