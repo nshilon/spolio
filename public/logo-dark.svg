@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#D6BAFF" opacity="0.1"/>
+  
+  <!-- Main Shape - Stylized "E" for Etna UI -->
+  <path d="M60 50H140V70H80V90H130V110H80V130H140V150H60V50Z" fill="#D6BAFF"/>
+  
+  <!-- Accent Elements -->
+  <circle cx="150" cy="50" r="10" fill="#B38CFF"/>
+  <circle cx="150" cy="150" r="10" fill="#B38CFF"/>
+  <circle cx="50" cy="100" r="10" fill="#B38CFF"/>
+  
+  <!-- Connecting Lines -->
+  <path d="M50 100L80 90M50 100L80 110M150 50L130 70M150 150L130 130" stroke="#B38CFF" stroke-width="3"/>
+</svg>

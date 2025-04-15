@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @media (prefers-color-scheme: dark) {
+      .favicon-bg { fill: #D6BAFF; }
+      .favicon-main { fill: #D6BAFF; }
+    }
+    @media (prefers-color-scheme: light) {
+      .favicon-bg { fill: #8A4DFF; }
+      .favicon-main { fill: #8A4DFF; }
+    }
+  </style>
+  
+  <!-- Background Circle -->
+  <circle cx="32" cy="32" r="30" class="favicon-bg" opacity="0.1"/>
+  
+  <!-- Simplified "E" -->
+  <path d="M16 16H48V24H24V28H44V36H24V40H48V48H16V16Z" class="favicon-main"/>
+</svg>
