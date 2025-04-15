@@ -22,7 +22,7 @@ const WelcomePage = () => {
         justifyContent: 'center',
         marginBottom: '2rem',
       }}>
-        <img src="/logo.svg" alt="Simple UI Kit Logo" style={{ width: '200px', height: '200px' }} />
+        <img src="./logo.svg" alt="Simple UI Kit Logo" style={{ width: '200px', height: '200px' }} />
       </div>
       
       <h1 style={{ textAlign: 'center' }}>Welcome to Simple UI Kit</h1>
