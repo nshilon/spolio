@@ -1,8 +1,8 @@
 import type { Preview, Decorator } from '@storybook/react';
-import '../src/index.css';
+import '../lib/index.css';
 import React from 'react';
-import { ThemeProvider } from '../src/components/theme/theme-context';
-import ThemeSwitcher from '../src/components/theme/theme-switcher';
+import { ThemeProvider } from '../lib/components/theme/theme-context';
+import ThemeSwitcher from '../lib/components/theme/theme-switcher';
 
 // Custom decorator that wraps stories with ThemeProvider and adds ThemeSwitcher
 const withThemeProvider: Decorator = (Story) => {

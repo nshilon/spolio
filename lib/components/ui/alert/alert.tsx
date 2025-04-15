@@ -1,6 +1,8 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import './alert.scss';
-import Icon from './icon.tsx';
+import {Icon} from "@/components";
+
+
 
 const alert = cva('Alert', {
   variants: {

@@ -1,8 +1,7 @@
 import { describe, it, expect } from 'vitest';
-// import { render, screen } from '../../test/utils';
 import { axe } from 'jest-axe';
 import Button from './button';
-import {render, screen} from "../../test/utils.tsx";
+import {render, screen} from "../../../test/utils.tsx";
 import { vi } from 'vitest';
 
 describe('Button', () => {

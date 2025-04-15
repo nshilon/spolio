@@ -46,8 +46,8 @@ $alert-types: (
 
       &.Alert--outline {
         background-color: transparent;
-        border: 1px solid map-get($colors, "border");
-        color: map-get($colors, "foreground");
+        border: 1px solid map_get($colors, "border");
+        color: map_get($colors, "foreground");
       }
     }
   }
