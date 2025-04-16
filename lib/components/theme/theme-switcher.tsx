@@ -11,8 +11,8 @@ export default function ThemeSwitcher({ className = '' }: ThemeSwitcherProps) {
 
   return (
     <Button
-        size="small"
-        variant="ghost"
+      size="small"
+      variant="ghost"
       className={`theme-switcher ${className}`}
       onClick={toggleTheme}
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
