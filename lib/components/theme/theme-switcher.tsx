@@ -1,7 +1,6 @@
+import { Button, Icon } from '@/components';
 import { useTheme } from './theme-context';
 import './theme-switcher.scss';
-import {Button, Icon} from "@/components";
-
 
 interface ThemeSwitcherProps {
   className?: string;
