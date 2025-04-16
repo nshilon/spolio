@@ -99,17 +99,21 @@ export const WithIcon: Story = {
 
 export const ButtonGrid: StoryObj = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, auto)', gap: '1rem' }}>
       <Button variant="primary" size="small">Primary Small</Button>
-      <Button variant="primary" size="medium">Primary Medium</Button>
-      <Button variant="primary" size="large">Primary Large</Button>
-      
       <Button variant="secondary" size="small">Secondary Small</Button>
-      <Button variant="secondary" size="medium">Secondary Medium</Button>
-      <Button variant="secondary" size="large">Secondary Large</Button>
-      
       <Button variant="primary" size="small" disabled>Disabled Primary</Button>
+
+      <Button variant="primary" size="medium">Primary Medium</Button>
+      <Button variant="secondary" size="medium">Secondary Medium</Button>
       <Button variant="secondary" size="medium" disabled>Disabled Secondary</Button>
+
+      <Button variant="outline" size="medium">outline Medium</Button>
+      <Button variant="ghost" size="medium">ghost Medium</Button>
+      <Button size="medium" disabled>Disabled Secondary</Button>
+
+      <Button variant="primary" size="large">Primary Large</Button>
+      <Button variant="secondary" size="large">Secondary Large</Button>
       <Button variant="primary" size="large">
         <Icon name="arrow-right" size="small" style={{ marginRight: '0.5rem', color: 'currentColor' }} />
         With Icon

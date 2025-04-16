@@ -1,24 +1,23 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 
-import './icon.scss';
 
 // Define the icon variants using CVA
 const iconVariants = cva('icon', {
   variants: {
     size: {
-      small: 'icon--small',
-      medium: 'icon--medium',
-      large: 'icon--large',
+      small: 'icon--small w-4 h-4',
+      medium: 'icon--medium w-6 h-6',
+      large: 'icon--large w-8 h-8',
     },
     variant: {
-      default: 'icon--default',
-      primary: 'icon--primary',
-      secondary: 'icon--secondary',
-      success: 'icon--success',
-      warning: 'icon--warning',
-      danger: 'icon--danger',
-      info: 'icon--info',
+      default: 'icon--default text-gray-500',
+      primary: 'icon--primary text-primary',
+      secondary: 'icon--secondary text-secondary',
+      success: 'icon--success text-success',
+      warning: 'icon--warning text-warning',
+      danger: 'icon--danger text-danger',
+      info: 'icon--info text-info',
     },
   },
   defaultVariants: {
