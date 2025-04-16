@@ -4,7 +4,7 @@ import { ComponentProps } from 'react';
 // import './button.scss';
 import { cn } from '@/utils';
 
-const ButtonStyles = cva('button', {
+const ButtonStyles = cva('focus:outline-none', {
   variants: {
     variant: {
       primary: 'button--primary bg-mint-500 text-white',
