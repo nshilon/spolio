@@ -8,18 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@tailwindcss/vite':
-        specifier: ^4.1.4
-        version: 4.1.4(vite@5.4.18(@types/node@22.14.1)(lightningcss@1.29.2)(sass-embedded@1.86.3)(sass@1.86.3))
       react:
         specifier: ^18.3.0
         version: 18.3.1
       react-dom:
         specifier: ^18.3.0
         version: 18.3.1(react@18.3.1)
-      tailwindcss:
-        specifier: ^4.1.4
-        version: 4.1.4
     devDependencies:
       '@biomejs/biome':
         specifier: 1.5.3
@@ -54,6 +48,9 @@ importers:
       '@storybook/theming':
         specifier: ^8.6.12
         version: 8.6.12(storybook@8.6.12)
+      '@tailwindcss/vite':
+        specifier: ^4.1.4
+        version: 4.1.4(vite@5.4.18(@types/node@22.14.1)(lightningcss@1.29.2)(sass-embedded@1.86.3)(sass@1.86.3))
       '@testing-library/jest-dom':
         specifier: ^6.4.2
         version: 6.6.3
@@ -102,6 +99,9 @@ importers:
       tailwind-merge:
         specifier: ^3.2.0
         version: 3.2.0
+      tailwindcss:
+        specifier: ^4.1.4
+        version: 4.1.4
       typescript:
         specifier: ^5.4.5
         version: 5.7.3
