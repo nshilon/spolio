@@ -44,6 +44,20 @@ export const Secondary: Story = {
   },
 };
 
+export const Outilne: Story = {
+  args: {
+    variant: 'outline',
+    children: 'Outline Button',
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    variant: 'ghost',
+    children: 'Ghost Button',
+  },
+};
+
 export const Small: Story = {
   args: {
     size: 'small',
@@ -76,7 +90,7 @@ export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <Icon name="check" size="small" style={{ marginRight: '0.5rem' }} />
+        <Icon name="check" size="small" style={{ marginRight: '0.5rem', color: 'currentColor' }} />
         Button with Icon
       </>
     ),
@@ -97,7 +111,7 @@ export const ButtonGrid: StoryObj = {
       <Button variant="primary" size="small" disabled>Disabled Primary</Button>
       <Button variant="secondary" size="medium" disabled>Disabled Secondary</Button>
       <Button variant="primary" size="large">
-        <Icon name="arrow-right" size="small" style={{ marginRight: '0.5rem' }} />
+        <Icon name="arrow-right" size="small" style={{ marginRight: '0.5rem', color: 'currentColor' }} />
         With Icon
       </Button>
     </div>

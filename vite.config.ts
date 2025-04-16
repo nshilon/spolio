@@ -4,9 +4,10 @@ import react from '@vitejs/plugin-react';
 import {resolve} from 'path';
 import tsconfigPaths from "vite-tsconfig-paths";
 import dts from 'vite-plugin-dts'
+import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-    plugins: [react(), tsconfigPaths(), dts({rollupTypes: true})],
+    plugins: [react(), tsconfigPaths(), tailwindcss(), dts({rollupTypes: true})],
     test: {
         globals: true,
         environment: 'jsdom',
