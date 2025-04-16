@@ -50,11 +50,11 @@ export function ThemeProvider({
     document.documentElement.setAttribute('data-theme', theme);
     // Also apply a class to the body for additional styling options
     if (theme === 'dark') {
-      document.body.classList.add('dark-theme');
-      document.body.classList.remove('light-theme');
+      document.body.classList.add('dark');
+      // document.body.classList.remove('light-theme');
     } else {
-      document.body.classList.add('light-theme');
-      document.body.classList.remove('dark-theme');
+      // document.body.classList.add('light-theme');
+      document.body.classList.remove('dark');
     }
   }, [theme]);
 

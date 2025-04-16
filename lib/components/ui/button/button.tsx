@@ -4,13 +4,16 @@ import {ComponentProps, forwardRef} from 'react';
 // import './button.scss';
 import {cn} from '@/utils';
 
-const ButtonStyles = cva('focus:outline-none', {
+const ButtonStyles = cva(['focus:outline-none cursor-pointer',
+    'flex items-center ',
+    'disabled:opacity-50 disabled:cursor-not-allowed',
+    'justify-center '], {
     variants: {
         variant: {
-            primary: 'button--primary bg-mint-500 text-white',
-            secondary: 'button--secondary',
+            primary: 'button--primary bg-mint-500 dark:text-white ',
+            secondary: 'button--secondary rounded bg-gray-200 dark:text-gray-700',
             outline: 'button--outline border rounded',
-            ghost: 'button--ghost transition-colors duration-200',
+            ghost: 'button--ghost transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-500',
         },
         size: {
             small: 'button--small text-xs p-2 py-0.5',
