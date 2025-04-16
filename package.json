@@ -1,6 +1,6 @@
 {
   "name": "spolio",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "author": "Nir Shilon",
   "description": "a simple design system",
   "type": "module",
@@ -14,7 +14,6 @@
       "import": "./dist/simple-ui.es.js",
       "require": "./dist/simple-ui.umd.js"
     },
-    "./dist/simple-ui.css": "./dist/simple-ui.css",
     "./dist/style.css": "./dist/style.css"
   },
   "sideEffects": false,
@@ -31,7 +30,6 @@
     "build-storybook": "storybook build",
     "prebuild": "rm -rf dist",
     "build": "tsc && vite build",
-    "postbuild": "npx @tailwindcss/cli -i ./lib/index.css -o ./dist/simple-ui.css --minify --content \"./lib/**/*.{js,ts,jsx,tsx}\" ",
     "prepublish": "npm run build"
   },
   "peerDependencies": {
