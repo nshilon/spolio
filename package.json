@@ -1,6 +1,6 @@
 {
   "name": "spolio",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "author": "Nir Shilon",
   "description": "a simple design system",
   "type": "module",
@@ -14,6 +14,7 @@
       "import": "./dist/simple-ui.es.js",
       "require": "./dist/simple-ui.umd.js"
     },
+    "./dist/simple-ui.css": "./dist/simple-ui.css",
     "./dist/style.css": "./dist/style.css"
   },
   "sideEffects": false,
@@ -30,6 +31,7 @@
     "build-storybook": "storybook build",
     "prebuild": "rm -rf dist",
     "build": "tsc && vite build",
+    "postbuild": "npx @tailwindcss/cli -i ./lib/index.css -o ./dist/simple-ui.css --minify --content \"./lib/**/*.{js,ts,jsx,tsx}\" ",
     "prepublish": "npm run build"
   },
   "peerDependencies": {
@@ -48,6 +50,7 @@
     "@storybook/react-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
     "@storybook/theming": "^8.6.12",
+    "@tailwindcss/vite": "^4.1.4",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@testing-library/user-event": "^14.5.2",
@@ -64,15 +67,12 @@
     "sass": "^1.77.1",
     "storybook": "^8.6.12",
     "tailwind-merge": "^3.2.0",
+    "tailwindcss": "^4.1.4",
     "typescript": "^5.4.5",
     "vite": "^5.2.11",
     "vite-plugin-dts": "^4.5.3",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^1.3.1"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.4",
-    "tailwindcss": "^4.1.4"
   },
   "license": "MIT"
 }

@@ -83,7 +83,12 @@ const WelcomePage = () => {
           <p>Easily customize components to match your brand and design requirements.</p>
         </div>
       </div>
-      
+
+      <h2>Pre requisites</h2>
+      <ul>
+        tailwind see how to install <a href="https://tailwindcss.com/docs/installation">here</a>
+      </ul>
+
       <h2>Core Components</h2>
       
       <ul>
@@ -102,7 +107,14 @@ const WelcomePage = () => {
         overflow: 'auto',
       }}>
         <code>
-{`import { Button, Icon, Alert } from 'simple-ui';
+
+
+          {`
+import @tailwindcss;
+
+import 'simple-ui/dist/index.css';
+
+import { Button, Icon, Alert } from 'simple-ui';
 
 function MyComponent() {
   return (

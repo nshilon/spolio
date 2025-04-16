@@ -2,9 +2,9 @@
 import {defineConfig} from 'vite';
 import react from '@vitejs/plugin-react';
 import {resolve} from 'path';
+import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from "vite-tsconfig-paths";
 import dts from 'vite-plugin-dts'
-import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
     plugins: [react(), tsconfigPaths(), tailwindcss(), dts({rollupTypes: true})],
