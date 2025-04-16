@@ -1,3 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-mint-500: oklch(0.72 0.11 178);
+}
+
 :root {
   /* Typography */
   --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
