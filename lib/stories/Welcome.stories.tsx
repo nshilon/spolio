@@ -5,6 +5,9 @@ const meta = {
   title: 'Welcome',
   parameters: {
     layout: 'fullscreen',
+    argTypes: {},
+    options: { showToolbar: false },
+    controls: { disabled: true },
   },
 } satisfies Meta;
 
