@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import {Typography} from "simple-ui";
 
 const meta = {
   title: 'Welcome',
@@ -25,17 +26,18 @@ const WelcomePage = () => {
         <img src="./logo.svg" alt="Simple UI Kit Logo" style={{ width: '200px', height: '200px' }} />
       </div>
       
-      <h1 style={{ textAlign: 'center' }}>Welcome to Simple UI Kit</h1>
+      <Typography variant="h1" style={{ textAlign: 'center' }}>Welcome to Simple UI Kit</Typography>
       
-      <p>
+      <Typography variant="body" style={{ marginBottom: '2rem' }}>
         Simple UI Kit is a modern, accessible, and customizable component library for React applications.
         Built with a focus on developer experience and user accessibility, it provides a comprehensive set
         of components to build beautiful and functional user interfaces.
-      </p>
+      </Typography>
       
-      <h2>Getting Started</h2>
+      <Typography variant="h2">Getting Started</Typography>
       
-      <p>Browse components in the sidebar to see examples, documentation, and interactive controls.</p>
+      <Typography variant="body" >
+        Browse components in the sidebar to see examples, documentation, and interactive controls.</Typography>
       
       <div style={{
         display: 'grid',
@@ -84,12 +86,12 @@ const WelcomePage = () => {
         </div>
       </div>
 
-      <h2>Pre requisites</h2>
+      <Typography variant="h2" >Pre requisites</Typography>
       <ul>
-        tailwind see how to install <a href="https://tailwindcss.com/docs/installation">here</a>
+        tailwind see how to install <a target="_blank" rel="noopener noreferrer" style={{color: 'var(--color-primary-600)'}} href="https://tailwindcss.com/docs/installation">here</a>
       </ul>
 
-      <h2>Core Components</h2>
+      <Typography variant="h2">Core Components</Typography>
       
       <ul>
         <li><strong>Button</strong>: Versatile button component with multiple variants and sizes</li>
@@ -98,8 +100,8 @@ const WelcomePage = () => {
         <li><strong>ThemeSwitcher</strong>: Easy theme switching between light and dark modes</li>
       </ul>
       
-      <h2>Usage</h2>
-      
+      <Typography variant="h2">Usage</Typography>
+
       <pre style={{
         backgroundColor: 'var(--color-background-secondary)',
         padding: '1rem',
@@ -136,6 +138,6 @@ function MyComponent() {
   );
 };
 
-export const Welcome: Story = {
+export const WelcomeStories: Story = {
   render: () => <WelcomePage />,
 };
