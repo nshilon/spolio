@@ -30,7 +30,7 @@
     "build-storybook": "storybook build",
     "prebuild": "rm -rf dist",
     "build": "tsc && vite build",
-    "prepublish": "pnpm run build"
+    "prepublish": "npm run build"
   },
   "peerDependencies": {
     "react": "^18.3.0",
