@@ -1,5 +1,5 @@
+import { type VariantProps, cva } from 'class-variance-authority';
 import React, { forwardRef } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../../utils/cn';
 
 export const inputVariants = cva(
@@ -7,10 +7,14 @@ export const inputVariants = cva(
   {
     variants: {
       variant: {
-        default: 'border-neutral-300 dark:border-neutral-700 dark:text-neutral-50',
-        ghost: 'border-transparent bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50',
-        error: 'border-danger-300 dark:border-danger-700 text-danger-600 dark:text-danger-400 focus-visible:ring-danger-500',
-        success: 'border-success-300 dark:border-success-700 text-success-600 dark:text-success-400 focus-visible:ring-success-500',
+        default:
+          'border-neutral-300 dark:border-neutral-700 dark:text-neutral-50',
+        ghost:
+          'border-transparent bg-neutral-100 dark:bg-neutral-800 dark:text-neutral-50',
+        error:
+          'border-danger-300 dark:border-danger-700 text-danger-600 dark:text-danger-400 focus-visible:ring-danger-500',
+        success:
+          'border-success-300 dark:border-success-700 text-success-600 dark:text-success-400 focus-visible:ring-success-500',
       },
       size: {
         sm: 'h-8 px-2 text-xs',
@@ -76,18 +80,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const inputId = id || `input-${Math.random().toString(36).substring(2, 9)}`;
     const helperTextId = `${inputId}-helper-text`;
     const errorId = `${inputId}-error`;
-    
+
     // Determine if we should show the input in error state
     const isError = !!errorMessage;
     const inputVariant = isError ? 'error' : variant;
-    
+
     // Determine the aria-describedby attribute value
-    const ariaDescribedBy = [
-      helperText ? helperTextId : null,
-      errorMessage ? errorId : null,
-    ]
-      .filter(Boolean)
-      .join(' ') || undefined;
+    const ariaDescribedBy =
+      [helperText ? helperTextId : null, errorMessage ? errorId : null]
+        .filter(Boolean)
+        .join(' ') || undefined;
 
     return (
       <div className="w-full">
@@ -103,7 +105,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <input
           id={inputId}
           type={type}
-          className={cn(inputVariants({ variant: inputVariant, size, fullWidth, className }))}
+          className={cn(
+            inputVariants({ variant: inputVariant, size, fullWidth, className })
+          )}
           ref={ref}
           aria-invalid={isError}
           aria-describedby={ariaDescribedBy}
@@ -111,12 +115,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
         {helperText && !errorMessage && (
-          <p id={helperTextId} className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+          <p
+            id={helperTextId}
+            className="mt-2 text-xs text-neutral-500 dark:text-neutral-400"
+          >
             {helperText}
           </p>
         )}
         {errorMessage && (
-          <p id={errorId} className="mt-2 text-xs text-danger-600 dark:text-danger-400">
+          <p
+            id={errorId}
+            className="mt-2 text-xs text-danger-600 dark:text-danger-400"
+          >
             {errorMessage}
           </p>
         )}
