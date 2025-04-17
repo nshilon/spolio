@@ -1,5 +1,5 @@
+import { type VariantProps, cva } from 'class-variance-authority';
 import React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../../../utils/cn';
 
 // Define the typography variants using CVA with Tailwind classes
@@ -24,7 +24,8 @@ export const typographyVariants = cva('', {
       caption: 'text-xs leading-normal text-neutral-500',
       code: 'font-mono text-sm leading-normal bg-neutral-100 dark:bg-neutral-800 px-1.5 py-0.5 rounded',
       lead: 'text-xl leading-relaxed text-neutral-700 dark:text-neutral-300 mb-6',
-      overline: 'text-xs leading-normal font-medium uppercase tracking-widest mb-2',
+      overline:
+        'text-xs leading-normal font-medium uppercase tracking-widest mb-2',
       label: 'text-sm leading-normal font-medium mb-2',
     },
     size: {
@@ -102,10 +103,22 @@ const variantElementMap = {
 } as const;
 
 export type TypographyVariant = keyof typeof variantElementMap;
-export type TypographySize = 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+export type TypographySize =
+  | 'xs'
+  | 'sm'
+  | 'base'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl';
 
 // Omit the color property from HTMLAttributes to avoid conflict with CVA's color
-type HTMLAttributesWithoutColor = Omit<React.HTMLAttributes<HTMLElement>, 'color'>;
+type HTMLAttributesWithoutColor = Omit<
+  React.HTMLAttributes<HTMLElement>,
+  'color'
+>;
 
 export interface TypographyProps
   extends HTMLAttributesWithoutColor,
@@ -151,7 +164,7 @@ export const Typography = ({
     Component,
     {
       className: combinedClassName,
-      ...props
+      ...props,
     },
     children
   );

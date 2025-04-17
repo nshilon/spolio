@@ -1,7 +1,6 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 
-
 // Define the icon variants using CVA
 const iconVariants = cva('icon', {
   variants: {
@@ -28,6 +27,8 @@ const iconVariants = cva('icon', {
 
 // Define the available icon names
 export type IconName =
+  | 'arrow-first'
+  | 'arrow-last'
   | 'arrow-down'
   | 'arrow-left'
   | 'arrow-right'
@@ -77,6 +78,10 @@ export default Icon;
 // Helper function to render the appropriate path based on the icon name
 function renderPath(name: IconName) {
   switch (name) {
+    case 'arrow-first':
+      return <path d="M14 19l-7-7 7-7 M3 4 L3 20" />;
+    case 'arrow-last':
+      return <path d="M10 19l7-7 -7-7 M20 4 L20 20" />;
     case 'arrow-down':
       return <path d="M12 5v14M5 12l7 7 7-7" />;
     case 'arrow-left':
