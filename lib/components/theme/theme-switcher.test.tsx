@@ -45,7 +45,9 @@ describe('ThemeSwitcher', () => {
     );
     
     expect(screen.getByRole('button')).toBeInTheDocument();
-    expect(screen.getByText('Dark Mode')).toBeInTheDocument();
+
+    // find element whose aria-label attributes contains 'Switch to dark theme'
+    expect(screen.getByLabelText(/Switch to dark theme/)).toBeInTheDocument();
   });
 
   it('toggles theme when clicked', async () => {
@@ -56,15 +58,15 @@ describe('ThemeSwitcher', () => {
     );
     
     // Initially in light mode
-    expect(screen.getByText('Dark Mode')).toBeInTheDocument();
+    expect(screen.getByRole('button')).toBeInTheDocument();
     
     // Click to toggle to dark mode
     await user.click(screen.getByRole('button'));
-    expect(screen.getByText('Light Mode')).toBeInTheDocument();
+    expect(screen.getByLabelText(/Switch to light theme/)).toBeInTheDocument();
     
     // Click again to toggle back to light mode
     await user.click(screen.getByRole('button'));
-    expect(screen.getByText('Dark Mode')).toBeInTheDocument();
+    expect(screen.getByLabelText(/Switch to dark theme/)).toBeInTheDocument();
   });
 
   it('has no accessibility violations', async () => {
