@@ -54,7 +54,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-
+  args: {
+    size: 'medium',
+    index: 0,
+    total: 10,
+    hasNext: true,
+    hasPrevious: false,
+  },
 };
 
 export const Small: Story = {
