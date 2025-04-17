@@ -88,6 +88,8 @@ export const Large: Story = {
 export const AllIcons: StoryObj = {
   render: () => {
     const icons: IconName[] = [
+      'arrow-first',
+      'arrow-last',
       'arrow-down',
       'arrow-left',
       'arrow-right',
