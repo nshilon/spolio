@@ -1,6 +1,6 @@
 import type { Preview, Decorator } from '@storybook/react';
 import '../lib/index.css';
-import React from 'react';
+
 import { ThemeProvider } from '../lib/components/theme/theme-context';
 import ThemeSwitcher from '../lib/components/theme/theme-switcher';
 

@@ -1,7 +1,9 @@
 /// <reference types="vitest" />
 import {defineConfig} from 'vite';
+// @ts-ignore
 import react from '@vitejs/plugin-react';
 import {resolve} from 'path';
+// @ts-ignore
 import tailwindcss from '@tailwindcss/vite';
 import tsconfigPaths from "vite-tsconfig-paths";
 import dts from 'vite-plugin-dts'
