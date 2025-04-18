@@ -1,6 +1,6 @@
 import type {Meta, StoryObj} from '@storybook/react';
 import {useCallback, useState} from 'react';
-import {Pagination, usePagination} from '@/components/ui/paging';
+import {Pagination, usePagination} from '@/components/ui/paging/pagination.tsx';
 import Button from "@/components/ui/button/button.tsx";
 
 const meta = {
@@ -28,14 +28,6 @@ const meta = {
             control: {type: 'number'},
             description: 'The number of items per page'
         },
-        hasNext: {
-            control: 'boolean',
-            description: 'Whether there is a next page',
-        },
-        hasPrevious: {
-            control: 'boolean',
-            description: 'Whether there is a previous page',
-        },
         onChangeIndex: {
             action: 'page changed',
             description: 'Callback when page changes',
@@ -45,9 +37,7 @@ const meta = {
         size: 'medium',
         index: 0,
         total: 10,
-        pageSize: 10,
-        hasNext: true,
-        hasPrevious: false,
+        pageSize: 10
     },
 } satisfies Meta<typeof Pagination>;
 
@@ -58,9 +48,7 @@ export const Default: Story = {
     args: {
         size: 'medium',
         index: 0,
-        total: 10,
-        hasNext: true,
-        hasPrevious: false,
+        total: 10
     },
 };
 
@@ -68,9 +56,7 @@ export const Small: Story = {
     args: {
         size: 'small',
         index: 0,
-        total: 10,
-        hasNext: true,
-        hasPrevious: false,
+        total: 10
     },
 };
 
@@ -78,9 +64,7 @@ export const Medium: Story = {
     args: {
         size: 'medium',
         index: 0,
-        total: 10,
-        hasNext: true,
-        hasPrevious: false,
+        total: 10
     },
 };
 
@@ -88,36 +72,28 @@ export const Large: Story = {
     args: {
         size: 'large',
         index: 0,
-        total: 10,
-        hasNext: true,
-        hasPrevious: false,
+        total: 10
     },
 };
 
 export const MiddlePage: Story = {
     args: {
         index: 5,
-        total: 10,
-        hasNext: true,
-        hasPrevious: true,
+        total: 10
     },
 };
 
 export const LastPage: Story = {
     args: {
         index: 9,
-        total: 10,
-        hasNext: false,
-        hasPrevious: true,
+        total: 10
     },
 };
 
 export const SinglePage: Story = {
     args: {
         index: 0,
-        total: 1,
-        hasNext: false,
-        hasPrevious: false,
+        total: 1
     },
 };
 
@@ -126,8 +102,6 @@ export const WithPageSize: Story = {
         index: 0,
         total: 10,
         pageSize: 5,
-        hasNext: true,
-        hasPrevious: false,
     },
 };
 
@@ -152,8 +126,6 @@ export const Interactive: StoryObj = {
                     pageSize={5}
                     index={currentPage}
                     total={totalPages}
-                    hasNext={currentPage < totalPages - 1}
-                    hasPrevious={currentPage > 0}
                     onChangeIndex={handlePageChange}
                 />
             </div>
@@ -239,8 +211,6 @@ export const TableExample: StoryObj = {
                         index={currentPage}
                         total={totalPages}
                         pageSize={pageSize}
-                        hasNext={currentPage < totalPages - 1}
-                        hasPrevious={currentPage > 0}
                         onChangeIndex={handlePageChange}
                         size="small"
                     />
@@ -265,8 +235,6 @@ export const PaginationWithCustomStyles: StoryObj = {
                 <Pagination
                     index={currentPage}
                     total={totalPages}
-                    hasNext={currentPage < totalPages - 1}
-                    hasPrevious={currentPage > 0}
                     onChangeIndex={handlePageChange}
                     className="bg-primary-50 p-4 rounded-lg shadow-md dark:bg-primary-900"
                 />
@@ -333,8 +301,6 @@ export const PaginationCustomContent: StoryObj = {
             <Pagination
                 index={currentPage}
                 total={totalPages}
-                hasNext={currentPage < totalPages - 1}
-                hasPrevious={currentPage > 0}
                 onChangeIndex={handlePageChange}
                 size="small"
                 className="bg-primary-50 dark:bg-primary-900 p-4 rounded-lg border-1 "
