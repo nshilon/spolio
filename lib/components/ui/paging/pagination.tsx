@@ -68,8 +68,6 @@ export interface PaginationProps
   extends ComponentProps<'div'>,
     VariantProps<typeof PaginationStyles> {
   pageSize?: number;
-  hasNext: boolean;
-  hasPrevious: boolean;
   total: number;
   index: number;
   onChangeIndex?: (index: number) => void;
@@ -79,8 +77,6 @@ export const Pagination = ({
   variant,
   size,
   pageSize,
-  hasNext,
-  hasPrevious,
   total,
   index,
   onChangeIndex,

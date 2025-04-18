@@ -12,8 +12,6 @@ describe('Pagination', () => {
         index={0}
         total={10}
         onChangeIndex={onChangeIndex}
-        hasNext={true}
-        hasPrevious={false}
       />
     );
 
@@ -41,8 +39,7 @@ describe('Pagination', () => {
         index={2}
         total={10}
         onChangeIndex={onChangeIndex}
-        hasNext={true}
-        hasPrevious={true}
+
       />
     );
 
@@ -81,8 +78,7 @@ describe('Pagination', () => {
         index={9}
         total={10}
         onChangeIndex={onChangeIndex}
-        hasNext={false}
-        hasPrevious={true}
+
       />
     );
 
@@ -106,8 +102,7 @@ describe('Pagination', () => {
         index={0}
         total={1}
         onChangeIndex={onChangeIndex}
-        hasNext={false}
-        hasPrevious={false}
+
       />
     );
 
@@ -132,8 +127,7 @@ describe('Pagination', () => {
         total={10}
         onChangeIndex={() => {}}
         size="small"
-        hasNext={true}
-        hasPrevious={false}
+
       />
     );
 
@@ -147,8 +141,6 @@ describe('Pagination', () => {
         total={10}
         onChangeIndex={() => {}}
         size="medium"
-        hasNext={true}
-        hasPrevious={false}
       />
     );
 
@@ -161,8 +153,7 @@ describe('Pagination', () => {
         total={10}
         onChangeIndex={() => {}}
         size="large"
-        hasNext={true}
-        hasPrevious={false}
+
       />
     );
 
@@ -177,8 +168,7 @@ describe('Pagination', () => {
         total={10}
         onChangeIndex={() => {}}
         className="custom-class"
-        hasNext={true}
-        hasPrevious={false}
+
       />
     );
 
@@ -194,8 +184,7 @@ describe('Pagination', () => {
         total={10}
         onChangeIndex={() => {}}
         data-testid="pagination-test"
-        hasNext={true}
-        hasPrevious={false}
+
       />
     );
 
@@ -210,8 +199,7 @@ describe('Pagination', () => {
         index={0}
         total={10}
         onChangeIndex={onChangeIndex}
-        hasNext={true}
-        hasPrevious={false}
+
       />
     );
 
@@ -228,8 +216,7 @@ describe('Pagination', () => {
         index={2}
         total={10}
         onChangeIndex={() => {}}
-        hasNext={true}
-        hasPrevious={true}
+
       />
     );
 
@@ -253,8 +240,6 @@ describe('Pagination', () => {
         index={0}
         total={10}
         onChangeIndex={() => {}}
-        hasNext={true}
-        hasPrevious={false}
       />
     );
 
