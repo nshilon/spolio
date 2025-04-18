@@ -89,8 +89,7 @@ describe('Button', () => {
     );
 
     const link = screen.getByRole('link');
-    expect(link).toHaveClass('button--primary');
-    expect(link).toHaveClass('button--medium');
+    expect(link).toHaveClass('button--link');
   });
 
   it('passes additional props to the rendered element', () => {

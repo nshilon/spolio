@@ -17,7 +17,8 @@ const ButtonStyles = cva(
         primary: 'button--primary bg-primary-500 text-white dark:text-white ',
         secondary: 'button--secondary rounded bg-gray-200 dark:text-gray-700',
         outline: 'button--outline border rounded',
-        ghost: 'button--ghost transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-500',
+        ghost:
+          'button--ghost transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-500',
         link: 'button--link hover:underline',
       },
       size: {
@@ -91,7 +92,13 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <Component
         ref={ref}
-        className={cn(ButtonStyles({ variant:Component === 'a' ? 'link' : variant, size, className }))}
+        className={cn(
+          ButtonStyles({
+            variant: Component === 'a' ? 'link' : variant,
+            size,
+            className,
+          })
+        )}
         {...buttonProps}
         {...anchorProps}
         {...props}
