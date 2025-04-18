@@ -118,6 +118,10 @@ export const ButtonGrid: StoryObj = {
         <Icon name="arrow-right" size="small" style={{ marginRight: '0.5rem', color: 'currentColor' }} />
         With Icon
       </Button>
+
+      <Button as="a" size="large" href="#" className="hover:underline bg-transparent text-primary-500">as link</Button>
+      <Button as="a" size="medium" href="#" className="hover:underline bg-transparent text-primary-500">as link</Button>
+      <Button as="a" size="small" href="#" className="hover:underline bg-transparent text-primary-500">as link</Button>
     </div>
   ),
 };
