@@ -18,7 +18,8 @@ describe('Pagination', () => {
     );
 
     // Check if pagination displays correct page info
-    const pageInfo = screen.getByLabelText('Page');
+    // use testing-library/react to get element by aria-label
+    const pageInfo = screen.getByLabelText('page');
     expect(pageInfo).toHaveTextContent('1 of 10');
 
     // Check if navigation buttons are present
@@ -26,10 +27,10 @@ describe('Pagination', () => {
     expect(buttons.length).toBe(4); // First, Previous, Next, Last
 
     // First page should have disabled previous buttons
-    expect(buttons[0]).toBeDisabled(); // First
-    expect(buttons[1]).toBeDisabled(); // Previous
-    expect(buttons[2]).not.toBeDisabled(); // Next
-    expect(buttons[3]).not.toBeDisabled(); // Last
+    expect(buttons.find((button) => button.getAttribute('aria-label') === 'First')).toBeDisabled(); // First
+    expect(buttons.find((button) => button.getAttribute('aria-label') === 'Previous')).toBeDisabled(); // Previous
+    expect(buttons.find((button) => button.getAttribute('aria-label') === 'Next')).not.toBeDisabled(); // Next
+    expect(buttons.find((button) => button.getAttribute('aria-label') === 'Last')).not.toBeDisabled(); // Last
   });
 
   it('handles page navigation correctly', () => {
@@ -46,7 +47,7 @@ describe('Pagination', () => {
     );
 
     // Check if pagination displays correct page info
-    const pageInfo = screen.getByLabelText('Page');
+    const pageInfo = screen.getByLabelText('page');
     expect(pageInfo).toHaveTextContent('3 of 10');
 
     // All navigation buttons should be enabled for middle pages
@@ -56,15 +57,17 @@ describe('Pagination', () => {
     expect(buttons[2]).not.toBeDisabled(); // Next
     expect(buttons[3]).not.toBeDisabled(); // Last
 
+    expect(onChangeIndex).toHaveBeenCalledWith(2);
     // Test navigation
+
     fireEvent.click(buttons[0]); // First
     expect(onChangeIndex).toHaveBeenCalledWith(0);
 
-    fireEvent.click(buttons[1]); // Previous
+    fireEvent.click(buttons[2]); // Next
     expect(onChangeIndex).toHaveBeenCalledWith(1);
 
-    fireEvent.click(buttons[2]); // Next
-    expect(onChangeIndex).toHaveBeenCalledWith(3);
+    fireEvent.click(buttons[1]); // Previous
+    expect(onChangeIndex).toHaveBeenCalledWith(0);
 
     fireEvent.click(buttons[3]); // Last
     expect(onChangeIndex).toHaveBeenCalledWith(9);
@@ -84,7 +87,7 @@ describe('Pagination', () => {
     );
 
     // Check if pagination displays correct page info
-    const pageInfo = screen.getByLabelText('Page');
+    const pageInfo = screen.getByLabelText('page');
     expect(pageInfo).toHaveTextContent('10 of 10');
 
     // Last page should have disabled next buttons

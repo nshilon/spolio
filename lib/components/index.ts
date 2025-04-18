@@ -10,4 +10,5 @@ export type {
 } from './ui/typography';
 export { Input } from './ui/input';
 export type { InputProps } from './ui/input';
-export { Pagination } from './ui/paging';
+export { Pagination, usePagination } from './ui/paging';
+export type { PaginationProps } from './ui/paging';

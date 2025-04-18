@@ -10,19 +10,11 @@ const withThemeProvider: Decorator = (Story) => {
     <ThemeProvider>
       <div style={{ padding: '1rem',
               width: '100%',
+          position: 'relative',
               height: '100%' }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'flex-end',
-            marginBottom: '1rem',
-              position: 'absolute',
-              top: '.1rem',
-              right: '.1rem',
-          }}
-        >
-          <ThemeSwitcher />
-        </div>
+
+          <ThemeSwitcher className="fixed top-4 right-4 z-50" />
+
         <div
           style={{
             padding: '1rem',

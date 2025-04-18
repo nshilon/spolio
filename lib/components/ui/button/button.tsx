@@ -19,6 +19,7 @@ const ButtonStyles = cva(
         outline: 'button--outline border rounded',
         ghost:
           'button--ghost transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-500',
+        link: 'button--link hover:underline',
       },
       size: {
         small: 'button--small text-xs p-2 py-0.5',
@@ -65,17 +66,45 @@ const ButtonStyles = cva(
   }
 );
 
-type ButtonProps = ComponentProps<'button'> & VariantProps<typeof ButtonStyles>;
+type ButtonProps = ComponentProps<'button' | 'a'> &
+  VariantProps<typeof ButtonStyles> & {
+    /**
+     * The element type to render the button as
+     * @example 'a' for anchor tag, 'button' for button element
+     */
+    as?: React.ElementType;
+    /**
+     * The href attribute for when the button is rendered as an anchor
+     */
+    href?: string;
+  };
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, size, variant, ...props }, ref) => (
-    <button
-      ref={ref}
-      type="button"
-      className={cn(ButtonStyles({ variant, size, className }))}
-      {...props}
-    />
-  )
+  ({ className, size, as, variant, href, ...props }, ref) => {
+    const Component: React.ElementType = as || 'button';
+
+    // Only add type="button" if the component is a button
+    const buttonProps = Component === 'button' ? { type: 'button' } : {};
+
+    // Add href if the component is an anchor and href is provided
+    const anchorProps = Component === 'a' && href ? { href } : {};
+
+    return (
+      <Component
+        ref={ref}
+        className={cn(
+          ButtonStyles({
+            variant: Component === 'a' ? 'link' : variant,
+            size,
+            className,
+          })
+        )}
+        {...buttonProps}
+        {...anchorProps}
+        {...props}
+      />
+    );
+  }
 );
 
 export default Button;
