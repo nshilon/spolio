@@ -23,13 +23,14 @@
     "lint": "biome lint lib --apply",
     "check": "biome check --apply lib",
     "ci": "biome ci lib",
-    "test": "vitest",
+    "test": "vitest run",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prebuild": "rm -rf dist",
-    "build": "tsc && vite build",
+    "build": "npm run build:svg-icons && tsc && vite build",
+    "build:svg-icons": "node lib/components/ui/icon/build-svg-icons.js",
     "prepublish": "npm run build"
   },
   "peerDependencies": {
