@@ -14,11 +14,11 @@ const ButtonStyles = cva(
   {
     variants: {
       variant: {
-        primary: 'button--primary bg-primary-500 text-white dark:text-white ',
+        primary: 'button--primary bg-primary-500 text-white dark:text-white transition-colors duration-300 hover:bg-primary-600 dark:hover:bg-primary-400 hover:shadow-md',
         secondary: 'button--secondary rounded bg-gray-200 dark:text-gray-700',
         outline: 'button--outline border rounded',
         ghost:
-          'button--ghost transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-gray-500',
+          'button--ghost transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-500',
         link: 'button--link hover:underline',
       },
       size: {
@@ -31,17 +31,17 @@ const ButtonStyles = cva(
       {
         variant: 'primary',
         size: 'small',
-        className: 'button--primary--small rounded-sm',
+        className: 'button--primary--small rounded-sm hover:shadow-sm',
       },
       {
         variant: 'primary',
         size: 'medium',
-        className: 'button--primary--medium rounded-md',
+        className: 'button--primary--medium rounded-md hover:shadow-md',
       },
       {
         variant: 'primary',
         size: 'large',
-        className: 'button--primary--large rounded',
+        className: 'button--primary--large rounded hover:shadow-lg',
       },
       {
         variant: 'secondary',
