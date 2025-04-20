@@ -314,9 +314,11 @@ export const PaginationCustomContent: StoryObj = {
                 {/*<Pagination.Next/>*/}
 
                 <Last/>
-                {/*<Inner/>*/}
+                <Inner/>
 
             </Pagination>
+
+
 
         );
     }
