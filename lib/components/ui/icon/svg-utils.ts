@@ -1,4 +1,5 @@
 import { IconDefinition, registerIcon, registerIcons } from './icon-registry';
+import {createElement} from "react";
 
 /**
  * Convert an SVG string to an icon definition
@@ -40,12 +41,12 @@ export function svgToIconDefinition(svgString: string): IconDefinition {
       });
       
       // Create the React element based on the tag name
-      return React.createElement(tagName, { key: `${tagName}-${index}`, ...attributes });
+      return createElement(tagName, { key: `${tagName}-${index}`, ...attributes });
     });
   
   // Return the icon definition
   return {
-    content: <>{reactElements}</>,
+    content: reactElements,
     viewBox,
   };
 }
