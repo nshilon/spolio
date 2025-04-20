@@ -1,0 +1,375 @@
+import { Meta } from '@storybook/blocks';
+import { ThemeProvider, Button, Typography } from '@/components';
+
+<Meta title="Guides/Creating a Custom Theme" />
+
+# Creating a Custom Theme
+
+This guide walks you through the process of creating a custom theme for your application using our UI kit.
+
+## Step 1: Understand the Theme Structure
+
+Our theming system is built on CSS custom properties (variables) that define colors, spacing, typography, and other design tokens. These variables are organized into several categories:
+
+- **Base colors**: Primary, secondary, success, warning, danger, info
+- **Semantic colors**: Background, foreground, border
+- **Typography**: Font sizes, line heights
+- **Spacing**: Padding and margin values
+- **Border radius**: Corner rounding values
+- **Shadows**: Box shadow values
+- **Transitions**: Animation durations
+
+## Step 2: Plan Your Theme
+
+Before writing any code, plan your theme by defining your color palette and other design tokens. Consider the following:
+
+- **Brand colors**: What are your primary and secondary brand colors?
+- **Semantic colors**: How will you map your brand colors to semantic roles?
+- **Dark mode**: How will your colors adapt for dark mode?
+- **Typography**: What font sizes and line heights will you use?
+- **Spacing**: What spacing scale will you use?
+- **Border radius**: How rounded should corners be?
+
+## Step 3: Create a Theme CSS File
+
+Create a new CSS file for your theme. Here's an example structure:
+
+```css
+/* theme.css */
+
+:root {
+  /* Primary color palette */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  
+  /* Secondary color palette */
+  --color-secondary-50: #fdf2f8;
+  --color-secondary-100: #fce7f3;
+  --color-secondary-200: #fbcfe8;
+  --color-secondary-300: #f9a8d4;
+  --color-secondary-400: #f472b6;
+  --color-secondary-500: #ec4899;
+  --color-secondary-600: #db2777;
+  --color-secondary-700: #be185d;
+  --color-secondary-800: #9d174d;
+  --color-secondary-900: #831843;
+  
+  /* Success color palette */
+  --color-success-50: #ecfdf5;
+  --color-success-100: #d1fae5;
+  --color-success-200: #a7f3d0;
+  --color-success-300: #6ee7b7;
+  --color-success-400: #34d399;
+  --color-success-500: #10b981;
+  --color-success-600: #059669;
+  --color-success-700: #047857;
+  --color-success-800: #065f46;
+  --color-success-900: #064e3b;
+  
+  /* Warning color palette */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+  
+  /* Danger color palette */
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
+  --color-danger-800: #991b1b;
+  --color-danger-900: #7f1d1d;
+  
+  /* Main color references */
+  --color-primary: var(--color-primary-600);
+  --color-secondary: var(--color-secondary-600);
+  --color-success: var(--color-success-500);
+  --color-warning: var(--color-warning-500);
+  --color-danger: var(--color-danger-500);
+  
+  /* Semantic colors - Light theme */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f0f9ff;
+  --color-background-tertiary: #e0f2fe;
+  
+  --color-foreground-primary: #0c4a6e;
+  --color-foreground-secondary: #075985;
+  --color-foreground-tertiary: #0369a1;
+  
+  --color-border-primary: #bae6fd;
+  --color-border-secondary: #e0f2fe;
+  
+  /* Typography */
+  --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  
+  /* Line heights */
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  /* Spacing */
+  --spacing-xxs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-s: 0.75rem;
+  --spacing-m: 1rem;
+  --spacing-l: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  --spacing-xxxl: 4rem;
+  
+  /* Border radius */
+  --border-radius-xs: 0.125rem;
+  --border-radius-s: 0.25rem;
+  --border-radius-m: 0.5rem;
+  --border-radius-l: 0.75rem;
+  --border-radius-xl: 1rem;
+  --border-radius-xxl: 1.25rem;
+  --border-radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Transitions */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+}
+
+/* Dark theme */
+.dark {
+  /* Semantic colors - Dark theme */
+  --color-background-primary: #0c4a6e;
+  --color-background-secondary: #075985;
+  --color-background-tertiary: #0369a1;
+  
+  --color-foreground-primary: #f0f9ff;
+  --color-foreground-secondary: #e0f2fe;
+  --color-foreground-tertiary: #bae6fd;
+  
+  --color-border-primary: #0284c7;
+  --color-border-secondary: #0369a1;
+  
+  /* Shadow adjustments for dark mode */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+```
+
+## Step 4: Import Your Theme
+
+Import your theme CSS file in your application. If you're using a bundler like webpack or Vite, you can import it in your main JavaScript/TypeScript file:
+
+```jsx
+// Import the default styles
+import 'your-ui-kit/dist/style.css';
+
+// Import your custom theme (after the default styles to override them)
+import './theme.css';
+```
+
+If you're not using a bundler, you can include the CSS files in your HTML:
+
+```html
+<link rel="stylesheet" href="path/to/your-ui-kit/dist/style.css">
+<link rel="stylesheet" href="path/to/theme.css">
+```
+
+## Step 5: Use the ThemeProvider
+
+Wrap your application with the `ThemeProvider` component to enable theme switching:
+
+```jsx
+import { ThemeProvider } from 'simple-ui';
+
+function App() {
+  return (
+    <ThemeProvider>
+      {/* Your application content */}
+    </ThemeProvider>
+  );
+}
+```
+
+## Step 6: Test Your Theme
+
+Test your theme with various components to ensure it looks good in both light and dark modes. Pay special attention to:
+
+- **Color contrast**: Ensure text is readable against backgrounds
+- **Component states**: Check hover, focus, active, and disabled states
+- **Responsive design**: Test on different screen sizes
+- **Accessibility**: Verify that your theme meets accessibility standards
+
+## Advanced: Theme Switching
+
+If you want to support multiple themes beyond just light and dark, you can create a custom theme switcher:
+
+```jsx
+import { useState, useEffect } from 'react';
+import { ThemeProvider } from 'simple-ui';
+
+// Define your themes
+const themes = {
+  default: {
+    light: '',
+    dark: 'dark',
+  },
+  blue: {
+    light: 'theme-blue',
+    dark: 'theme-blue dark',
+  },
+  green: {
+    light: 'theme-green',
+    dark: 'theme-green dark',
+  },
+};
+
+function CustomThemeProvider({ children }) {
+  const [theme, setTheme] = useState('default');
+  const [mode, setMode] = useState('light');
+  
+  // Apply the theme and mode classes to the body
+  useEffect(() => {
+    document.body.className = themes[theme][mode];
+  }, [theme, mode]);
+  
+  return (
+    <ThemeProvider defaultTheme={mode}>
+      <div className="theme-controls">
+        <div>
+          <label>Theme:</label>
+          <select value={theme} onChange={(e) => setTheme(e.target.value)}>
+            <option value="default">Default</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+          </select>
+        </div>
+      </div>
+      {children}
+    </ThemeProvider>
+  );
+}
+```
+
+Then, define your theme-specific CSS:
+
+```css
+/* Default theme is already defined in :root */
+
+/* Blue theme */
+.theme-blue {
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  
+  --color-background-primary: #f0f9ff;
+  --color-background-secondary: #e0f7ff;
+  --color-background-tertiary: #bae6fd;
+  
+  --color-foreground-primary: #1e3a8a;
+  --color-foreground-secondary: #1e40af;
+  --color-foreground-tertiary: #3b82f6;
+  
+  --color-border-primary: #93c5fd;
+  --color-border-secondary: #bfdbfe;
+}
+
+/* Blue theme - dark mode */
+.theme-blue.dark {
+  --color-background-primary: #1e3a8a;
+  --color-background-secondary: #1e40af;
+  --color-background-tertiary: #1d4ed8;
+  
+  --color-foreground-primary: #f0f9ff;
+  --color-foreground-secondary: #e0f7ff;
+  --color-foreground-tertiary: #bae6fd;
+  
+  --color-border-primary: #3b82f6;
+  --color-border-secondary: #1d4ed8;
+}
+
+/* Green theme */
+.theme-green {
+  --color-primary-500: #10b981;
+  --color-primary-600: #059669;
+  --color-primary-700: #047857;
+  
+  --color-background-primary: #ecfdf5;
+  --color-background-secondary: #d1fae5;
+  --color-background-tertiary: #a7f3d0;
+  
+  --color-foreground-primary: #064e3b;
+  --color-foreground-secondary: #065f46;
+  --color-foreground-tertiary: #047857;
+  
+  --color-border-primary: #6ee7b7;
+  --color-border-secondary: #a7f3d0;
+}
+
+/* Green theme - dark mode */
+.theme-green.dark {
+  --color-background-primary: #064e3b;
+  --color-background-secondary: #065f46;
+  --color-background-tertiary: #047857;
+  
+  --color-foreground-primary: #ecfdf5;
+  --color-foreground-secondary: #d1fae5;
+  --color-foreground-tertiary: #a7f3d0;
+  
+  --color-border-primary: #10b981;
+  --color-border-secondary: #059669;
+}
+```
+
+## Best Practices
+
+1. **Use a color palette generator**: Tools like [Coolors](https://coolors.co/) or [Adobe Color](https://color.adobe.com/) can help you create harmonious color palettes.
+
+2. **Check contrast ratios**: Use tools like [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) to ensure your text has sufficient contrast against backgrounds.
+
+3. **Create a theme design system**: Document your theme variables and how they should be used to maintain consistency.
+
+4. **Test with real components**: Don't just define variables; test them with actual components to see how they look in practice.
+
+5. **Consider color blindness**: Test your theme with color blindness simulators to ensure it's accessible to all users.
+
+6. **Use semantic variable names**: Name your variables based on their purpose, not their value (e.g., `--color-primary` instead of `--color-blue`).
+
+7. **Maintain dark mode parity**: Ensure all features and components work equally well in both light and dark modes.
+
+## Conclusion
+
+Creating a custom theme allows you to align the UI kit with your brand identity while maintaining the functionality and accessibility of the components. By following this guide, you can create a cohesive and professional-looking theme for your application.

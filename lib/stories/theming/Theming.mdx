@@ -1,0 +1,291 @@
+import { Meta } from '@storybook/blocks';
+
+
+
+<Meta title="Guides/Theming" />
+
+# Theming Guide
+
+This guide explains how to use and customize the theming system in our UI kit.
+
+## Introduction
+
+Our UI kit comes with a built-in theming system that supports light and dark modes out of the box. The theming system is based on CSS custom properties (variables) that can be customized to match your brand's visual identity.
+
+## Theme Provider
+
+The `ThemeProvider` component is the foundation of our theming system. It manages the current theme state and provides theme-related functionality to all components.
+
+```jsx
+import { ThemeProvider } from 'simple-ui';
+
+function App() {
+  return (
+    <ThemeProvider>
+      {/* Your application content */}
+    </ThemeProvider>
+  );
+}
+```
+
+### Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `defaultTheme` | `'light' \| 'dark'` | `'light'` | The default theme to use if no preference is stored |
+| `children` | `ReactNode` | - | The content to be rendered within the theme context |
+
+## Theme Switching
+
+The UI kit provides a `ThemeSwitcher` component that allows users to toggle between light and dark themes:
+
+```jsx
+// Example of using ThemeSwitcher
+import { ThemeSwitcher } from 'simple-ui';
+
+function Header() {
+  return (
+    <header>
+      <ThemeSwitcher />
+    </header>
+  );
+}
+```
+
+```jsx
+import { ThemeSwitcher } from 'simple-ui';
+
+function Header() {
+  return (
+    <header>
+      <ThemeSwitcher />
+    </header>
+  );
+}
+```
+
+### Programmatic Theme Control
+
+You can also control the theme programmatically using the `useTheme` hook:
+
+```jsx
+import { useTheme } from 'simple-ui';
+
+function ThemeControls() {
+  const { theme, setTheme, toggleTheme } = useTheme();
+
+  return (
+    <div>
+      <p>Current theme: {theme}</p>
+      <button onClick={() => setTheme('light')}>Light</button>
+      <button onClick={() => setTheme('dark')}>Dark</button>
+      <button onClick={toggleTheme}>Toggle</button>
+    </div>
+  );
+}
+```
+
+## Theme Variables
+
+Our theming system uses CSS custom properties (variables) to define colors, spacing, typography, and other design tokens. These variables are defined in the `:root` selector and can be overridden to customize the appearance of components.
+
+### Color Variables
+
+The UI kit includes a comprehensive set of color variables:
+
+- `--color-primary-500`: Primary color (500)
+- `--color-primary-600`: Primary color (600)
+- `--color-success-500`: Success color
+- `--color-warning-500`: Warning color
+- `--color-danger-500`: Danger color
+- `--color-info-500`: Info color
+
+#### Semantic Color Variables
+
+The UI kit also includes semantic color variables that are used to define the appearance of components:
+
+**Background Colors:**
+- `--color-background-primary`: Primary background color
+- `--color-background-secondary`: Secondary background color
+- `--color-background-tertiary`: Tertiary background color
+
+**Foreground Colors:**
+- `--color-foreground-primary`: Primary text color
+- `--color-foreground-secondary`: Secondary text color
+- `--color-foreground-tertiary`: Tertiary text color
+
+### Spacing Variables
+
+The UI kit includes spacing variables for consistent spacing throughout your application:
+
+```css
+--spacing-xxs: 0.25rem;   /* 4px */
+--spacing-xs: 0.5rem;     /* 8px */
+--spacing-s: 0.75rem;     /* 12px */
+--spacing-m: 1rem;        /* 16px */
+--spacing-l: 1.5rem;      /* 24px */
+--spacing-xl: 2rem;       /* 32px */
+--spacing-xxl: 3rem;      /* 48px */
+--spacing-xxxl: 4rem;     /* 64px */
+```
+
+### Border Radius Variables
+
+The UI kit includes border radius variables for consistent rounding of corners:
+
+```css
+--border-radius-xs: 0.125rem;  /* 2px */
+--border-radius-s: 0.25rem;    /* 4px */
+--border-radius-m: 0.375rem;   /* 6px */
+--border-radius-l: 0.5rem;     /* 8px */
+--border-radius-xl: 0.75rem;   /* 12px */
+--border-radius-xxl: 1rem;     /* 16px */
+--border-radius-full: 9999px;  /* Fully rounded */
+```
+
+### Typography Variables
+
+The UI kit includes typography variables for consistent text styling:
+
+```css
+--font-size-xs: 0.75rem;    /* 12px */
+--font-size-sm: 0.875rem;   /* 14px */
+--font-size-base: 1rem;     /* 16px */
+--font-size-lg: 1.125rem;   /* 18px */
+--font-size-xl: 1.25rem;    /* 20px */
+--font-size-2xl: 1.5rem;    /* 24px */
+--font-size-3xl: 1.875rem;  /* 30px */
+--font-size-4xl: 2.25rem;   /* 36px */
+--font-size-5xl: 3rem;      /* 48px */
+
+--line-height-tight: 1.25;
+--line-height-snug: 1.375;
+--line-height-normal: 1.5;
+--line-height-relaxed: 1.625;
+--line-height-loose: 2;
+```
+
+## Customizing Themes
+
+You can customize the theme by overriding the CSS variables in your application's CSS.
+
+### Basic Customization
+
+To customize the theme, add your own CSS that overrides the default variables:
+
+```css
+:root {
+  /* Override primary color */
+  --color-primary-500: #0070f3;
+  --color-primary-600: #0060df;
+
+  /* Override border radius */
+  --border-radius-m: 0.5rem;
+}
+```
+
+### Dark Mode Customization
+
+You can also customize the dark mode theme by overriding the variables in the `.dark` selector:
+
+```css
+.dark {
+  /* Override dark mode background colors */
+  --color-background-primary: #121212;
+  --color-background-secondary: #1e1e1e;
+
+  /* Override dark mode text colors */
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #e0e0e0;
+}
+```
+
+### Creating a Custom Theme
+
+For more extensive customization, you can create a completely custom theme by defining all the necessary variables:
+
+```css
+/* Custom theme */
+:root {
+  /* Primary colors */
+  --color-primary-50: #e6f7ff;
+  --color-primary-100: #bae7ff;
+  --color-primary-200: #91d5ff;
+  --color-primary-300: #69c0ff;
+  --color-primary-400: #40a9ff;
+  --color-primary-500: #1890ff;
+  --color-primary-600: #096dd9;
+  --color-primary-700: #0050b3;
+  --color-primary-800: #003a8c;
+  --color-primary-900: #002766;
+
+  /* Main color references */
+  --color-primary: var(--color-primary-600);
+  --color-secondary: var(--color-primary-400);
+
+  /* Semantic colors - Light theme */
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #f5f5f5;
+  --color-background-tertiary: #e5e5e5;
+
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --color-foreground-tertiary: #666666;
+
+  --color-border-primary: #d9d9d9;
+  --color-border-secondary: #e5e5e5;
+}
+
+/* Custom dark theme */
+.dark {
+  /* Semantic colors - Dark theme */
+  --color-background-primary: #121212;
+  --color-background-secondary: #1e1e1e;
+  --color-background-tertiary: #2c2c2c;
+
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #e0e0e0;
+  --color-foreground-tertiary: #a0a0a0;
+
+  --color-border-primary: #434343;
+  --color-border-secondary: #2c2c2c;
+}
+```
+
+## Component-Specific Theming
+
+Many components in the UI kit use the theme variables for styling. You can customize the appearance of specific components by overriding these variables or by using the component's props.
+
+### Example: Button Theming
+
+The `Button` component uses theme variables for styling. You can customize its appearance by overriding these variables:
+
+```css
+:root {
+  /* Customize button colors */
+  --button-primary-bg: var(--color-primary-600);
+  --button-primary-text: white;
+  --button-primary-hover-bg: var(--color-primary-700);
+
+  /* Customize button border radius */
+  --button-border-radius: var(--border-radius-m);
+}
+```
+
+## Best Practices
+
+Here are some best practices for using the theming system:
+
+1. **Use semantic variables**: Instead of using color values directly, use semantic variables like `--color-background-primary` and `--color-foreground-primary`.
+
+2. **Test both themes**: Always test your application in both light and dark themes to ensure good contrast and readability.
+
+3. **Respect user preferences**: The theme system respects the user's system preference by default. Don't override this behavior unless necessary.
+
+4. **Use the ThemeProvider**: Always wrap your application with the `ThemeProvider` component to ensure proper theme functionality.
+
+5. **Avoid hard-coded colors**: Avoid using hard-coded colors in your components. Instead, use the theme variables to ensure consistency.
+
+## Conclusion
+
+The theming system in our UI kit provides a flexible and powerful way to customize the appearance of your application. By using the theme variables and components, you can create a consistent and branded user experience that works well in both light and dark modes.
