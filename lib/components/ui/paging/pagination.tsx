@@ -161,7 +161,7 @@ Pagination.displayName = 'Pagination';
 Pagination.Simple = ({ children }: { children?: ReactNode }) => {
   const { index, total } = usePagination();
   return (
-    <Typography variant="body" aria-label="page">
+    <Typography variant="body" size="sm" aria-label="page" className="m-0">
       {children ? (
         children
       ) : (
