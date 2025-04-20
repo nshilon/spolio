@@ -200,3 +200,17 @@ body {
     --font-size-5xl: 2.5rem;    /* 40px */
   }
 }
+
+/* Progress component animations */
+@keyframes progress-indeterminate {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(400%);
+  }
+}
+
+.animate-progress-indeterminate {
+  animation: progress-indeterminate 2s ease-in-out infinite;
+}

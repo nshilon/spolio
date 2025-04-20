@@ -12,3 +12,5 @@ export { Input } from './ui/input';
 export type { InputProps } from './ui/input';
 export { Pagination, usePagination } from './ui/paging';
 export type { PaginationProps } from './ui/paging';
+export { Progress } from './ui/progress';
+export type { ProgressProps } from './ui/progress';
