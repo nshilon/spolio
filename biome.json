@@ -6,7 +6,8 @@
   "files": {
     "ignore": [
       "**/*.stories.tsx",
-      "**/*.test.tsx"
+      "**/*.test.tsx",
+      "**/*.cjs"
     ]
   },
   "linter": {
@@ -14,7 +15,8 @@
     "rules": {
       "recommended": true,
       "complexity": {
-        "useOptionalChain": "off"
+        "useOptionalChain": "off",
+        "noForEach": "off"
       },
       "suspicious": {
         "noExplicitAny": "error"

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Theming Guide</title>
+  <style>
+    :root {
+      /* Base colors */
+      --color-primary-50: #f5f3ff;
+      --color-primary-100: #ede9fe;
+      --color-primary-200: #ddd6fe;
+      --color-primary-300: #c4b5fd;
+      --color-primary-400: #a78bfa;
+      --color-primary-500: #8b5cf6;
+      --color-primary-600: #7c3aed;
+      --color-primary-700: #6d28d9;
+      --color-primary-800: #5b21b6;
+      --color-primary-900: #4c1d95;
+
+      --color-neutral-50: #fafafa;
+      --color-neutral-100: #f5f5f5;
+      --color-neutral-200: #e5e5e5;
+      --color-neutral-300: #d4d4d4;
+      --color-neutral-400: #a3a3a3;
+      --color-neutral-500: #737373;
+      --color-neutral-600: #525252;
+      --color-neutral-700: #404040;
+      --color-neutral-800: #262626;
+      --color-neutral-900: #171717;
+
+      /* Main color references */
+      --color-primary: var(--color-primary-600);
+      --color-secondary: var(--color-primary-400);
+
+      /* Semantic colors - Light theme */
+      --color-background-primary: var(--color-neutral-50);
+      --color-background-secondary: var(--color-neutral-100);
+      --color-background-tertiary: var(--color-neutral-200);
+
+      --color-foreground-primary: var(--color-neutral-900);
+      --color-foreground-secondary: var(--color-neutral-700);
+      --color-foreground-tertiary: var(--color-neutral-500);
+
+      --color-border-primary: var(--color-neutral-300);
+      --color-border-secondary: var(--color-neutral-200);
+
+      /* Typography */
+      --font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      --font-size-base: 16px;
+      --line-height-normal: 1.5;
+
+      /* Spacing */
+      --spacing-m: 1rem;
+      --spacing-l: 1.5rem;
+      
+      /* Border radius */
+      --border-radius-m: 0.375rem;
+      
+      /* Transitions */
+      --transition-normal: 300ms;
+    }
+
+    /* Dark theme */
+    .dark {
+      --color-background-primary: var(--color-neutral-900);
+      --color-background-secondary: var(--color-neutral-800);
+      --color-background-tertiary: var(--color-neutral-700);
+
+      --color-foreground-primary: var(--color-neutral-50);
+      --color-foreground-secondary: var(--color-neutral-200);
+      --color-foreground-tertiary: var(--color-neutral-400);
+
+      --color-border-primary: var(--color-neutral-600);
+      --color-border-secondary: var(--color-neutral-700);
+    }
+
+    body {
+      font-family: var(--font-family);
+      font-size: var(--font-size-base);
+      line-height: var(--line-height-normal);
+      color: var(--color-foreground-primary);
+      background-color: var(--color-background-primary);
+      transition: color var(--transition-normal), background-color var(--transition-normal);
+      padding: var(--spacing-l);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .container {
+      padding: var(--spacing-m);
+      border-radius: var(--border-radius-m);
+      border: 1px solid var(--color-border-primary);
+      background-color: var(--color-background-secondary);
+      margin-bottom: var(--spacing-m);
+    }
+
+    .color-sample {
+      display: inline-block;
+      width: 100px;
+      height: 50px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border-radius: var(--border-radius-m);
+      border: 1px solid var(--color-border-primary);
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color: var(--color-primary);
+      color: white;
+      border: none;
+      border-radius: var(--border-radius-m);
+      cursor: pointer;
+    }
+
+    pre {
+      background-color: var(--color-background-tertiary);
+      padding: var(--spacing-m);
+      border-radius: var(--border-radius-m);
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  
+  <h1>Theming Guide</h1>
+  
+  <p>This guide explains how to use and customize the theming system in our UI kit.</p>
+  
+  <h2>Introduction</h2>
+  
+  <p>Our UI kit comes with a built-in theming system that supports light and dark modes out of the box. The theming system is based on CSS custom properties (variables) that can be customized to match your brand's visual identity.</p>
+  
+  <h2>Theme Provider</h2>
+  
+  <p>The <code>ThemeProvider</code> component is the foundation of our theming system. It manages the current theme state and provides theme-related functionality to all components.</p>
+  
+  <pre><code>import { ThemeProvider } from 'your-ui-kit';
+
+function App() {
+  return (
+    &lt;ThemeProvider&gt;
+      {/* Your application content */}
+    &lt;/ThemeProvider&gt;
+  );
+}</code></pre>
+  
+  <h2>Theme Variables</h2>
+  
+  <p>Our theming system uses CSS custom properties (variables) to define colors, spacing, typography, and other design tokens. These variables are defined in the <code>:root</code> selector and can be overridden to customize the appearance of components.</p>
+  
+  <h3>Color Variables</h3>
+  
+  <div class="container">
+    <h4>Primary Colors</h4>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-primary-500);"></div>
+      <code>--color-primary-500</code>
+    </div>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-primary-600);"></div>
+      <code>--color-primary-600</code>
+    </div>
+  </div>
+  
+  <h3>Semantic Color Variables</h3>
+  
+  <div class="container">
+    <h4>Background Colors</h4>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-background-primary);"></div>
+      <code>--color-background-primary</code>
+    </div>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-background-secondary);"></div>
+      <code>--color-background-secondary</code>
+    </div>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-background-tertiary);"></div>
+      <code>--color-background-tertiary</code>
+    </div>
+  </div>
+  
+  <div class="container">
+    <h4>Foreground Colors</h4>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-foreground-primary);"></div>
+      <code>--color-foreground-primary</code>
+    </div>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-foreground-secondary);"></div>
+      <code>--color-foreground-secondary</code>
+    </div>
+    <div>
+      <div class="color-sample" style="background-color: var(--color-foreground-tertiary);"></div>
+      <code>--color-foreground-tertiary</code>
+    </div>
+  </div>
+  
+  <h2>Customizing Themes</h2>
+  
+  <p>You can customize the theme by overriding the CSS variables in your application's CSS.</p>
+  
+  <pre><code>:root {
+  /* Override primary color */
+  --color-primary-500: #0070f3;
+  --color-primary-600: #0060df;
+  
+  /* Override border radius */
+  --border-radius-m: 0.5rem;
+}</code></pre>
+  
+  <h2>Dark Mode</h2>
+  
+  <p>You can also customize the dark mode theme by overriding the variables in the <code>.dark</code> selector:</p>
+  
+  <pre><code>.dark {
+  /* Override dark mode background colors */
+  --color-background-primary: #121212;
+  --color-background-secondary: #1e1e1e;
+  
+  /* Override dark mode text colors */
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #e0e0e0;
+}</code></pre>
+  
+  <h2>Best Practices</h2>
+  
+  <ol>
+    <li><strong>Use semantic variables</strong>: Instead of using color values directly, use semantic variables like <code>--color-background-primary</code> and <code>--color-foreground-primary</code>.</li>
+    <li><strong>Test both themes</strong>: Always test your application in both light and dark themes to ensure good contrast and readability.</li>
+    <li><strong>Respect user preferences</strong>: The theme system respects the user's system preference by default. Don't override this behavior unless necessary.</li>
+    <li><strong>Use the ThemeProvider</strong>: Always wrap your application with the <code>ThemeProvider</code> component to ensure proper theme functionality.</li>
+    <li><strong>Avoid hard-coded colors</strong>: Avoid using hard-coded colors in your components. Instead, use the theme variables to ensure consistency.</li>
+  </ol>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
+</body>
+</html>

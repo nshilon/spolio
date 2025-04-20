@@ -14,7 +14,8 @@ const ButtonStyles = cva(
   {
     variants: {
       variant: {
-        primary: 'button--primary bg-primary-500 text-white dark:text-white transition-colors duration-300 hover:bg-primary-600 dark:hover:bg-primary-400 hover:shadow-md',
+        primary:
+          'button--primary bg-primary-500 text-white dark:text-white transition-colors duration-300 hover:bg-primary-600 dark:hover:bg-primary-400 hover:shadow-md',
         secondary: 'button--secondary rounded bg-gray-200 dark:text-gray-700',
         outline: 'button--outline border rounded',
         ghost:

@@ -1,6 +1,6 @@
 {
   "name": "spolio",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "author": "Nir Shilon",
   "description": "a simple design system",
   "type": "module",
@@ -23,13 +23,14 @@
     "lint": "biome lint lib --apply",
     "check": "biome check --apply lib",
     "ci": "biome ci lib",
-    "test": "vitest",
+    "test": "vitest run",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prebuild": "rm -rf dist",
-    "build": "tsc && vite build",
+    "build": "npm run build:svg-icons &&  vite build",
+    "build:svg-icons": "node lib/components/ui/icon/build-svg-icons.cjs",
     "prepublish": "npm run build"
   },
   "peerDependencies": {
@@ -38,6 +39,9 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
+    "@mdx-js/mdx": "^3.1.0",
+    "@mdx-js/react": "^3.1.0",
+    "@storybook/addon-docs": "^8.6.12",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
