@@ -20,6 +20,11 @@ export default defineConfig({
             exclude: [
                 'node_modules/',
                 'lib/test/setup.ts',
+                '**/*.stories.tsx',
+                'storybook-static/',
+                '**/generated/**',
+                '.storybook/**',
+                '**/build-svg-icons.cjs',
             ],
         },
     },
