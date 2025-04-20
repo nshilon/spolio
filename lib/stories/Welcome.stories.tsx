@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {Typography} from "simple-ui";
+import {Typography} from "@/components";
 
 const meta = {
   title: 'Welcome',
