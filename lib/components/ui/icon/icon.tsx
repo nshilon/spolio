@@ -1,6 +1,6 @@
 import { type VariantProps, cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
-import { getIcon/*, hasIcon*/ } from './icon-registry';
+import { getIcon /*, hasIcon*/ } from './icon-registry';
 
 // Define the icon variants using CVA
 const iconVariants = cva('icon', {
@@ -68,7 +68,7 @@ const Icon = forwardRef<SVGSVGElement, IconProps>(
         ref={ref}
         className={iconVariants({ size, variant, className })}
         xmlns="http://www.w3.org/2000/svg"
-        viewBox={icon?.viewBox || viewBox || "0 0 24 24"}
+        viewBox={icon?.viewBox || viewBox || '0 0 24 24'}
         fill="none"
         stroke="currentColor"
         strokeWidth="2"
