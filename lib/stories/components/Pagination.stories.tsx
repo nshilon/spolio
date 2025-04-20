@@ -303,19 +303,22 @@ export const PaginationCustomContent: StoryObj = {
                 total={totalPages}
                 onChangeIndex={handlePageChange}
                 size="small"
-                className="bg-primary-50 dark:bg-primary-900 p-4 rounded-lg border-1 "
+                className="p-4 rounded-lg border-1"
+
             >
                 <First/>
 
-                <Pagination.Previous/>
+                {/*<Pagination.Previous/>*/}
 
                 <Pagination.Items/>
-                <Pagination.Next/>
+                {/*<Pagination.Next/>*/}
 
                 <Last/>
                 <Inner/>
 
             </Pagination>
+
+
 
         );
     }
