@@ -22,7 +22,6 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
-      "simple-ui": ["./lib/index.ts"],
       "@/*": ["./lib/*"]
     },
     "baseUrl": "."
