@@ -1,6 +1,6 @@
+import { cn } from '@/utils';
 import { VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps, forwardRef } from 'react';
-import { cn } from '@/utils';
 
 const progressVariants = cva(
   [
@@ -61,12 +61,7 @@ const progressVariants = cva(
 );
 
 const progressIndicatorVariants = cva(
-  [
-    'h-full',
-    'transition-all',
-    'duration-300',
-    'ease-in-out',
-  ],
+  ['h-full', 'transition-all', 'duration-300', 'ease-in-out'],
   {
     variants: {
       color: {
@@ -136,7 +131,7 @@ const Progress = forwardRef<HTMLDivElement, ProgressProps>(
   ) => {
     // Calculate the width percentage for the progress indicator
     const percentage = Math.min(100, Math.max(0, (value / max) * 100));
-    
+
     // Format the label
     const label = formatLabel
       ? formatLabel(value, max)
@@ -157,7 +152,7 @@ const Progress = forwardRef<HTMLDivElement, ProgressProps>(
       >
         <div className={cn(progressVariants({ size, variant, color }))}>
           <div
-              aria-label="progress-indicator"
+            aria-label="progress-indicator"
             className={cn(
               progressIndicatorVariants({
                 color,
