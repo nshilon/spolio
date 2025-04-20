@@ -2,6 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { render, screen } from '../../../test/utils';
 import { axe } from 'jest-axe';
 import Icon from './icon.tsx';
+import { registerIcon, hasIcon, getIcon } from './icon-registry';
 
 describe('Icon', () => {
   it('renders correctly with default props', () => {
@@ -60,8 +61,32 @@ describe('Icon', () => {
         <Icon name="info" aria-label="Information" />
       </div>
     );
-    
+
     const results = await axe(container);
     expect(results).toHaveNoViolations();
+  });
+});
+
+describe('IconRegistry', () => {
+  it('can register and retrieve custom icons', () => {
+    // Register a custom icon
+    const customIcon = {
+      content: <path d="M1 1L23 23M1 23L23 1" />,
+      viewBox: '0 0 24 24',
+    };
+
+    registerIcon('custom-icon', customIcon);
+
+    // Check if the icon exists in the registry
+    expect(hasIcon('custom-icon')).toBe(true);
+
+    // Get the icon from the registry
+    const retrievedIcon = getIcon('custom-icon');
+    expect(retrievedIcon).toEqual(customIcon);
+
+    // Render the custom icon
+    render(<Icon name="custom-icon" data-testid="custom-icon" />);
+    const icon = screen.getByTestId('custom-icon');
+    expect(icon).toBeInTheDocument();
   });
 });
