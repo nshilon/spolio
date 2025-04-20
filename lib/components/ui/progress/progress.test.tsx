@@ -63,19 +63,19 @@ describe('Progress', () => {
 
   it('applies different color variants correctly', () => {
     const { rerender } = render(<Progress color="primary" data-testid="progress" />);
-    let progressIndicator = screen.getByTestId('progress').querySelector('div > div');
+    let progressIndicator = screen.getByLabelText( 'progress-indicator');
     expect(progressIndicator).toHaveClass('bg-primary-600');
     
     rerender(<Progress color="success" data-testid="progress" />);
-    progressIndicator = screen.getByTestId('progress').querySelector('div > div');
+    progressIndicator = screen.getByLabelText( 'progress-indicator');
     expect(progressIndicator).toHaveClass('bg-success-600');
     
     rerender(<Progress color="warning" data-testid="progress" />);
-    progressIndicator = screen.getByTestId('progress').querySelector('div > div');
+    progressIndicator = screen.getByLabelText( 'progress-indicator');
     expect(progressIndicator).toHaveClass('bg-warning-600');
     
     rerender(<Progress color="danger" data-testid="progress" />);
-    progressIndicator = screen.getByTestId('progress').querySelector('div > div');
+    progressIndicator = screen.getByLabelText( 'progress-indicator');
     expect(progressIndicator).toHaveClass('bg-danger-600');
   });
 

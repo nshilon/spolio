@@ -157,6 +157,7 @@ const Progress = forwardRef<HTMLDivElement, ProgressProps>(
       >
         <div className={cn(progressVariants({ size, variant, color }))}>
           <div
+              aria-label="progress-indicator"
             className={cn(
               progressIndicatorVariants({
                 color,
