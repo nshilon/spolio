@@ -32,11 +32,15 @@ export default defineConfig({
         lib: {
             entry: resolve(__dirname, 'lib/index.ts'),
             name: 'simple-ui',
+            formats: ['es', 'cjs'],
             fileName: (format) => `simple-ui.${format}.js`,
         },
         rollupOptions: {
             external: ['react', 'react-dom', 'react/jsx-runtime'],
             output: {
+                inlineDynamicImports: false,
+                preserveModules: true,
+                exports: 'named',
                 globals: {
                     react: 'React',
                     'react-dom': 'ReactDOM',
