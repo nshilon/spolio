@@ -21,6 +21,7 @@ const ButtonStyles = cva(
         ghost:
           'button--ghost transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-500',
         link: 'button--link hover:underline',
+        danger: 'button--danger bg-red-600 text-white transition-colors duration-300 hover:bg-red-700 hover:shadow-md',
       },
       size: {
         small: 'button--small text-xs p-2 py-0.5',

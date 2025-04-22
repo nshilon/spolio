@@ -14,3 +14,13 @@ export { Pagination, usePagination } from './ui/paging';
 export type { PaginationProps } from './ui/paging';
 export { Progress } from './ui/progress';
 export type { ProgressProps } from './ui/progress';
+export {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+  DialogClose,
+} from './ui/dialog';
