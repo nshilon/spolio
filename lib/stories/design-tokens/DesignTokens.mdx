@@ -1,0 +1,105 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as DesignTokensStories from './DesignTokens.stories';
+
+<Meta title="Design System/Design Tokens/Documentation" />
+
+# Design Tokens
+
+Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes. These tokens are used in place of hard-coded values in order to maintain a scalable and consistent visual system.
+
+## Why Use Design Tokens?
+
+Design tokens help to:
+
+- **Maintain consistency** across products and platforms
+- **Streamline design-to-development workflow**
+- **Simplify theming and customization**
+- **Centralize design decisions**
+
+## Color Tokens
+
+Our color system is built on a set of base colors that are used to create a consistent visual language. The primary color palette is used for primary actions, while the neutral palette is used for text, backgrounds, and borders.
+
+### Primary Colors
+
+The primary color palette is used for primary actions, links, and highlighting important information.
+
+<Canvas of={DesignTokensStories.Colors} />
+
+## Spacing Tokens
+
+Spacing tokens are used to maintain consistent spacing throughout the UI. They are based on a 4px grid system, which means that all spacing values are multiples of 4px.
+
+<Canvas of={DesignTokensStories.Spacing} />
+
+## Border Radius Tokens
+
+Border radius tokens are used to maintain consistent corner rounding throughout the UI.
+
+<Canvas of={DesignTokensStories.BorderRadius} />
+
+## Shadow Tokens
+
+Shadow tokens are used to create depth and hierarchy in the UI.
+
+<Canvas of={DesignTokensStories.Shadows} />
+
+## Typography Tokens
+
+Typography tokens define the font styles used throughout the UI.
+
+<Canvas of={DesignTokensStories.TypographyTokens} />
+
+## Using Design Tokens in Code
+
+Design tokens are implemented as CSS custom properties (variables) and can be accessed in your CSS:
+
+```css
+.my-element {
+  color: var(--color-primary-500);
+  margin-bottom: var(--spacing-m);
+  border-radius: var(--border-radius-m);
+  box-shadow: var(--shadow-md);
+}
+```
+
+## Dark Mode
+
+The design system supports dark mode through a set of semantic color tokens that automatically adjust based on the current theme.
+
+To toggle between light and dark mode, use the `ThemeSwitcher` component or the `useTheme` hook:
+
+```jsx
+import { useTheme } from '@/components';
+
+function MyComponent() {
+  const { theme, toggleTheme } = useTheme();
+  
+  return (
+    <button onClick={toggleTheme}>
+      Current theme: {theme}
+    </button>
+  );
+}
+```
+
+## Customizing Design Tokens
+
+You can customize the design tokens by overriding the CSS variables in your application:
+
+```css
+:root {
+  /* Override primary color */
+  --color-primary-500: #0070f3;
+  --color-primary-600: #0060df;
+  
+  /* Override border radius */
+  --border-radius-m: 0.5rem;
+}
+
+/* Dark mode overrides */
+.dark {
+  --color-background-primary: #121212;
+  --color-foreground-primary: #ffffff;
+}
+```
