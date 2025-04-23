@@ -230,7 +230,7 @@ const SpacingExample = ({
         <Typography variant="code" className="text-xs">{variable}</Typography>
       </div>
       <div 
-        className="bg-primary-500 h-4"
+        className="bg-primary-100 h-4 inline-block"
         style={{ width: `var(${variable})` }}
       />
     </div>
@@ -252,7 +252,7 @@ const BorderRadiusExample = ({
         <Typography variant="code" className="text-xs">{variable}</Typography>
       </div>
       <div 
-        className="bg-primary-500 h-12 w-12"
+        className="bg-primary-100 h-12 w-12"
         style={{ borderRadius: `var(${variable})` }}
       />
     </div>
@@ -274,7 +274,7 @@ const ShadowExample = ({
         <Typography variant="code" className="text-xs">{variable}</Typography>
       </div>
       <div 
-        className="bg-white h-12 w-12"
+        className="bg-primary-100 h-12 w-12"
         style={{ boxShadow: `var(${variable})` }}
       />
     </div>

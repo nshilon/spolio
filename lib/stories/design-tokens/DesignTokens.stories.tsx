@@ -63,14 +63,14 @@ const SpacingExample = ({
   variable: string;
 }) => {
   return (
-    <div className="flex items-center mb-4">
-      <div className="w-32">
+    <div className="flex items-center mb-4 w-[300px]">
+      <div className="w-32 flex flex-col">
         <Typography variant="label" className="mb-0">{name}</Typography>
-        <Typography variant="code" className="text-xs">{variable}</Typography>
+        <Typography variant="code" className="text-xs  no-wrap">{variable}</Typography>
       </div>
       <div 
-        className="bg-primary-500 h-4"
-        style={{ width: `var(${variable})` }}
+        className="bg-primary-300 h-4 inline p-2"
+        style={{ borderWidth: `0 var(${variable})`, borderStyle: 'solid', borderColor: 'var(--color-primary-100)' }}
       />
     </div>
   );
@@ -85,13 +85,13 @@ const BorderRadiusExample = ({
   variable: string;
 }) => {
   return (
-    <div className="flex items-center mb-4">
+    <div className="flex items-center mb-4 w-[300px]">
       <div className="w-32">
         <Typography variant="label" className="mb-0">{name}</Typography>
         <Typography variant="code" className="text-xs">{variable}</Typography>
       </div>
       <div 
-        className="bg-primary-500 h-16 w-16"
+        className="bg-primary-200 h-16 w-16"
         style={{ borderRadius: `var(${variable})` }}
       />
     </div>
@@ -107,13 +107,13 @@ const ShadowExample = ({
   variable: string;
 }) => {
   return (
-    <div className="flex items-center mb-6">
-      <div className="w-32">
+    <div className="flex flex-col items-center mb-6 p-4">
+      <div className="w-32 whitespace-no-wrap">
         <Typography variant="label" className="mb-0">{name}</Typography>
         <Typography variant="code" className="text-xs">{variable}</Typography>
       </div>
       <div 
-        className="bg-white h-16 w-16"
+        className="bg-primary-200 h-16 w-16"
         style={{ boxShadow: `var(${variable})` }}
       />
     </div>
