@@ -3,6 +3,7 @@
 
 /* Import component design tokens */
 @import "../design-tokens/components/alert.css";
+@import "../design-tokens/components/badge.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 

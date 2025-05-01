@@ -2,6 +2,8 @@ export { Button } from './ui/button';
 export { Icon, type IconName } from './ui/icon';
 export { Alert } from './ui/alert';
 export type { AlertProps, AlertVariants } from './ui/alert';
+export { Badge } from './ui/badge';
+export type { BadgeProps, BadgeVariants } from './ui/badge';
 export { ThemeSwitcher, ThemeProvider } from './theme';
 export { Typography } from './ui/typography';
 export type {
