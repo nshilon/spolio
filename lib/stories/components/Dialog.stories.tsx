@@ -188,7 +188,7 @@ export const CustomSized: Story = {
         <DialogTrigger asChild>
           <Button variant="secondary">Small Modal</Button>
         </DialogTrigger>
-        <DialogContent className="max-w-sm">
+        <DialogContent className="max-w-[24rem]">
           <DialogHeader>
             <DialogTitle>Small Modal</DialogTitle>
             <DialogDescription>
@@ -205,7 +205,7 @@ export const CustomSized: Story = {
         <DialogTrigger asChild>
           <Button variant="secondary">Large Modal</Button>
         </DialogTrigger>
-        <DialogContent className="max-w-3xl">
+        <DialogContent className="max-w-[48rem]">
           <DialogHeader>
             <DialogTitle>Large Modal</DialogTitle>
             <DialogDescription>

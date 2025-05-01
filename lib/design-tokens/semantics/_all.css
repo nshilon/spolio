@@ -2,10 +2,10 @@
 @import "./color/dark.css";
 @import "./shape.css";
 @import "./elevation.css";
-/*@import "./code-editor.css";*/
-/*@import "./text/mobile.css";*/
-/*@import "./text/tablet.css";*/
-/*@import "./text/desktop.css";*/
-/*@import "./text/responsive.css";*/
-/*@import "./text/use-case.css";*/
+@import "./code-editor.css";
+@import "./text/mobile.css";
+@import "./text/tablet.css";
+@import "./text/desktop.css";
+@import "./text/responsive.css";
+@import "./text/use-case.css";
 
