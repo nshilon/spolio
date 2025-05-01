@@ -166,9 +166,9 @@ export const TableExample: StoryObj = {
         const data = generateData();
 
         return (
-            <div className="w-full max-w-3xl mx-auto">
+            <div className="w-full mx-auto">
                 <div className="border rounded-md overflow-hidden">
-                    <table className="w-full text-sm">
+                    <table className="w-full font-sm">
                         <thead className="bg-neutral-100 dark:bg-neutral-800">
                         <tr>
                             <th className="px-4 py-2 text-left font-medium">ID</th>

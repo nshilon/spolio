@@ -243,7 +243,7 @@ export const FormExample: StoryObj = {
     };
     
     return (
-      <div className="w-full max-w-md mx-auto p-6 bg-white dark:bg-neutral-800 rounded-lg shadow-md">
+      <div className="w-full mx-auto p-6 bg-white dark:bg-neutral-800 rounded-lg shadow-md">
         {submitted ? (
           <div className="text-center">
             <h3 className="text-xl font-semibold text-success-600 dark:text-success-400 mb-2">Form Submitted!</h3>
@@ -314,7 +314,7 @@ export const FormExample: StoryObj = {
 
 export const InputVariants: StoryObj = {
   render: () => (
-    <div className="space-y-8 w-full max-w-md">
+    <div className="space-y-8 w-full ">
       <div>
         <h3 className="text-lg font-medium mb-4">Input Variants</h3>
         <div className="space-y-4">
