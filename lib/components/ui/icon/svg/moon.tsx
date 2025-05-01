@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { IconDefinition } from '../icon-registry';
 
 export const MoonIcon: IconDefinition = {
