@@ -7,138 +7,200 @@
   /* Base colors */
   --color-mint-500: oklch(0.72 0.11 178);
 
-  /* Color palette */
-  --color-primary-50: #f5f3ff;
-  --color-primary-100: #ede9fe;
-  --color-primary-200: #ddd6fe;
-  --color-primary-300: #c4b5fd;
-  --color-primary-400: #a78bfa;
-  --color-primary-500: #8b5cf6;
-  --color-primary-600: #7c3aed;
-  --color-primary-700: #6d28d9;
-  --color-primary-800: #5b21b6;
-  --color-primary-900: #4c1d95;
+  /* Color palette - From design-tokens/primitives/palette.css */
+  /* Primary colors */
+  --color-primary-700: #010614;
+  --color-primary-600: #010B23;
+  --color-primary-500: #01133A;
+  --color-primary-400: #001C56;
+  --color-primary-300: #002D8A;
+  --color-primary-200: #3056A1;
+  --color-primary-100: #768BB7;
+  --color-primary-75: #B5C1D9;
+  --color-primary-50: #E6EAF2;
+  --color-primary-25: #F3F3F7;
 
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #e5e5e5;
-  --color-neutral-300: #d4d4d4;
-  --color-neutral-400: #a3a3a3;
-  --color-neutral-500: #737373;
-  --color-neutral-600: #525252;
-  --color-neutral-700: #404040;
-  --color-neutral-800: #262626;
-  --color-neutral-900: #171717;
+  /* Neutral colors */
+  --color-neutral-900: #030B17;
+  --color-neutral-800: #030C1C;
+  --color-neutral-700: #1F2735;
+  --color-neutral-600: #303845;
+  --color-neutral-500: #3D4450;
+  --color-neutral-400: #4C525E;
+  --color-neutral-300: #595F69;
+  --color-neutral-200: #686D77;
+  --color-neutral-100: #717782;
+  --color-neutral-90: #868A92;
+  --color-neutral-80: #9599A0;
+  --color-neutral-70: #A4A8AD;
+  --color-neutral-60: #B1B4B9;
+  --color-neutral-50: #C0C2C6;
+  --color-neutral-40: #DEDFE1;
+  --color-neutral-30: #EBECED;
+  --color-neutral-20: #F5F5F6;
+  --color-neutral-10: #FAFAFA;
 
-  --color-success-50: #ecfdf5;
-  --color-success-100: #d1fae5;
-  --color-success-200: #a7f3d0;
-  --color-success-300: #6ee7b7;
-  --color-success-400: #34d399;
-  --color-success-500: #10b981;
-  --color-success-600: #059669;
-  --color-success-700: #047857;
-  --color-success-800: #065f46;
-  --color-success-900: #064e3b;
+  /* Success colors */
+  --color-success-700: #0F1405;
+  --color-success-600: #1E290A;
+  --color-success-500: #3D5115;
+  --color-success-400: #567C18;
+  --color-success-300: #6FBC0B;
+  --color-success-200: #A2EA43;
+  --color-success-100: #CEF995;
+  --color-success-75: #E0FBBC;
+  --color-success-50: #F6FFE6;
+  --color-success-25: #FBFFF5;
 
-  --color-warning-50: #fffbeb;
-  --color-warning-100: #fef3c7;
-  --color-warning-200: #fde68a;
-  --color-warning-300: #fcd34d;
-  --color-warning-400: #fbbf24;
-  --color-warning-500: #f59e0b;
-  --color-warning-600: #d97706;
-  --color-warning-700: #b45309;
-  --color-warning-800: #92400e;
-  --color-warning-900: #78350f;
+  /* Warning colors */
+  --color-warning-700: #181501;
+  --color-warning-600: #312A02;
+  --color-warning-500: #493F03;
+  --color-warning-400: #7A6805;
+  --color-warning-300: #AB9207;
+  --color-warning-200: #DCBC09;
+  --color-warning-100: #F6D523;
+  --color-warning-75: #F9EC95;
+  --color-warning-50: #FCF7CF;
+  --color-warning-25: #FEFDF5;
 
-  --color-danger-50: #fef2f2;
-  --color-danger-100: #fee2e2;
-  --color-danger-200: #fecaca;
-  --color-danger-300: #fca5a5;
-  --color-danger-400: #f87171;
-  --color-danger-500: #ef4444;
-  --color-danger-600: #dc2626;
-  --color-danger-700: #b91c1c;
-  --color-danger-800: #991b1b;
-  --color-danger-900: #7f1d1d;
+  /* Danger colors */
+  --color-danger-700: #150405;
+  --color-danger-600: #2B080A;
+  --color-danger-500: #551114;
+  --color-danger-400: #A10811;
+  --color-danger-300: #EC2F3A;
+  --color-danger-200: #EF525B;
+  --color-danger-100: #F48188;
+  --color-danger-75: #F9C2C5;
+  --color-danger-50: #FDEAEB;
+  --color-danger-25: #FEF6F6;
 
-  --color-info-50: #eff6ff;
-  --color-info-100: #dbeafe;
-  --color-info-200: #bfdbfe;
-  --color-info-300: #93c5fd;
-  --color-info-400: #60a5fa;
-  --color-info-500: #3b82f6;
-  --color-info-600: #2563eb;
-  --color-info-700: #1d4ed8;
-  --color-info-800: #1e40af;
-  --color-info-900: #1e3a8a;
+  /* Info colors */
+  --color-info-700: #00131A;
+  --color-info-600: #002633;
+  --color-info-500: #00506B;
+  --color-info-400: #007AA3;
+  --color-info-300: #00A5E0;
+  --color-info-200: #00BBFF;
+  --color-info-100: #80DEFF;
+  --color-info-75: #ADEAFF;
+  --color-info-50: #D6F5FF;
+  --color-info-25: #EBFAFF;
 
   /* Main color references */
-  --color-primary: var(--color-primary-600);
-  --color-secondary: var(--color-primary-400);
-  --color-success: var(--color-success-500);
-  --color-warning: var(--color-warning-500);
-  --color-danger: var(--color-danger-500);
-  --color-info: var(--color-info-500);
+  --color-primary: var(--color-primary-500);
+  --color-secondary: var(--color-primary-300);
+  --color-success: var(--color-success-300);
+  --color-warning: var(--color-warning-300);
+  --color-danger: var(--color-danger-300);
+  --color-info: var(--color-info-300);
 
   /* Semantic colors - Light theme */
-  --color-background-primary: var(--color-neutral-50);
-  --color-background-secondary: var(--color-neutral-100);
-  --color-background-tertiary: var(--color-neutral-200);
+  --color-background-primary: var(--color-neutral-10);
+  --color-background-secondary: var(--color-neutral-20);
+  --color-background-tertiary: var(--color-neutral-30);
 
   --color-foreground-primary: var(--color-neutral-900);
   --color-foreground-secondary: var(--color-neutral-700);
   --color-foreground-tertiary: var(--color-neutral-500);
 
-  --color-border-primary: var(--color-neutral-300);
-  --color-border-secondary: var(--color-neutral-200);
+  --color-border-primary: var(--color-neutral-50);
+  --color-border-secondary: var(--color-neutral-40);
 
-  /* Typography */
-  --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  --font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  /* Typography - From design-tokens/primitives/font.css and typography.css */
+  --font-family-primary: inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-secondary: rubik, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-family-tertiary: "source code pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-family: var(--font-family-primary);
+  --font-family-mono: var(--font-family-tertiary);
 
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
+  /* Font weights - From design-tokens/primitives/typography.css */
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-light: var(--font-weight-300);
+  --font-weight-regular: var(--font-weight-400);
+  --font-weight-medium: var(--font-weight-500);
+  --font-weight-semibold: var(--font-weight-600);
+  --font-weight-bold: var(--font-weight-700);
 
-  /* Font sizes */
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.5rem;    /* 24px */
-  --font-size-3xl: 1.875rem;  /* 30px */
-  --font-size-4xl: 2.25rem;   /* 36px */
-  --font-size-5xl: 3rem;      /* 48px */
+  /* Font sizes - From design-tokens/primitives/typography.css */
+  --font-size-100: 11px;
+  --font-size-200: 12px;
+  --font-size-300: 13px;
+  --font-size-400: 14px;
+  --font-size-500: 16px;
+  --font-size-600: 18px;
+  --font-size-700: 21px;
+  --font-size-800: 26px;
+  --font-size-900: 32px;
+  --font-size-1000: 40px;
+  --font-size-1100: 48px;
+  --font-size-1200: 56px;
+  --font-size-1300: 80px;
+  --font-size-xs: var(--font-size-200);    /* 12px */
+  --font-size-sm: var(--font-size-300);    /* 13px */
+  --font-size-base: var(--font-size-500);  /* 16px */
+  --font-size-lg: var(--font-size-600);    /* 18px */
+  --font-size-xl: var(--font-size-700);    /* 21px */
+  --font-size-2xl: var(--font-size-800);   /* 26px */
+  --font-size-3xl: var(--font-size-900);   /* 32px */
+  --font-size-4xl: var(--font-size-1000);  /* 40px */
+  --font-size-5xl: var(--font-size-1100);  /* 48px */
 
-  /* Line heights */
-  --line-height-tight: 1.25;
-  --line-height-snug: 1.375;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
-  --line-height-loose: 2;
+  /* Line heights - From design-tokens/primitives/typography.css */
+  --line-height-100: 16px;
+  --line-height-200: 18px;
+  --line-height-300: 20px;
+  --line-height-400: 21px;
+  --line-height-500: 24px;
+  --line-height-600: 28px;
+  --line-height-700: 32px;
+  --line-height-800: 40px;
+  --line-height-900: 48px;
+  --line-height-1000: 48px;
+  --line-height-1100: 60px;
+  --line-height-1200: 68px;
+  --line-height-1300: 96px;
+  --line-height-tight: calc(var(--line-height-300) / var(--font-size-500));
+  --line-height-snug: calc(var(--line-height-400) / var(--font-size-500));
+  --line-height-normal: calc(var(--line-height-500) / var(--font-size-500));
+  --line-height-relaxed: calc(var(--line-height-600) / var(--font-size-500));
+  --line-height-loose: calc(var(--line-height-700) / var(--font-size-500));
 
-  /* Spacing */
-  --spacing-xxs: 0.25rem;   /* 4px */
-  --spacing-xs: 0.5rem;      /* 8px */
-  --spacing-s: 0.75rem;      /* 12px */
-  --spacing-m: 1rem;         /* 16px */
-  --spacing-l: 1.5rem;       /* 24px */
-  --spacing-xl: 2rem;        /* 32px */
-  --spacing-xxl: 3rem;       /* 48px */
-  --spacing-xxxl: 4rem;      /* 64px */
+  /* Spacing - From design-tokens/primitives/dimension.css */
+  --spacing-none: 0px;
+  --spacing-2xs: 2px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md-minus: 10px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 24px;
+  --spacing-2xl: 32px;
+  --spacing-3xl: 48px;
+  --spacing-4xl: 56px;
+  --spacing-xxs: var(--spacing-xs);   /* 4px */
+  --spacing-s: var(--spacing-md);     /* 12px */
+  --spacing-m: var(--spacing-lg);     /* 16px */
+  --spacing-l: var(--spacing-xl);     /* 24px */
+  --spacing-xxl: var(--spacing-3xl);  /* 48px */
+  --spacing-xxxl: var(--spacing-4xl); /* 56px */
 
-  /* Border radius */
-  --border-radius-xs: 0.125rem;  /* 2px */
-  --border-radius-s: 0.25rem;    /* 4px */
-  --border-radius-m: 0.375rem;   /* 6px */
-  --border-radius-l: 0.5rem;     /* 8px */
-  --border-radius-xl: 0.75rem;   /* 12px */
-  --border-radius-xxl: 1rem;     /* 16px */
+  /* Border radius - From design-tokens/primitives/dimension.css */
+  --border-radius-none: 0px;
+  --border-radius-xs: 2px;
+  --border-radius-s: 4px;
+  --border-radius-m: 6px;
+  --border-radius-l: 8px;
+  --border-radius-xl: 12px;
+  --border-radius-xxl: 16px;
   --border-radius-full: 9999px;  /* Fully rounded */
 
   /* Shadows */
@@ -147,10 +209,14 @@
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
-  /* Transitions */
-  --transition-fast: 150ms;
-  --transition-normal: 300ms;
-  --transition-slow: 500ms;
+  /* Transitions - From design-tokens/primitives/transition.css */
+  --transition-none: 0ms;
+  --transition-slower: 500ms;
+  --transition-slow: 400ms;
+  --transition-default: 300ms;
+  --transition-fast: 200ms;
+  --transition-faster: 100ms;
+  --transition-normal: var(--transition-default);
 
   /* Z-index */
   --z-index-dropdown: 1000;
@@ -169,9 +235,9 @@
   --color-background-secondary: var(--color-neutral-800);
   --color-background-tertiary: var(--color-neutral-700);
 
-  --color-foreground-primary: var(--color-neutral-50);
-  --color-foreground-secondary: var(--color-neutral-200);
-  --color-foreground-tertiary: var(--color-neutral-400);
+  --color-foreground-primary: var(--color-neutral-10);
+  --color-foreground-secondary: var(--color-neutral-30);
+  --color-foreground-tertiary: var(--color-neutral-50);
 
   --color-border-primary: var(--color-neutral-600);
   --color-border-secondary: var(--color-neutral-700);
@@ -185,12 +251,12 @@
 
 /* Base styles */
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-family) sans-serif;
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--color-foreground-primary);
   background-color: var(--color-background-primary);
-  transition: color var(--transition-normal), background-color var(--transition-normal);
+  transition: color var(--transition-default), background-color var(--transition-default);
 }
 
 /* Responsive typography adjustments */
