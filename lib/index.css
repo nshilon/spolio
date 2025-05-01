@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 /* Import component design tokens */
-@import "@/design-tokens/primitives/_all.css";
-@import "@/design-tokens/semantics/_all.css";
+@import "./design-tokens/primitives/_all.css";
+@import "./design-tokens/semantics/_all.css";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
