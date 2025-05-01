@@ -1,6 +1,6 @@
 import { Icon } from '@/components';
-import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@/utils/cn.ts';
+import { VariantProps, cva } from 'class-variance-authority';
 
 import '@/design-tokens/components/alert.css';
 
@@ -12,7 +12,8 @@ const alertVariants = cva(
       variant: {
         // Using the design tokens for soft and critical variants
         soft: 'border-l-[var(--alert-unit-border-left)] rounded-[var(--alert-unit-border-radius)] p-[var(--alert-unit-padding-top)_var(--alert-unit-padding-right)_var(--alert-unit-padding-bottom)_var(--alert-unit-padding-left)]',
-        critical: 'rounded-[var(--alert-unit-border-radius)] p-[var(--alert-unit-padding-top)_var(--alert-unit-padding-right)_var(--alert-unit-padding-bottom)_var(--alert-unit-padding-left)]',
+        critical:
+          'rounded-[var(--alert-unit-border-radius)] p-[var(--alert-unit-padding-top)_var(--alert-unit-padding-right)_var(--alert-unit-padding-bottom)_var(--alert-unit-padding-left)]',
       },
       type: {
         primary: '',
@@ -28,63 +29,75 @@ const alertVariants = cva(
       {
         variant: 'soft',
         type: 'primary',
-        className: 'bg-[var(--alert-soft-primary-background)] border-[var(--alert-soft-primary-border)]',
+        className:
+          'bg-[var(--alert-soft-primary-background)] border-[var(--alert-soft-primary-border)]',
       },
       {
         variant: 'soft',
         type: 'neutral',
-        className: 'bg-[var(--alert-soft-neutral-background)] border-[var(--alert-soft-neutral-border)]',
+        className:
+          'bg-[var(--alert-soft-neutral-background)] border-[var(--alert-soft-neutral-border)]',
       },
       {
         variant: 'soft',
         type: 'danger',
-        className: 'bg-[var(--alert-soft-danger-background)] border-[var(--alert-soft-danger-border)]',
+        className:
+          'bg-[var(--alert-soft-danger-background)] border-[var(--alert-soft-danger-border)]',
       },
       {
         variant: 'soft',
         type: 'success',
-        className: 'bg-[var(--alert-soft-success-background)] border-[var(--alert-soft-success-border)]',
+        className:
+          'bg-[var(--alert-soft-success-background)] border-[var(--alert-soft-success-border)]',
       },
       {
         variant: 'soft',
         type: 'warning',
-        className: 'bg-[var(--alert-soft-warning-background)] border-[var(--alert-soft-warning-border)]',
+        className:
+          'bg-[var(--alert-soft-warning-background)] border-[var(--alert-soft-warning-border)]',
       },
       {
         variant: 'soft',
         type: 'info',
-        className: 'bg-[var(--alert-soft-info-background)] border-[var(--alert-soft-info-border)]',
+        className:
+          'bg-[var(--alert-soft-info-background)] border-[var(--alert-soft-info-border)]',
       },
       // Critical variant styles for each type
       {
         variant: 'critical',
         type: 'primary',
-        className: 'bg-[var(--alert-critical-primary-background)] border-[var(--alert-critical-primary-border)]',
+        className:
+          'bg-[var(--alert-critical-primary-background)] border-[var(--alert-critical-primary-border)]',
       },
       {
         variant: 'critical',
         type: 'neutral',
-        className: 'bg-[var(--alert-critical-neutral-background)] border-[var(--alert-critical-neutral-border)]',
+        className:
+          'bg-[var(--alert-critical-neutral-background)] border-[var(--alert-critical-neutral-border)]',
       },
       {
         variant: 'critical',
         type: 'danger',
-        className: 'bg-[var(--alert-critical-danger-background)] border-[var(--alert-critical-danger-border)]',
+        className:
+          'bg-[var(--alert-critical-danger-background)] border-[var(--alert-critical-danger-border)]',
       },
       {
         variant: 'critical',
         type: 'success',
-        className: 'bg-[var(--alert-critical-success-background)] border-[var(--alert-critical-success-border)]',
+        className:
+          'bg-[var(--alert-critical-success-background)] border-[var(--alert-critical-success-border)]',
       },
       {
         variant: 'critical',
         type: 'warning',
-        className: 'bg-[var(--alert-critical-warning-background)] border-[var(--alert-critical-warning-border)]',
+        className:
+          'bg-[var(--alert-critical-warning-background)] border-[var(--alert-critical-warning-border)]',
       },
       {
         variant: 'critical',
         type: 'info',
-        className: 'bg-[var(--alert-critical-info-background)] border-[var(--alert-critical-info-border)]',
+        className:
+          'bg-[var(--alert-critical-info-background)] border-[var(--alert-critical-info-border)]',
       },
     ],
     defaultVariants: {
@@ -381,6 +394,7 @@ const Alert = ({
       case 'primary':
         return 'warning';
       case 'neutral':
+        return 'info';
       default:
         return 'info';
     }
@@ -391,7 +405,9 @@ const Alert = ({
       {title && (
         <h2 className={alertTitleVariants({ variant, type })}>{title}</h2>
       )}
-      <div className={`Alert__content flex gap-[var(--alert-unit-horizontal-gap)]`}>
+      <div
+        className={'Alert__content flex gap-[var(--alert-unit-horizontal-gap)]'}
+      >
         <Icon
           name={getIconName()}
           className={alertIconVariants({ variant, type })}

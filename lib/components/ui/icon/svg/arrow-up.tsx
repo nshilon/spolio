@@ -1,4 +1,3 @@
-
 import { IconDefinition } from '../icon-registry';
 
 export const ArrowUpIcon: IconDefinition = {

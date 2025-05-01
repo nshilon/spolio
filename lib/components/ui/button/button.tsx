@@ -1,6 +1,6 @@
+import { cn } from '@/utils';
 import { VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps, forwardRef } from 'react';
-import { cn } from '@/utils';
 
 import '@/design-tokens/components/button.css';
 

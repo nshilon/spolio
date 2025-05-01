@@ -1,7 +1,7 @@
+import { cn } from '@/utils';
 import { type VariantProps, cva } from 'class-variance-authority';
 import { forwardRef } from 'react';
 import { getIcon /*, hasIcon*/ } from './icon-registry';
-import {cn} from "@/utils";
 
 // Define the icon variants using CVA
 const iconVariants = cva('icon', {
