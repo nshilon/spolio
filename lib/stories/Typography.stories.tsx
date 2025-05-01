@@ -290,7 +290,7 @@ export const ResponsiveTypography: StoryObj = {
 
         <div>
           <Typography variant="h4" className="mb-2">Responsive Line Length</Typography>
-          <div className="p-4 border border-neutral-200 rounded-md max-w-prose">
+          <div className="p-4 border border-neutral-200 rounded-md ">
             <Typography variant="body">
               This paragraph demonstrates a responsive line length. The max-width is set to maintain
               optimal readability across different screen sizes. Too long lines are hard to read,
@@ -362,7 +362,7 @@ export const RealWorldExample: StoryObj = {
     layout: 'padded',
   },
   render: () => (
-    <div className="max-w-4xl mx-auto">
+    <div className=" mx-auto">
       <div className="mb-8">
         <Typography variant="overline" color="primary">BLOG POST</Typography>
         <Typography variant="h1" className="mb-4">Designing with Typography</Typography>
@@ -381,7 +381,7 @@ export const RealWorldExample: StoryObj = {
         </div>
       </div>
 
-      <div className="prose max-w-none">
+      <div className="prose ">
         <Typography variant="h2">The Importance of Typography in UI Design</Typography>
         <Typography variant="body">
           Typography is a fundamental element of design that significantly impacts how users perceive and interact with a product.
