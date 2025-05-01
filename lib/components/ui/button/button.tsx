@@ -1,65 +1,121 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps, forwardRef } from 'react';
-
-// import './button.scss';
 import { cn } from '@/utils';
 
+// Base button styles using design tokens
 const ButtonStyles = cva(
   [
     'focus:outline-none cursor-pointer',
-    'flex items-center ',
+    'flex items-center justify-center',
+    'font-medium transition-all',
     'disabled:opacity-50 disabled:cursor-not-allowed',
-    'justify-center ',
+    'border border-transparent', // Default transparent border
   ],
   {
     variants: {
       variant: {
-        primary:
-          'button--primary bg-primary-500 text-white dark:text-white transition-colors duration-300 hover:bg-primary-600 dark:hover:bg-primary-400 hover:shadow-md',
-        secondary: 'button--secondary rounded bg-gray-200 dark:text-gray-700',
-        outline: 'button--outline border rounded',
-        ghost:
-          'button--ghost transition-colors duration-300 hover:bg-gray-100 dark:hover:bg-gray-500',
-        link: 'button--link hover:underline',
-        danger: 'button--danger bg-red-600 text-white transition-colors duration-300 hover:bg-red-700 hover:shadow-md',
+        // Primary button - solid background with white text
+        primary: [
+          'button--primary',
+          'bg-[var(--button-contained-primary-default-background)]',
+          'text-[var(--button-contained-primary-default-text)]',
+          'hover:bg-[var(--button-contained-primary-hover-background)]',
+          'hover:text-[var(--button-contained-primary-hover-text)]',
+          'active:bg-[var(--button-contained-primary-active-background)]',
+          'active:text-[var(--button-contained-primary-active-text)]',
+          'focus:ring-2 focus:ring-[var(--primary-300)] focus:ring-opacity-50',
+          'shadow-sm hover:shadow-md',
+        ],
+        // Secondary button - subtle background
+        secondary: [
+          'button--secondary',
+          'bg-[var(--button-contained-secondary-default-background)]',
+          'text-[var(--button-contained-secondary-default-text)]',
+          'hover:bg-[var(--button-contained-secondary-hover-background)]',
+          'hover:text-[var(--button-contained-secondary-hover-text)]',
+          'active:bg-[var(--button-contained-secondary-active-background)]',
+          'active:text-[var(--button-contained-secondary-active-text)]',
+          'focus:ring-2 focus:ring-[var(--neutral-300)] focus:ring-opacity-50',
+        ],
+        // Outline button - transparent with border
+        outline: [
+          'button--outline',
+          'bg-[var(--button-outline-primary-default-background)]',
+          'text-[var(--button-outline-primary-default-text)]',
+          'border-[var(--button-outline-primary-default-border)]',
+          'hover:bg-[var(--button-outline-primary-hover-background)]',
+          'hover:text-[var(--button-outline-primary-hover-text)]',
+          'hover:border-[var(--button-outline-primary-hover-border)]',
+          'active:bg-[var(--button-outline-primary-active-background)]',
+          'active:text-[var(--button-outline-primary-active-text)]',
+          'active:border-[var(--button-outline-primary-active-border)]',
+          'focus:ring-2 focus:ring-[var(--primary-300)] focus:ring-opacity-50',
+        ],
+        // Ghost button - transparent until hover
+        ghost: [
+          'button--ghost',
+          'bg-[var(--button-ghost-primary-default-background)]',
+          'text-[var(--button-ghost-primary-default-text)]',
+          'hover:bg-[var(--button-ghost-primary-hover-background)]',
+          'hover:text-[var(--button-ghost-primary-hover-text)]',
+          'active:bg-[var(--button-ghost-primary-active-background)]',
+          'active:text-[var(--button-ghost-primary-active-text)]',
+          'focus:ring-2 focus:ring-[var(--primary-300)] focus:ring-opacity-50',
+        ],
+        // Link button - looks like a link
+        link: [
+          'button--link',
+          'bg-transparent',
+          'text-[var(--fg-primary-default)]',
+          'hover:text-[var(--fg-primary-higher)]',
+          'hover:underline',
+          'p-0 h-auto',
+        ],
+        // Danger button - red for destructive actions
+        danger: [
+          'button--danger',
+          'bg-[var(--button-contained-danger-default-background)]',
+          'text-[var(--button-contained-danger-default-text)]',
+          'hover:bg-[var(--button-contained-danger-hover-background)]',
+          'hover:text-[var(--button-contained-danger-hover-text)]',
+          'active:bg-[var(--button-contained-danger-active-background)]',
+          'active:text-[var(--button-contained-danger-active-text)]',
+          'focus:ring-2 focus:ring-[var(--red-300)] focus:ring-opacity-50',
+          'shadow-sm hover:shadow-md',
+        ],
       },
       size: {
-        small: 'button--small text-xs p-2 py-0.5',
-        medium: 'button--medium text-base p-4 py-1',
-        large: 'button--large text-lg p-6 py-2',
+        small: [
+          'button--small',
+          'text-sm',
+          'h-[var(--button-unit-small-padding-top) + var(--button-unit-small-padding-bottom) + 1.5rem]',
+          'px-[var(--button-unit-small-padding-left)]',
+          'py-[var(--button-unit-small-padding-top)]',
+          'rounded-[var(--button-unit-small-border-radius)]',
+          'gap-[var(--button-unit-small-gap)]',
+        ],
+        medium: [
+          'button--medium',
+          'text-base',
+          'h-[var(--button-unit-medium-padding-top) + var(--button-unit-medium-padding-bottom) + 1.5rem]',
+          'px-[var(--button-unit-medium-padding-left)]',
+          'py-[var(--button-unit-medium-padding-top)]',
+          'rounded-[var(--button-unit-medium-border-radius)]',
+          'gap-[var(--button-unit-medium-gap)]',
+        ],
+        large: [
+          'button--large',
+          'text-lg',
+          'h-[var(--button-unit-large-padding-top) + var(--button-unit-large-padding-bottom) + 1.5rem]',
+          'px-[var(--button-unit-large-padding-left)]',
+          'py-[var(--button-unit-large-padding-top)]',
+          'rounded-[var(--button-unit-large-border-radius)]',
+          'gap-[var(--button-unit-large-gap)]',
+        ],
       },
     },
     compoundVariants: [
-      {
-        variant: 'primary',
-        size: 'small',
-        className: 'button--primary--small rounded-sm hover:shadow-sm',
-      },
-      {
-        variant: 'primary',
-        size: 'medium',
-        className: 'button--primary--medium rounded-md hover:shadow-md',
-      },
-      {
-        variant: 'primary',
-        size: 'large',
-        className: 'button--primary--large rounded hover:shadow-lg',
-      },
-      {
-        variant: 'secondary',
-        size: 'small',
-        className: 'button--secondary--small',
-      },
-      {
-        variant: 'secondary',
-        size: 'medium',
-        className: 'button--secondary--medium',
-      },
-      {
-        variant: 'secondary',
-        size: 'large',
-        className: 'button--secondary--large',
-      },
+      // Add any specific compound variants if needed
     ],
     defaultVariants: {
       variant: 'primary',

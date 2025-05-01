@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import {Button, Icon} from "@/components";
+import { Button, Icon } from "@/components";
 
 const meta = {
   title: 'Components/Button',
@@ -11,7 +11,7 @@ const meta = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary'],
+      options: ['primary', 'secondary', 'outline', 'ghost', 'link', 'danger'],
       description: 'The visual style of the button',
     },
     size: {
@@ -22,6 +22,16 @@ const meta = {
     disabled: {
       control: 'boolean',
       description: 'Whether the button is disabled',
+    },
+    as: {
+      control: { type: 'select' },
+      options: ['button', 'a'],
+      description: 'The element type to render the button as',
+    },
+    href: {
+      control: 'text',
+      description: 'The href attribute for when the button is rendered as an anchor',
+      if: { arg: 'as', eq: 'a' },
     },
     onClick: { action: 'clicked' },
   },
@@ -44,7 +54,7 @@ export const Secondary: Story = {
   },
 };
 
-export const Outilne: Story = {
+export const Outline: Story = {
   args: {
     variant: 'outline',
     children: 'Outline Button',
@@ -55,6 +65,20 @@ export const Ghost: Story = {
   args: {
     variant: 'ghost',
     children: 'Ghost Button',
+  },
+};
+
+export const Link: Story = {
+  args: {
+    variant: 'link',
+    children: 'Link Button',
+  },
+};
+
+export const Danger: Story = {
+  args: {
+    variant: 'danger',
+    children: 'Danger Button',
   },
 };
 
@@ -86,12 +110,31 @@ export const Disabled: Story = {
   },
 };
 
+export const AsLink: Story = {
+  args: {
+    as: 'a',
+    href: '#',
+    children: 'Link Button',
+  },
+};
+
 export const WithIcon: Story = {
   args: {
     children: (
       <>
-        <Icon name="check" size="small" style={{ marginRight: '0.5rem', color: 'currentColor' }} />
+        <Icon name="check" size="small" />
         Button with Icon
+      </>
+    ),
+  },
+};
+
+export const WithTrailingIcon: Story = {
+  args: {
+    children: (
+      <>
+        Button with Icon
+        <Icon name="arrow-right" size="small" />
       </>
     ),
   },
@@ -99,29 +142,104 @@ export const WithIcon: Story = {
 
 export const ButtonGrid: StoryObj = {
   render: () => (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, auto)', gap: '1rem' }}>
-      <Button variant="primary" size="small">Primary Small</Button>
-      <Button variant="secondary" size="small">Secondary Small</Button>
-      <Button variant="primary" size="small" disabled>Disabled Primary</Button>
+    <div className="flex flex-col gap-8">
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Primary Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="primary" size="small">Small</Button>
+          <Button variant="primary" size="medium">Medium</Button>
+          <Button variant="primary" size="large">Large</Button>
+          <Button variant="primary" size="medium" disabled>Disabled</Button>
+          <Button variant="primary" size="medium">
+            <Icon name="check" size="small" />
+            With Icon
+          </Button>
+        </div>
+      </div>
 
-      <Button variant="primary" size="medium">Primary Medium</Button>
-      <Button variant="secondary" size="medium">Secondary Medium</Button>
-      <Button variant="secondary" size="medium" disabled>Disabled Secondary</Button>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Secondary Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="secondary" size="small">Small</Button>
+          <Button variant="secondary" size="medium">Medium</Button>
+          <Button variant="secondary" size="large">Large</Button>
+          <Button variant="secondary" size="medium" disabled>Disabled</Button>
+          <Button variant="secondary" size="medium">
+            <Icon name="check" size="small" />
+            With Icon
+          </Button>
+        </div>
+      </div>
 
-      <Button variant="outline" size="medium">outline Medium</Button>
-      <Button variant="ghost" size="medium">ghost Medium</Button>
-      <Button size="medium" disabled>Disabled Secondary</Button>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Outline Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="outline" size="small">Small</Button>
+          <Button variant="outline" size="medium">Medium</Button>
+          <Button variant="outline" size="large">Large</Button>
+          <Button variant="outline" size="medium" disabled>Disabled</Button>
+          <Button variant="outline" size="medium">
+            <Icon name="check" size="small" />
+            With Icon
+          </Button>
+        </div>
+      </div>
 
-      <Button variant="primary" size="large">Primary Large</Button>
-      <Button variant="secondary" size="large">Secondary Large</Button>
-      <Button variant="primary" size="large">
-        <Icon name="arrow-right" size="small" style={{ marginRight: '0.5rem', color: 'currentColor' }} />
-        With Icon
-      </Button>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Ghost Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="ghost" size="small">Small</Button>
+          <Button variant="ghost" size="medium">Medium</Button>
+          <Button variant="ghost" size="large">Large</Button>
+          <Button variant="ghost" size="medium" disabled>Disabled</Button>
+          <Button variant="ghost" size="medium">
+            <Icon name="check" size="small" />
+            With Icon
+          </Button>
+        </div>
+      </div>
 
-      <Button as="a" size="large" href="#" className="hover:underline bg-transparent text-primary-500">as link</Button>
-      <Button as="a" size="medium" href="#" className="hover:underline bg-transparent text-primary-500">as link</Button>
-      <Button as="a" size="small" href="#" className="hover:underline bg-transparent text-primary-500">as link</Button>
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Link Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="link" size="small">Small</Button>
+          <Button variant="link" size="medium">Medium</Button>
+          <Button variant="link" size="large">Large</Button>
+          <Button variant="link" size="medium" disabled>Disabled</Button>
+          <Button variant="link" size="medium">
+            <Icon name="check" size="small" />
+            With Icon
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold mb-2">Danger Buttons</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button variant="danger" size="small">Small</Button>
+          <Button variant="danger" size="medium">Medium</Button>
+          <Button variant="danger" size="large">Large</Button>
+          <Button variant="danger" size="medium" disabled>Disabled</Button>
+          <Button variant="danger" size="medium">
+            <Icon name="check" size="small" />
+            With Icon
+          </Button>
+        </div>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-semibold mb-2">As Link</h3>
+        <div className="flex flex-wrap gap-4">
+          <Button as="a" href="#" size="small">Small Link</Button>
+          <Button as="a" href="#" size="medium">Medium Link</Button>
+          <Button as="a" href="#" size="large">Large Link</Button>
+          <Button as="a" href="#" size="medium" disabled>Disabled Link</Button>
+          <Button as="a" href="#" size="medium">
+            <Icon name="check" size="small" />
+            Link with Icon
+          </Button>
+        </div>
+      </div>
     </div>
   ),
 };
