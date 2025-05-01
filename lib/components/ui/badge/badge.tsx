@@ -1,6 +1,7 @@
 import { VariantProps, cva } from 'class-variance-authority';
 import { cn } from '@/utils';
 import { forwardRef } from 'react';
+import '@/design-tokens/components/badge.css';
 
 // Define the badge variants using design tokens
 const badgeVariants = cva(
