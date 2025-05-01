@@ -8,7 +8,9 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: var(--primary);
+  --font-sans: var(--primary),  sans-serif;
+
+  --font-family: var(--font-sans);
 
 
   /* Base colors */
@@ -258,7 +260,10 @@
 
 /* Base styles */
 body {
-  font-family: var(--font-family) sans-serif;
+  font-family: var(--font-family), sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
   font-size: var(--font-size-base);
   line-height: var(--line-height-normal);
   color: var(--color-foreground-primary);

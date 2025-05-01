@@ -7,7 +7,7 @@
 */
 /* primitive-fonts */
 :root {
-    --primary: Inter;
-    --secondary: rubik;
+    --primary: "Inter";
+    --secondary: "Rubik";
     --tertiary: "source code pro";
 }
