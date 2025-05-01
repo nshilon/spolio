@@ -1,4 +1,4 @@
-import React from 'react';
+
 import defaultIcons from './svg';
 
 // Define the type for an icon in the registry
