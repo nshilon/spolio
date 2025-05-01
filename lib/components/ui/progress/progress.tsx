@@ -6,8 +6,8 @@ const progressVariants = cva(
   [
     'w-full',
     'overflow-hidden',
-    'bg-neutral-200',
-    'dark:bg-neutral-700',
+    'bg-neutral-30',
+    'dark:bg-neutral-50',
     'rounded-full',
   ],
   {
