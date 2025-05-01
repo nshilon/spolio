@@ -1,0 +1,143 @@
+/*
+       _           _   
+  __ _| | ___ _ __| |_ 
+ / _` | |/ _ \ '__| __|
+| (_| | |  __/ |  | |_ 
+ \__,_|_|\___|_|   \__|
+*/
+/* component-alert */
+:root
+ {
+  
+/* Alert Unit Specifications */
+  --alert-unit-border-left: var(--border-width-xl);
+  --alert-unit-border-radius: var(--border-radius-md);
+  --alert-unit-padding-left: var(--spacing-lg);
+  --alert-unit-padding-right: var(--spacing-lg);
+  --alert-unit-padding-top: var(--spacing-md);
+  --alert-unit-padding-bottom: var(--spacing-md);
+  --alert-unit-vertical-gap: var(--spacing-sm);
+  --alert-unit-horizontal-gap: var(--spacing-sm);
+  
+/* Text Style for Alerts */
+  --alert-text-title-font: var(--primary);
+  --alert-text-title-size: var(--uitext-lg-size);
+  --alert-text-title-line-height: var(--uitext-lg-height);
+  --alert-text-title-weight: var(--font-weight-emphasis);
+  --alert-text-strapline-font: var(--primary);
+  --alert-text-strapline-font-size: var(--uitext-md-size);
+  --alert-text-strapline-line-height: var(--uitext-md-height);
+  --alert-text-strapline-font-weight: var(--font-weight-emphasis);
+  
+/* Primary Alert Styles */
+  
+/* Soft */
+  --alert-soft-primary-background: var(--bg-primary-lower);
+  --alert-soft-primary-title: var(--fg-primary-higher);
+  --alert-soft-primary-text: var(--fg-common-default);
+  --alert-soft-primary-icon: var(--fg-primary-default);
+  --alert-soft-primary-border: var(--bd-primary-default);
+  
+/* Critical */
+  --alert-critical-primary-background: var(--bg-primary-default);
+  --alert-critical-primary-title: var(--fg-primary-lower);
+  --alert-critical-primary-text: var(--fg-common-inverse);
+  --alert-critical-primary-icon: var(--fg-primary-low);
+  --alert-critical-primary-border: var(--bd-primary-low);
+  
+/* Neutral Alert Styles */
+  
+/* Soft */
+  --alert-soft-neutral-background: var(--bg-neutral-lower);
+  --alert-soft-neutral-title: var(--fg-neutral-higher);
+  --alert-soft-neutral-text: var(--fg-common-default);
+  --alert-soft-neutral-icon: var(--fg-neutral-default);
+  --alert-soft-neutral-border: var(--bd-neutral-default);
+  
+/* Critical */
+  --alert-critical-neutral-background: var(--bg-neutral-default);
+  --alert-critical-neutral-title: var(--fg-neutral-lower);
+  --alert-critical-neutral-text: var(--fg-common-inverse);
+  --alert-critical-neutral-icon: var(--fg-neutral-low);
+  --alert-critical-neutral-border: var(--bd-neutral-low);
+  
+/* Tertiary Alert Styles */
+  
+/* Soft */
+  --alert-soft-tertiary-background: var(--bg-tertiary-lower);
+  --alert-soft-tertiary-title: var(--fg-tertiary-higher);
+  --alert-soft-tertiary-text: var(--fg-common-default);
+  --alert-soft-tertiary-icon: var(--fg-tertiary-default);
+  --alert-soft-tertiary-border: var(--bd-tertiary-default);
+  
+/* Critical */
+  --alert-critical-tertiary-background: var(--bg-tertiary-default);
+  --alert-critical-tertiary-title: var(--fg-tertiary-lower);
+  --alert-critical-tertiary-text: var(--fg-common-inverse);
+  --alert-critical-tertiary-icon: var(--fg-tertiary-low);
+  --alert-critical-tertiary-border: var(--bd-tertiary-low);
+  
+/* Danger Alert Styles */
+  
+/* Soft */
+  --alert-soft-danger-background: var(--bg-danger-lower);
+  --alert-soft-danger-title: var(--bg-danger-higher);
+  --alert-soft-danger-text: var(--fg-common-default);
+  --alert-soft-danger-icon: var(--fg-danger-default);
+  --alert-soft-danger-border: var(--bd-danger-default);
+  
+/* Critical */
+  --alert-critical-danger-background: var(--bg-danger-default);
+  --alert-critical-danger-title: var(--fg-danger-lower);
+  --alert-critical-danger-text: var(--fg-common-inverse);
+  --alert-critical-danger-icon: var(--fg-danger-low);
+  --alert-critical-danger-border: var(--bd-danger-low);
+  
+/* Success Alert Styles */
+  
+/* Soft */
+  --alert-soft-success-background: var(--bg-success-lower);
+  --alert-soft-success-title: var(--bg-success-higher);
+  --alert-soft-success-text: var(--fg-common-default);
+  --alert-soft-success-icon: var(--bg-success-default);
+  --alert-soft-success-border: var(--bd-success-default);
+  
+/* Critical */
+  --alert-critical-success-background: var(--bg-success-default);
+  --alert-critical-success-title: var(--fg-success-lower);
+  --alert-critical-success-text: var(--fg-common-inverse);
+  --alert-critical-success-icon: var(--fg-success-low);
+  --alert-critical-success-border: var(--bd-success-low);
+  
+/* Warning Alert Styles */
+  
+/* Soft */
+  --alert-soft-warning-background: var(--bg-warning-lower);
+  --alert-soft-warning-title: var(--fg-warning-higher);
+  --alert-soft-warning-text: var(--fg-common-default);
+  --alert-soft-warning-icon: var(--fg-warning-default);
+  --alert-soft-warning-border: var(--bd-warning-default);
+  
+/* Critical */
+  --alert-critical-warning-background: var(--bg-warning-default);
+  --alert-critical-warning-title: var(--fg-warning-lower);
+  --alert-critical-warning-text: var(--fg-common-inverse);
+  --alert-critical-warning-icon: var(--fg-warning-low);
+  --alert-critical-warning-border: var(--bd-warning-low);
+  
+/* Info Alert Styles */
+  
+/* Soft */
+  --alert-soft-info-background: var(--bg-info-lower);
+  --alert-soft-info-title: var(--fg-info-higher);
+  --alert-soft-info-text: var(--fg-common-default);
+  --alert-soft-info-icon: var(--fg-info-default);
+  --alert-soft-info-border: var(--bd-info-default);
+  
+/* Critical */
+  --alert-critical-info-background: var(--bg-info-default);
+  --alert-critical-info-title: var(--fg-info-lower);
+  --alert-critical-info-text: var(--fg-common-inverse);
+  --alert-critical-info-icon: var(--fg-info-low);
+  --alert-critical-info-border: var(--bd-info-low);
+}
