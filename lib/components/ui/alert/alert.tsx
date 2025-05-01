@@ -1,6 +1,8 @@
 import { Icon } from '@/components';
 import { VariantProps, cva } from 'class-variance-authority';
-import { cn } from '../../../utils/cn';
+import { cn } from '@/utils/cn.ts';
+
+import '@/design-tokens/components/alert.css';
 
 // Define the alert variants using design tokens
 const alertVariants = cva(
@@ -94,7 +96,7 @@ const alertVariants = cva(
 
 // Define title styles based on variant and type
 const alertTitleVariants = cva(
-  'Alert__title font-[var(--alert-text-title-weight)] text-[var(--alert-text-title-size)] leading-[var(--alert-text-title-line-height)]',
+  'Alert__title font-[var(--alert-text-title-weight)] font-[var(--alert-text-title-size)] leading-[var(--alert-text-title-line-height)]',
   {
     variants: {
       variant: {
@@ -179,7 +181,7 @@ const alertTitleVariants = cva(
 
 // Define text styles based on variant and type
 const alertTextVariants = cva(
-  'Alert__text text-[var(--alert-text-strapline-font-size)] leading-[var(--alert-text-strapline-line-height)]',
+  'Alert__text font-[var(--alert-text-strapline-font-size)] leading-[var(--alert-text-strapline-line-height)]',
   {
     variants: {
       variant: {
@@ -369,15 +371,15 @@ const Alert = ({
   const getIconName = () => {
     switch (type) {
       case 'danger':
-        return 'alert-circle';
+        return 'error';
       case 'success':
-        return 'check-circle';
+        return 'success';
       case 'warning':
-        return 'alert-triangle';
+        return 'warning';
       case 'info':
         return 'info';
       case 'primary':
-        return 'bell';
+        return 'warning';
       case 'neutral':
       default:
         return 'info';
