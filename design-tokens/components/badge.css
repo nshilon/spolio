@@ -1,0 +1,195 @@
+/*
+ _               _            
+| |__   __ _  __| | __ _  ___ 
+| '_ \ / _` |/ _` |/ _` |/ _ \
+| |_) | (_| | (_| | (_| |  __/
+|_.__/ \__,_|\__,_|\__, |\___|
+                   |___/      
+*/
+/* component-navigation-header */
+:root {
+
+    /* Badge Unit Specifications - Large */
+    --badge-unit-large-font-size: var(--uitext-lg-size);
+    --badge-unit-large-line-height: var(--uitext-lg-height);
+    --badge-unit-large-font-weight: var(--font-weight-heavy);
+    --badge-unit-large-padding-left: var(--spacing-lg);
+    --badge-unit-large-padding-right: var(--spacing-lg);
+    --badge-unit-large-padding-top: var(--spacing-sm);
+    --badge-unit-large-padding-bottom: var(--spacing-sm);
+    --badge-unit-large-border-radius: var(--border-radius-2xl);
+    --badge-unit-large-border-width: var(--border-width-sm);
+    --badge-unit-large-margin: var(--spacing-sm);
+
+    /* Badge Unit Specifications - Medium */
+    --badge-unit-medium-font-size: var(--uitext-md-size);
+    --badge-unit-medium-line-height: var(--uitext-md-height);
+    --badge-unit-medium-font-weight: var(--font-weight-heavy);
+    --badge-unit-medium-padding-left: var(--spacing-xs);
+    --badge-unit-medium-padding-right: var(--spacing-xs);
+    --badge-unit-medium-padding-top: var(--spacing-xs);
+    --badge-unit-medium-padding-bottom: var(--spacing-xs);
+    --badge-unit-medium-border-radius: var(--border-radius-2xl);
+    --badge-unit-medium-margin: var(--spacing-xs);
+
+    /* Badge Unit Specifications - Small */
+    --badge-unit-small-font-size: var(--uitext-sm-size);
+    --badge-unit-small-line-height: var(--uitext-sm-height);
+    --badge-unit-small-font-weight: var(--font-weight-heavy);
+    --badge-unit-small-padding-left: var(--spacing-xs);
+    --badge-unit-small-padding-right: var(--spacing-xs);
+    --badge-unit-small-padding-top: var(--spacing-none);
+    --badge-unit-small-padding-bottom: var(--spacing-none);
+    --badge-unit-small-border-radius: var(--border-radius-2xl);
+    --badge-unit-small-margin: var(--spacing-xs);
+
+    /* Soft Badge Styles */
+
+    /* Primary */
+    --badge-soft-primary-label: var(--fg-primary-higher);
+    --badge-soft-primary-icon: var(--fg-primary-default);
+    --badge-soft-primary-background: var(--bg-primary-lower);
+    --badge-soft-primary-border: var(--bd-primary-high);
+
+
+    /* Neutral */
+    --badge-soft-neutral-label: var(--fg-neutral-higher);
+    --badge-soft-neutral-icon: var(--fg-neutral-default);
+    --badge-soft-neutral-background: var(--bg-neutral-lower);
+    --badge-soft-neutral-border: var(--bd-neutral-high);
+
+
+    /* Tertiary */
+    --badge-soft-tertiary-label: var(--fg-tertiary-higher);
+    --badge-soft-tertiary-icon: var(--fg-tertiary-default);
+    --badge-soft-tertiary-background: var(--bg-tertiary-lower);
+    --badge-soft-tertiary-border: var(--bd-tertiary-high);
+
+
+    /* Danger */
+    --badge-soft-danger-label: var(--fg-danger-higher);
+    --badge-soft-danger-icon: var(--fg-danger-default);
+    --badge-soft-danger-background: var(--bg-danger-lower);
+    --badge-soft-danger-border: var(--bd-danger-high);
+
+
+    /* Success */
+    --badge-soft-success-label: var(--fg-success-higher);
+    --badge-soft-success-icon: var(--fg-success-default);
+    --badge-soft-success-background: var(--bg-success-lower);
+    --badge-soft-success-border: var(--bd-success-high);
+
+
+    /* Warning */
+    --badge-soft-warning-label: var(--fg-warning-higher);
+    --badge-soft-warning-icon: var(--fg-warning-default);
+    --badge-soft-warning-background: var(--bg-warning-lower);
+    --badge-soft-warning-border: var(--bd-warning-high);
+
+
+    /* Info */
+    --badge-soft-info-text-body: var(--fg-info-higher);
+    --badge-soft-info-icon: var(--fg-info-default);
+    --badge-soft-info-background: var(--bg-info-lower);
+    --badge-soft-info-border: var(--bd-info-high);
+
+    /* Critical Badge Styles */
+
+    /* Primary */
+    --badge-critical-primary-body-text: var(--fg-common-inverse);
+    --badge-critical-primary-icon: var(--fg-primary-inverse);
+    --badge-critical-primary-background: var(--bg-primary-default);
+    --badge-critical-primary-border: var(--bd-primary-low);
+
+
+    /* Neutral */
+    --badge-critical-neutral-body-text: var(--fg-common-inverse);
+    --badge-critical-neutral-icon: var(--fg-primary-low);
+    --badge-critical-neutral-background: var(--bg-primary-default);
+    --badge-critical-neutral-border: var(--bd-primary-low);
+
+
+    /* Tertiary */
+    --badge-critical-tertiary-body-text: var(--fg-common-inverse);
+    --badge-critical-tertiary-icon: var(--fg-primary-inverse);
+    --badge-critical-tertiary-background: var(--bg-primary-default);
+    --badge-critical-tertiary-border: var(--bd-primary-low);
+
+
+    /* Danger */
+    --badge-critical-danger-label: var(--fg-common-inverse);
+    --badge-critical-danger-icon: var(--fg-danger-inverse);
+    --badge-critical-danger-background: var(--bg-danger-default);
+    --badge-critical-danger-border: var(--bd-danger-low);
+
+
+    /* Success */
+    --badge-critical-success-label: var(--fg-common-inverse);
+    --badge-critical-success-icon: var(--fg-success-inverse);
+    --badge-critical-success-background: var(--bg-success-lower);
+    --badge-critical-success-border: var(--bd-success-default);
+
+
+    /* Warning */
+    --badge-critical-warning-label: var(--fg-common-inverse);
+    --badge-critical-warning-icon: var(--fg-warning-lower);
+    --badge-critical-warning-background: var(--bg-warning-default);
+    --badge-critical-warning-border: var(--bd-warning-default);
+
+
+    /* Info */
+    --badge-critical-info-label: var(--fg-common-inverse);
+    --badge-critical-info-icon: var(--fg-info-low);
+    --badge-critical-info-background: var(--bg-info-default);
+    --badge-critical-info-border: var(--bd-info-low);
+
+    /* Outline Badge Styles */
+
+    /* Primary */
+    --badge-outline-primary-label: var(--fg-primary-higher);
+    --badge-outline-primary-icon: var(--fg-primary-higher);
+    --badge-outline-primary-background: var(--bg-primary-lower);
+    --badge-outline-primary-border: var(--bd-primary-high);
+
+
+    /* Neutral */
+    --badge-outline-neutral-label: var(--fg-neutral-higher);
+    --badge-outline-neutral-icon: var(--fg-neutral-default);
+    --badge-outline-neutral-background: var(--bg-neutral-lower);
+    --badge-outline-neutral-border: var(--bd-neutral-high);
+
+
+    /* Tertiary */
+    --badge-outline-tertiary-label: var(--fg-tertiary-higher);
+    --badge-outline-tertiary-icon: var(--fg-tertiary-default);
+    --badge-outline-tertiary-background: var(--bg-tertiary-lower);
+    --badge-outline-tertiary-border: var(--bd-tertiary-high);
+
+
+    /* Danger */
+    --badge-outline-danger-label: var(--fg-danger-higher);
+    --badge-outline-danger-icon: var(--fg-danger-default);
+    --badge-outline-danger-background: var(--bg-danger-lower);
+    --badge-outline-danger-border: var(--bd-danger-high);
+
+
+    /* Success */
+    --badge-outline-success-label: var(--fg-success-higher);
+    --badge-outline-success-icon: var(--fg-success-default);
+    --badge-outline-success-background: var(--bg-success-lower);
+    --badge-outline-success-border: var(--bd-success-high);
+
+
+    /* Warning */
+    --badge-outline-warning-label: var(--fg-warning-higher);
+    --badge-outline-warning-icon: var(--fg-warning-default);
+    --badge-outline-warning-background: var(--bg-warning-lower);
+    --badge-outline-warning-border: var(--bd-warning-high);
+
+
+    /* Info */
+    --badge-outline-info-text-body: var(--fg-info-higher);
+    --badge-outline-info-icon: var(--fg-info-default);
+    --badge-outline-info-background: var(--bg-info-lower);
+    --badge-outline-info-border: var(--bd-info-high);
+}
