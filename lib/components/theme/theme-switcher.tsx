@@ -18,9 +18,9 @@ export default function ThemeSwitcher({ className = '' }: ThemeSwitcherProps) {
       title={`Switch to ${theme === 'light' ? 'dark' : 'light'} theme`}
     >
       {theme === 'dark' ? (
-        <Icon name="moon" variant="primary" className="theme-switcher__icon" />
+        <Icon name="moon" className="theme-switcher__icon" />
       ) : (
-        <Icon name="sun" variant="secondary" className="theme-switcher__icon" />
+        <Icon name="sun" className="theme-switcher__icon" />
       )}
       {/*<span className="theme-switcher__text">*/}
       {/*  {theme === 'light' ? 'Dark Mode' : 'Light Mode'}*/}
