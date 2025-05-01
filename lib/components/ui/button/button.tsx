@@ -2,6 +2,8 @@ import { VariantProps, cva } from 'class-variance-authority';
 import { ComponentProps, forwardRef } from 'react';
 import { cn } from '@/utils';
 
+import '@/design-tokens/components/button.css';
+
 // Base button styles using design tokens
 const ButtonStyles = cva(
   [
@@ -87,7 +89,7 @@ const ButtonStyles = cva(
       size: {
         small: [
           'button--small',
-          'text-sm',
+          'font-sm',
           'h-[var(--button-unit-small-padding-top) + var(--button-unit-small-padding-bottom) + 1.5rem]',
           'px-[var(--button-unit-small-padding-left)]',
           'py-[var(--button-unit-small-padding-top)]',
@@ -96,7 +98,7 @@ const ButtonStyles = cva(
         ],
         medium: [
           'button--medium',
-          'text-base',
+          'font-base',
           'h-[var(--button-unit-medium-padding-top) + var(--button-unit-medium-padding-bottom) + 1.5rem]',
           'px-[var(--button-unit-medium-padding-left)]',
           'py-[var(--button-unit-medium-padding-top)]',
@@ -105,7 +107,7 @@ const ButtonStyles = cva(
         ],
         large: [
           'button--large',
-          'text-lg',
+          'font-lg',
           'h-[var(--button-unit-large-padding-top) + var(--button-unit-large-padding-bottom) + 1.5rem]',
           'px-[var(--button-unit-large-padding-left)]',
           'py-[var(--button-unit-large-padding-top)]',
