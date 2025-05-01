@@ -18,15 +18,23 @@ const meta = {
       control: 'text',
       description: 'The content of the alert',
     },
-    design: {
+    variant: {
       control: { type: 'select' },
-      options: ['solid', 'outline'],
+      options: ['soft', 'critical'],
       description: 'The visual style of the alert',
     },
     type: {
       control: { type: 'select' },
-      options: ['critical', 'danger', 'warning', 'success', 'informative', 'discovery'],
+      options: ['primary', 'neutral', 'danger', 'success', 'warning', 'info'],
       description: 'The type of the alert which determines its color',
+    },
+    showCloseButton: {
+      control: 'boolean',
+      description: 'Whether to show the close button',
+    },
+    onClose: {
+      action: 'closed',
+      description: 'Callback when the close button is clicked',
     },
   },
 } satisfies Meta<typeof Alert>;
@@ -38,36 +46,52 @@ export const Default: Story = {
   args: {
     title: 'Alert Title',
     children: 'This is an alert message providing important information to the user.',
+    variant: 'soft',
+    type: 'info',
   },
 };
 
 export const WithoutTitle: Story = {
   args: {
     children: 'This is an alert message without a title.',
+    variant: 'soft',
+    type: 'info',
   },
 };
 
-export const Solid: Story = {
+export const Soft: Story = {
   args: {
-    title: 'Solid Alert',
-    children: 'This is a solid alert with the default style.',
-    design: 'solid',
-  },
-};
-
-export const Outline: Story = {
-  args: {
-    title: 'Outline Alert',
-    children: 'This is an outline alert with a border.',
-    design: 'outline',
+    title: 'Soft Alert',
+    children: 'This is a soft alert with a subtle background and left border.',
+    variant: 'soft',
+    type: 'info',
   },
 };
 
 export const Critical: Story = {
   args: {
     title: 'Critical Alert',
-    children: 'This is a critical alert for very important issues.',
-    type: 'critical',
+    children: 'This is a critical alert with a stronger background color.',
+    variant: 'critical',
+    type: 'info',
+  },
+};
+
+export const Primary: Story = {
+  args: {
+    title: 'Primary Alert',
+    children: 'This is a primary alert using the primary color scheme.',
+    variant: 'soft',
+    type: 'primary',
+  },
+};
+
+export const Neutral: Story = {
+  args: {
+    title: 'Neutral Alert',
+    children: 'This is a neutral alert using neutral colors.',
+    variant: 'soft',
+    type: 'neutral',
   },
 };
 
@@ -75,6 +99,7 @@ export const Danger: Story = {
   args: {
     title: 'Danger Alert',
     children: 'This is a danger alert for error conditions.',
+    variant: 'soft',
     type: 'danger',
   },
 };
@@ -83,6 +108,7 @@ export const Warning: Story = {
   args: {
     title: 'Warning Alert',
     children: 'This is a warning alert for potential issues.',
+    variant: 'soft',
     type: 'warning',
   },
 };
@@ -91,37 +117,52 @@ export const Success: Story = {
   args: {
     title: 'Success Alert',
     children: 'This is a success alert for completed actions.',
+    variant: 'soft',
     type: 'success',
   },
 };
 
-export const Informative: Story = {
+export const Info: Story = {
   args: {
-    title: 'Informative Alert',
-    children: 'This is an informative alert providing general information.',
-    type: 'informative',
+    title: 'Info Alert',
+    children: 'This is an info alert providing general information.',
+    variant: 'soft',
+    type: 'info',
   },
 };
 
-export const Discovery: Story = {
+export const WithCloseButton: Story = {
   args: {
-    title: 'Discovery Alert',
-    children: 'This is a discovery alert for new features or tips.',
-    type: 'discovery',
+    title: 'Closable Alert',
+    children: 'This alert has a close button that can be clicked.',
+    variant: 'soft',
+    type: 'info',
+    showCloseButton: true,
+  },
+};
+
+export const WithoutCloseButton: Story = {
+  args: {
+    title: 'Non-Closable Alert',
+    children: 'This alert does not have a close button.',
+    variant: 'soft',
+    type: 'info',
+    showCloseButton: false,
   },
 };
 
 export const AlertTypes: StoryObj = {
   render: () => {
-    const types = ['critical', 'danger', 'warning', 'success', 'informative', 'discovery'];
-    
+    const types = ['primary', 'neutral', 'danger', 'success', 'warning', 'info'];
+
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px' }}>
         {types.map((type) => (
-          <Alert 
-            key={type} 
+          <Alert
+            key={type}
             title={`${type.charAt(0).toUpperCase() + type.slice(1)} Alert`}
             type={type as any}
+            variant="soft"
           >
             This is a {type} alert message.
           </Alert>
@@ -131,29 +172,72 @@ export const AlertTypes: StoryObj = {
   },
 };
 
-export const AlertDesigns: StoryObj = {
+export const AlertVariants: StoryObj = {
   render: () => {
-    const designs = ['solid', 'outline'];
-    const types = ['critical', 'danger', 'warning', 'success', 'informative', 'discovery'];
-    
+    const variants = ['soft', 'critical'];
+    const types = ['primary', 'neutral', 'danger', 'success', 'warning', 'info'];
+
     return (
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', maxWidth: '1000px' }}>
-        {designs.map((design) => (
-          <div key={design} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <h3 style={{ textAlign: 'center' }}>{design.charAt(0).toUpperCase() + design.slice(1)} Design</h3>
-            
+        {variants.map((variant) => (
+          <div key={variant} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <h3 style={{ textAlign: 'center' }}>{variant.charAt(0).toUpperCase() + variant.slice(1)} Variant</h3>
+
             {types.map((type) => (
-              <Alert 
-                key={`${design}-${type}`} 
+              <Alert
+                key={`${variant}-${type}`}
                 title={`${type.charAt(0).toUpperCase() + type.slice(1)}`}
-                design={design as any}
+                variant={variant as any}
                 type={type as any}
               >
-                This is a {design} {type} alert.
+                This is a {variant} {type} alert.
               </Alert>
             ))}
           </div>
         ))}
+      </div>
+    );
+  },
+};
+
+export const InteractiveAlerts: StoryObj = {
+  render: () => {
+    // This is just for demonstration in Storybook
+    const handleClose = (alertName: string) => {
+      console.log(`${alertName} alert closed`);
+      // In a real app, you would handle state here to hide the alert
+    };
+
+    return (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '500px' }}>
+        <Alert
+          title="Closable Alert"
+          variant="soft"
+          type="info"
+          showCloseButton={true}
+          onClose={() => handleClose('Info')}
+        >
+          Click the X button to close this alert.
+        </Alert>
+
+        <Alert
+          title="Critical Warning"
+          variant="critical"
+          type="warning"
+          showCloseButton={true}
+          onClose={() => handleClose('Warning')}
+        >
+          This is an important warning that can be dismissed.
+        </Alert>
+
+        <Alert
+          title="Permanent Error"
+          variant="critical"
+          type="danger"
+          showCloseButton={false}
+        >
+          This error alert cannot be dismissed.
+        </Alert>
       </div>
     );
   },

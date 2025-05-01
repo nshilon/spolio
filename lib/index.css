@@ -1,6 +1,9 @@
 /* Import Tailwind CSS */
 @import "tailwindcss";
 
+/* Import component design tokens */
+@import "../design-tokens/components/alert.css";
+
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
