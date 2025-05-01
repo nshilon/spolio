@@ -1,5 +1,5 @@
 import { type VariantProps, cva } from 'class-variance-authority';
-
+import React from 'react';
 import { cn } from '../../../utils/cn';
 
 // Define the typography variants using CVA with Tailwind classes
