@@ -1,0 +1,72 @@
+/*
+ _            _   
+| |_ _____  _| |_ 
+| __/ _ \ \/ / __|
+| ||  __/>  <| |_ 
+ \__\___/_/\_\\__|
+*/
+/* semantic-type */
+:root {
+
+    /* Display Typography */
+    --display-font: var(--secondary);
+    --display-lg-size: var(--font-size-1300);
+    --display-lg-height: var(--line-height-1300);
+    --display-md-size: var(--font-size-1200);
+    --display-md-height: var(--line-height-1200);
+    --display-sm-size: var(--font-size-1100);
+    --display-sm-height: var(--line-height-1100);
+
+    /* Header Typography */
+    --header-font: var(--primary);
+    --header-xl-size: var(--font-size-900);
+    --header-xl-height: var(--line-height-900);
+    --header-lg-size: var(--font-size-800);
+    --header-lg-height: var(--line-height-800);
+    --header-md-size: var(--font-size-700);
+    --header-md-height: var(--line-height-700);
+    --header-sm-size: var(--font-size-600);
+    --header-sm-height: var(--line-height-600);
+    --header-xs-size: var(--font-size-500);
+    --header-xs-height: var(--line-height-500);
+
+    /* Subtitle Typography */
+    --subtitle-font: var(--primary);
+    --subtitle-lg-size: var(--font-size-600);
+    --subtitle-lg-height: var(--line-height-600);
+    --subtitle-md-size: var(--font-size-500);
+    --subtitle-md-height: var(--line-height-500);
+
+    /* Body Typography */
+    --body-font: var(--primary);
+    --body-lg-size: var(--font-size-500);
+    --body-lg-height: var(--line-height-500);
+    --body-md-size: var(--font-size-400);
+    --body-md-height: var(--line-height-400);
+    --body-sm-size: var(--font-size-300);
+    --body-sm-height: var(--line-height-300);
+
+    /* UI Text Typography */
+    --uitext-font: var(--primary);
+    --uitext-lg-size: var(--font-size-500);
+    --uitext-lg-height: var(--line-height-500);
+    --uitext-md-size: var(--font-size-400);
+    --uitext-md-height: var(--line-height-300);
+    --uitext-sm-size: var(--font-size-200);
+    --uitext-sm-height: var(--line-height-100);
+
+    /* Button Typography */
+    --button-font: var(--primary);
+    --button-lg-size: var(--font-size-500);
+    --button-lg-height: var(--line-height-200);
+    --button-md-size: var(--font-size-400);
+    --button-md-height: var(--line-height-200);
+
+    /* Font Weights */
+    --font-weight-heavy: var(--font-weight-600);
+    --font-weight-emphasis: var(--font-weight-500);
+    --font-weight-base: var(--font-weight-400);
+    --font-weight-light: var(--font-weight-300);
+    --font-weight-weak: var(--font-weight-100);
+}
+

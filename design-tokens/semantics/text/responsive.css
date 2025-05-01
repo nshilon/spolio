@@ -1,0 +1,79 @@
+@media (max-width: var(--screen-size-xl)) {
+    .header1 {
+        font-size: var(--header-xl-size);
+        line-height: var(--header-xl-size);
+    }
+}
+
+@media (max-width: var(--screen-size-lg)) {
+    .header1 {
+        font-size: var(--header-lg-size);
+        line-height: var(--header-lg-size);
+    }
+}
+
+@media (max-width: var(--screen-size-md)) {
+    .header1 {
+        font-size: var(--header-lg-size);
+        line-height: var(--header-lg-size);
+    }
+}
+
+@media (max-width: var(--screen-size-sm)) {
+    .header1 {
+        font-size: var(--header-md-size);
+        line-height: var(--header-md-size);
+    }
+}
+
+
+
+/*
+ _            _
+| |_ _____  _| |_
+| __/ _ \ \/ / __|
+| ||  __/>  <| |_
+ \__\___/_/\_\\__|
+*/
+/*desktop - xxl suggestion (>1536px) */
+@media (min-width: var(--max-width-xl)) {
+}
+
+/*
+----------------------------------------------
+----------- None set up in portals -----------
+-----------       Suggestion       -----------
+----------------------------------------------
+*/
+/* desktop - xl (max-width: 1536px) */
+@media (max-width: var(--max-width-xl)) {
+    :root {
+        --header-xl-size: var(--font-size-900);
+        --header-xl-height: var(--line-height-900);
+    }
+}
+
+/* tablet landscape / laptop - lg (max-width: 1200px) */
+@media (max-width: var(--max-width-lg)) {
+    :root {
+        --header-xl-size: var(--font-size-800);
+        --header-xl-height: var(--line-height-800);
+    }
+}
+
+/* tablet portrait / mobile landscape - md (max-width: 900px) */
+@media (max-width: var(--max-width-md)) {
+    :root {
+        --header-xl-size: var(--font-size-700);
+        --header-xl-height: var(--line-height-700);
+    }
+}
+
+/* mobile - sm (max-width: 600px) */
+@media (max-width: var(--max-width-sm)) {
+    :root {
+        --header-xl-size: var(--font-size-700);
+        --header-xl-height: var(--line-height-700);
+    }
+}
+

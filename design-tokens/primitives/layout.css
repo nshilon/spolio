@@ -1,0 +1,26 @@
+/*
+ _                         _   
+| | __ _ _   _  ___  _   _| |_ 
+| |/ _` | | | |/ _ \| | | | __|
+| | (_| | |_| | (_) | |_| | |_ 
+|_|\__,_|\__, |\___/ \__,_|\__|
+         |___/                 
+*/
+/* primitive-layout */
+:root {
+    /* grid */
+    --grid-columns-sm: 4;
+    --grid-columns-md: 8;
+    --grid-columns-lg: 12;
+    --grid-columns-xl: 12;
+    /* margin */
+    --margin-sm: 8px;
+    --margin-md: 16px;
+    --margin-lg: 32px;
+    --margin-xl: 48px;
+    /* gutter */
+    --gutter-sm: 8px;
+    --gutter-md: 16px;
+    --gutter-lg: 24px;
+    --gutter-xl: 32px;
+}

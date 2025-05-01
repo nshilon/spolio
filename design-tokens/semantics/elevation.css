@@ -1,0 +1,53 @@
+/*
+      _                 _   _             
+  ___| | _____   ____ _| |_(_) ___  _ __  
+ / _ \ |/ _ \ \ / / _` | __| |/ _ \| '_ \ 
+|  __/ |  __/\ V / (_| | |_| | (_) | | | |
+ \___|_|\___| \_/ \__,_|\__|_|\___/|_| |_|
+*/
+:root {
+
+    /*// elevation*/
+
+    /*Elevation Levels */
+
+
+    /** elevation 1: Low elevation, minimal shadow for subtle depth */
+    --elevation-1: 0px 0px 1px 0px var(--alpha-A75), 0px 1px 1px 0px var(--alpha-A50);
+
+
+    /** elevation 2: Slightly more elevated, good for buttons and small cards */
+    --elevation-2: 0px 0px 1px 0px var(--alpha-A75), 0px 3px 5px 0px var(--alpha-A50);
+
+
+    /** elevation 3: Medium elevation, often used for popups and floating components */
+    --elevation-3: 0px 0px 1px 0px var(--alpha-A75), 0px 8px 12px 0px var(--alpha-A50);
+
+
+    /** elevation 4: High elevation, suitable for modals and important containers */
+    --elevation-4: 0px 0px 1px 0px var(--alpha-A75), 0px 10px 18px 0px var(--alpha-A50);
+
+
+    /** elevation 5: Strongest shadow, for highly prominent elements like dialogs */
+    --elevation-5: 0px 0px 1px 0px var(--alpha-A75), 0px 18px 28px 0px var(--alpha-A50);
+
+
+    /**
+         * Halo Effects
+         * Used for focus states and visual emphasis on key UI elements.
+         */
+
+
+    /** Primary focus ring: Soft highlight around primary interactive elements */
+    --elevation-primary: 0px 0px 0px 2px var(--bg-success-lower, #F6FFE6);
+
+
+    /** Success highlight: Green glow to indicate success states */
+    --elevation-success: 0px 0px 0px 2px var(--bg-primary-lower, #E6EAF2);
+
+
+    /** Error highlight: Red glow for errors and warnings */
+    --elevation-danger: 0px 0px 0px 2px var(--bg-danger-lower, #FDEAEB);
+
+}
+  

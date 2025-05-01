@@ -1,0 +1,49 @@
+/*
+ _                    
+| |_ _   _ _ __   ___ 
+| __| | | | '_ \ / _ \
+| |_| |_| | |_) |  __/
+ \__|\__, | .__/ \___|
+     |___/|_|         
+*/
+/* primitive-typography */
+:root
+ {
+/* font-size */
+  --font-size-100: 11px;
+  --font-size-200: 12px;
+  --font-size-300: 13px;
+  --font-size-400: 14px;
+  --font-size-500: 16px;
+  --font-size-600: 18px;
+  --font-size-700: 21px;
+  --font-size-800: 26px;
+  --font-size-900: 32px;
+  --font-size-1000: 40px;
+  --font-size-1100: 48px;
+  --font-size-1200: 56px;
+  --font-size-1300: 80px;
+/* line-height */
+  --line-height-100: 16px;
+  --line-height-200: 18px;
+  --line-height-300: 20px;
+  --line-height-400: 21px;
+  --line-height-500: 24px;
+  --line-height-600: 28px;
+  --line-height-700: 32px;
+  --line-height-800: 40px;
+  --line-height-1000: 48px;
+  --line-height-900: 48px;
+  --line-height-1100: 60px;
+  --line-height-1200: 68px;
+  --line-height-1300: 96px;
+/* font-weight */
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+}

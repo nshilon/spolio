@@ -1,0 +1,13 @@
+/*
+  __             _
+ / _| ___  _ __ | |_ ___
+| |_ / _ \| '_ \| __/ __|
+|  _| (_) | | | | |_\__ \
+|_|  \___/|_| |_|\__|___/
+*/
+/* primitive-fonts */
+:root {
+    --primary: inter;
+    --secondary: rubik;
+    --tertiary: "source code pro";
+}

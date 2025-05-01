@@ -1,0 +1,215 @@
+/*
+           _              _ _       _     _   
+  ___ ___ | | ___  _ __  | (_) __ _| |__ | |_ 
+ / __/ _ \| |/ _ \| '__| | | |/ _` | '_ \| __|
+| (_| (_) | | (_) | |    | | | (_| | | | | |_ 
+ \___\___/|_|\___/|_|    |_|_|\__, |_| |_|\__|
+                              |___/           
+*/
+/* semantic-color */
+:root
+ {
+  
+/* Common Backgrounds */
+  --bg-common-higher: var(--neutral-700);
+  --bg-common-high: var(--neutral-300);
+  --bg-common-low: var(--neutral-40);
+  --bg-common-default: var(--neutral-20);
+  --bg-common-lower: var(--static-White);
+  --bg-common-transparent: var(--static-Transparent);
+  --bg-common-hover: var(--neutral-20);
+  --bg-common-active: var(--neutral-40);
+  --bg-common-selected: var(--primary-50);
+  --bg-common-selected-hover: var(--primary-75);
+  --bg-common-selected-inverse: var(--primary-500);
+  --bg-common-disabled: var(--neutral-20);
+  --bg-common-body: var(--neutral-20);
+  
+/* Primary Backgrounds */
+  --bg-primary-higher: var(--primary-500);
+  --bg-primary-default: var(--primary-400);
+  --bg-primary-high: var(--primary-300);
+  --bg-primary-low: var(--primary-75);
+  --bg-primary-lower: var(--primary-50);
+  
+/* Secondary Backgrounds */
+  --bg-secondary-higher: var(--neutral-60);
+  --bg-secondary-default: var(--neutral-30);
+  --bg-secondary-high: var(--neutral-40);
+  --bg-secondary-low: var(--neutral-20);
+  --bg-secondary-lower: var(--neutral-10);
+  
+/* Neutral Backgrounds */
+  --bg-neutral-higher: var(--grey-500);
+  --bg-neutral-default: var(--grey-400);
+  --bg-neutral-high: var(--grey-300);
+  --bg-neutral-low: var(--grey-75);
+  --bg-neutral-lower: var(--grey-50);
+  
+/* Tertiary Backgrounds */
+  --bg-tertiary-higher: var(--purple-500);
+  --bg-tertiary-default: var(--purple-400);
+  --bg-tertiary-high: var(--purple-300);
+  --bg-tertiary-low: var(--purple-75);
+  --bg-tertiary-lower: var(--purple-50);
+  
+/* Status Backgrounds */
+  --bg-danger-higher: var(--red-500);
+  --bg-danger-default: var(--red-400);
+  --bg-danger-high: var(--red-300);
+  --bg-danger-low: var(--red-75);
+  --bg-danger-lower: var(--red-50);
+  --bg-info-higher: var(--blue-500);
+  --bg-info-default: var(--blue-400);
+  --bg-info-high: var(--blue-300);
+  --bg-info-low: var(--blue-75);
+  --bg-info-lower: var(--blue-50);
+  --bg-success-higher: var(--green-500);
+  --bg-success-default: var(--green-400);
+  --bg-success-high: var(--green-300);
+  --bg-success-low: var(--green-75);
+  --bg-success-lower: var(--green-50);
+  --bg-warning-higher: var(--yellow-500);
+  --bg-warning-default: var(--yellow-400);
+  --bg-warning-high: var(--yellow-300);
+  --bg-warning-low: var(--yellow-75);
+  --bg-warning-lower: var(--yellow-50);
+  
+/* Common Foregrounds */
+  --fg-common-higher: var(--neutral-600);
+  --fg-common-default: var(--neutral-900);
+  --fg-common-high: var(--neutral-300);
+  --fg-common-low: var(--neutral-100);
+  --fg-common-lower: var(--neutral-50);
+  --fg-common-icon: var(--neutral-300);
+  --fg-common-hover: var(--neutral-900);
+  --fg-common-selected: var(--primary-400);
+  --fg-common-selected-inverse: var(--primary-50);
+  --fg-common-disabled: var(--neutral-50);
+  --fg-common-inverse: var(--static-White);
+  
+/* Primary Foregrounds */
+  --fg-primary-higher: var(--primary-500);
+  --fg-primary-default: var(--primary-400);
+  --fg-primary-high: var(--primary-300);
+  --fg-primary-low: var(--primary-75);
+  --fg-primary-lower: var(--primary-50);
+  --fg-primary-inverse: var(--static-White);
+  
+/* Neutral Foregrounds */
+  --fg-neutral-higher: var(--grey-500);
+  --fg-neutral-default: var(--grey-400);
+  --fg-neutral-high: var(--grey-300);
+  --fg-neutral-low: var(--grey-75);
+  --fg-neutral-lower: var(--grey-50);
+  --fg-neutral-inverse: var(--static-White);
+  
+/* Secondary Foregrounds */
+  --fg-secondary-higher: var(--neutral-900);
+  --fg-secondary-default: var(--neutral-600);
+  --fg-secondary-high: var(--neutral-300);
+  --fg-secondary-low: var(--neutral-70);
+  --fg-secondary-lower: var(--neutral-30);
+  --fg-secondary-inverse: var(--neutral-900);
+  
+/* Tertiary Foregrounds */
+  --fg-tertiary-higher: var(--purple-500);
+  --fg-tertiary-default: var(--purple-400);
+  --fg-tertiary-high: var(--purple-300);
+  --fg-tertiary-low: var(--purple-75);
+  --fg-tertiary-lower: var(--purple-50);
+  --fg-tertiary-inverse: var(--static-White);
+  
+/* Status Foregrounds */
+  --fg-danger-higher: var(--red-500);
+  --fg-danger-default: var(--red-400);
+  --fg-danger-high: var(--red-300);
+  --fg-danger-low: var(--red-75);
+  --fg-danger-lower: var(--red-50);
+  --fg-danger-inverse: var(--static-White);
+  --fg-info-higher: var(--blue-500);
+  --fg-info-default: var(--blue-400);
+  --fg-info-high: var(--blue-300);
+  --fg-info-low: var(--blue-75);
+  --fg-info-lower: var(--blue-50);
+  --fg-info-inverse: var(--static-White);
+  --fg-success-higher: var(--green-500);
+  --fg-success-default: var(--green-400);
+  --fg-success-high: var(--green-300);
+  --fg-success-low: var(--green-75);
+  --fg-success-lower: var(--green-50);
+  --fg-success-inverse: var(--static-White);
+  --fg-warning-higher: var(--yellow-500);
+  --fg-warning-default: var(--yellow-400);
+  --fg-warning-high: var(--yellow-300);
+  --fg-warning-low: var(--yellow-75);
+  --fg-warning-lower: var(--yellow-50);
+  --fg-warning-inverse: var(--static-White);
+  
+/* Common Borders */
+  --bd-common-higher: var(--neutral-600);
+  --bd-common-high: var(--neutral-300);
+  --bd-common-low: var(--neutral-100);
+  --bd-common-lower: var(--neutral-50);
+  --bd-common-default: var(--neutral-40);
+  --bd-common-inverse: var(--static-White);
+  --bd-common-main: var(--neutral-100);
+  --bd-common-hover: var(--neutral-300);
+  --bd-common-disabled: var(--neutral-50);
+  
+/* Primary Borders */
+  --bd-primary-higher: var(--primary-500);
+  --bd-primary-default: var(--primary-400);
+  --bd-primary-high: var(--primary-300);
+  --bd-primary-low: var(--primary-75);
+  --bd-primary-lower: var(--primary-50);
+  
+/* Secondary Borders */
+  --bd-secondary-higher: var(--neutral-900);
+  --bd-secondary-default: var(--neutral-600);
+  --bd-secondary-high: var(--neutral-300);
+  --bd-secondary-low: var(--neutral-70);
+  --bd-secondary-lower: var(--neutral-30);
+  
+/* Neutral Borders */
+  --bd-neutral-higher: var(--grey-500);
+  --bd-neutral-default: var(--grey-400);
+  --bd-neutral-high: var(--grey-300);
+  --bd-neutral-low: var(--grey-75);
+  --bd-neutral-lower: var(--grey-50);
+  
+/* Tertiary Borders */
+  --bd-tertiary-higher: var(--purple-500);
+  --bd-tertiary-default: var(--purple-400);
+  --bd-tertiary-high: var(--purple-300);
+  --bd-tertiary-low: var(--purple-75);
+  --bd-tertiary-lower: var(--purple-50);
+  
+/* Status Borders */
+  --bd-danger-higher: var(--red-500);
+  --bd-danger-default: var(--red-400);
+  --bd-danger-high: var(--red-300);
+  --bd-danger-low: var(--red-75);
+  --bd-danger-lower: var(--red-50);
+  --bd-info-higher: var(--blue-500);
+  --bd-info-default: var(--blue-400);
+  --bd-info-high: var(--blue-300);
+  --bd-info-low: var(--blue-75);
+  --bd-info-lower: var(--blue-50);
+  --bd-success-higher: var(--green-500);
+  --bd-success-default: var(--green-400);
+  --bd-success-high: var(--green-300);
+  --bd-success-low: var(--green-75);
+  --bd-success-lower: var(--green-50);
+  --bd-warning-higher: var(--yellow-500);
+  --bd-warning-default: var(--yellow-400);
+  --bd-warning-high: var(--yellow-300);
+  --bd-warning-low: var(--yellow-75);
+  --bd-warning-lower: var(--yellow-50);
+  
+/* Focus States */
+  --focus-on-low-offset: var(--bg-primary-default);
+  --focus-on-low-focus-inset: var(--bg-common-lower);
+  --focus-on-high-offset: var(--bg-primary-lower);
+  --focus-on-high-focus-inset: var(--bg-common-higher);
+}

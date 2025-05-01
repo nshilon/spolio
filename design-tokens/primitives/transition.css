@@ -1,0 +1,24 @@
+/*
+ _                       _ _   _
+| |_ _ __ __ _ _ __  ___(_) |_(_) ___  _ __
+| __| '__/ _` | '_ \/ __| | __| |/ _ \| '_ \
+| |_| | | (_| | | | \__ \ | |_| | (_) | | | |
+ \__|_|  \__,_|_| |_|___/_|\__|_|\___/|_| |_|
+*/
+:root {
+    /*// transition*/
+    /** None */
+    --transition-none: 0ms;
+
+    /** Slower */
+    --transition-slower: 500ms;
+
+    /** Slow */
+    --transition-slow: 400ms;
+    /** Default */
+    --transition-default: 300ms;
+    /** Fast */
+    --transition-fast: 200ms;
+    /*// Faster*/
+    --transition-faster: 100ms;
+}

@@ -1,0 +1,17 @@
+/*
+ _   _ ___  ___  ___ __ _ ___  ___ 
+| | | / __|/ _ \/ __/ _` / __|/ _ \
+| |_| \__ \  __/ (_| (_| \__ \  __/
+ \__,_|___/\___|\___\__,_|___/\___|
+*/
+/* for project specific */
+.header {
+    font-family: var(--header-font), sans-serif;
+    color: var(--fg-common-default);
+}
+
+.header .header-1 {
+    font-size: var(--header-xl-size);
+    line-height: var(--header-xl-height);
+    font-weight: var(--font-weight-emphasis);
+}

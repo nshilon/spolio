@@ -1,0 +1,36 @@
+/*
+ _                    _                _       _       
+| |__  _ __ ___  __ _| | ___ __   ___ (_)_ __ | |_ ___ 
+| '_ \| '__/ _ \/ _` | |/ / '_ \ / _ \| | '_ \| __/ __|
+| |_) | | |  __/ (_| |   <| |_) | (_) | | | | | |_\__ \
+|_.__/|_|  \___|\__,_|_|\_\ .__/ \___/|_|_| |_|\__|___/
+                          |_|                          
+*/
+/* primitive-breakpoints */
+:root
+ {
+/*desktop - xxl (>1536px) 
+----------------------------------------------
+----------- None set up in portals -----------
+-----------    Use same as xl      -----------
+----------------------------------------------
+*/
+  
+  
+/* desktop - xl */
+  --screen-size-xl: 1440px;
+  --max-width-xl: 1536px;
+  
+/* tablet landscape / laptop - lg */
+  --screen-size-lg: 1024px;
+  --max-width-lg: 1200px;
+  
+  
+/* tablet portrait / mobile landscape - md */
+  --screen-size-md: 768px;
+  --max-width-md: 900px;
+  
+/* mobile - sm */
+  --screen-size-sm: 360px;
+  --max-width-sm: 600px;
+}

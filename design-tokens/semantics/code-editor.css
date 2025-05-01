@@ -1,0 +1,394 @@
+/*
+     _         _                __             _   _             
+ ___| |_ _   _| | ___  ___     / /   __ _  ___| |_(_) ___  _ __  
+/ __| __| | | | |/ _ \/ __|   / /   / _` |/ __| __| |/ _ \| '_ \ 
+\__ \ |_| |_| | |  __/\__ \  / /   | (_| | (__| |_| | (_) | | | |
+|___/\__|\__, |_|\___||___/ /_/     \__,_|\___|\__|_|\___/|_| |_|
+         |___/                                                   
+*/
+/* semantic styles */
+:root
+ {
+  
+/* Primary Action Styles */
+  --action-primary-solid-default-foreground: var(--fg-primary-inverse);
+  --action-primary-solid-default-surface: var(--fg-primary-default);
+  --action-primary-solid-hover-foreground: var(--fg-primary-inverse);
+  --action-primary-solid-hover-surface: var(--fg-primary-high);
+  --action-primary-solid-active-foreground: var(--fg-primary-inverse);
+  --action-primary-solid-active-surface: var(--bg-primary-higher);
+  --action-primary-solidInverse-default-foreground: var(--fg-primary-higher);
+  --action-primary-solidInverse-default-surface: var(--bg-primary-lower);
+  --action-primary-solidInverse-hover-foreground: var(--fg-primary-higher);
+  --action-primary-solidInverse-hover-surface: var(--bg-primary-low);
+  --action-primary-solidInverse-active-foreground: var(--fg-primary-inverse);
+  --action-primary-solidInverse-active-surface: var(--bg-primary-default);
+  --action-primary-plain-default-foreground: var(--fg-primary-default);
+  --action-primary-plain-default-surface: var(--bg-common-transparent);
+  --action-primary-plain-default-stroke: var(--bd-primary-default);
+  --action-primary-plain-hover-foreground: var(--fg-primary-higher);
+  --action-primary-plain-hover-surface: var(--bg-common-default);
+  --action-primary-plain-hover-stroke: var(--bd-primary-higher);
+  --action-primary-plain-active-foreground: var(--fg-primary-higher);
+  --action-primary-plain-active-surface: var(--bg-primary-lower);
+  --action-primary-plain-active-stroke: var(--bd-primary-higher);
+  --action-primary-plainInverse-default-foreground: var(--fg-primary-low);
+  --action-primary-plainInverse-default-surface: var(--bg-common-transparent);
+  --action-primary-plainInverse-default-stroke: var(--bd-primary-low);
+  --action-primary-plainInverse-hover-foreground: var(--fg-primary-inverse);
+  --action-primary-plainInverse-hover-surface: var(--bg-primary-higher);
+  --action-primary-plainInverse-hover-stroke: var(--bd-primary-lower);
+  --action-primary-plainInverse-active-foreground: var(--fg-primary-lower);
+  --action-primary-plainInverse-active-surface: var(--bg-primary-default);
+  --action-primary-plainInverse-active-stroke: var(--bd-primary-lower);
+  
+/* Secondary Action Styles */
+  --action-secondary-solid-default-foreground: var(--fg-neutral-inverse);
+  --action-secondary-solid-default-surface: var(--bg-neutral-default);
+  --action-secondary-solid-hover-foreground: var(--fg-neutral-inverse);
+  --action-secondary-solid-hover-surface: var(--bg-neutral-high);
+  --action-secondary-solid-active-foreground: var(--fg-neutral-inverse);
+  --action-secondary-solid-active-surface: var(--bg-neutral-higher);
+  --action-secondary-solidInverse-default-foreground: var(--fg-neutral-higher);
+  --action-secondary-solidInverse-default-surface: var(--bg-neutral-lower);
+  --action-secondary-solidInverse-hover-foreground: var(--fg-neutral-higher);
+  --action-secondary-solidInverse-hover-surface: var(--bg-neutral-low);
+  --action-secondary-solidInverse-active-foreground: var(--fg-neutral-inverse);
+  --action-secondary-solidInverse-active-surface: var(--bg-neutral-higher);
+  --action-secondary-plain-default-foreground: var(--fg-neutral-default);
+  --action-secondary-plain-default-surface: var(--bg-common-transparent);
+  --action-secondary-plain-default-stroke: var(--bd-neutral-default);
+  --action-secondary-plain-hover-foreground: var(--fg-neutral-higher);
+  --action-secondary-plain-hover-surface: var(--bg-common-default);
+  --action-secondary-plain-hover-stroke: var(--bd-neutral-higher);
+  --action-secondary-plain-active-foreground: var(--fg-neutral-higher);
+  --action-secondary-plain-active-surface: var(--bg-neutral-lower);
+  --action-secondary-plain-active-stroke: var(--bd-neutral-higher);
+  --action-secondary-plainInverse-default-foreground: var(--fg-neutral-low);
+  --action-secondary-plainInverse-default-surface: var(--bg-common-transparent);
+  --action-secondary-plainInverse-default-stroke: var(--fg-neutral-low);
+  --action-secondary-plainInverse-hover-foreground: var(--fg-neutral-inverse);
+  --action-secondary-plainInverse-hover-surface: var(--bg-common-transparent);
+  --action-secondary-plainInverse-hover-stroke: var(--bd-neutral-lower);
+  --action-secondary-plainInverse-active-foreground: var(--fg-neutral-lower);
+  --action-secondary-plainInverse-active-surface: var(--bd-neutral-higher);
+  --action-secondary-plainInverse-active-stroke: var(--bd-neutral-lower);
+  
+/* Tertiary Action Styles */
+  --action-tertiary-solid-default-foreground: var(--fg-tertiary-inverse);
+  --action-tertiary-solid-default-surface: var(--bg-tertiary-default);
+  --action-tertiary-solid-hover-foreground: var(--fg-tertiary-inverse);
+  --action-tertiary-solid-hover-surface: var(--bg-tertiary-high);
+  --action-tertiary-solid-active-foreground: var(--fg-primary-inverse);
+  --action-tertiary-solid-active-surface: var(--bg-tertiary-higher);
+  --action-tertiary-solidInverse-default-foreground: var(--fg-tertiary-higher);
+  --action-tertiary-solidInverse-default-surface: var(--bg-tertiary-lower);
+  --action-tertiary-solidInverse-hover-foreground: var(--fg-tertiary-higher);
+  --action-tertiary-solidInverse-hover-surface: var(--bg-tertiary-low);
+  --action-tertiary-solidInverse-active-foreground: var(--fg-tertiary-inverse);
+  --action-tertiary-solidInverse-active-surface: var(--bg-tertiary-default);
+  --action-tertiary-plain-default-foreground: var(--fg-tertiary-default);
+  --action-tertiary-plain-default-surface: var(--bg-common-transparent);
+  --action-tertiary-plain-default-stroke: var(--bd-tertiary-default);
+  --action-tertiary-plain-hover-foreground: var(--fg-tertiary-higher);
+  --action-tertiary-plain-hover-surface: var(--bg-common-default);
+  --action-tertiary-plain-hover-stroke: var(--bd-tertiary-higher);
+  --action-tertiary-plain-active-foreground: var(--fg-tertiary-higher);
+  --action-tertiary-plain-active-surface: var(--bg-tertiary-lower);
+  --action-tertiary-plain-active-stroke: var(--bd-tertiary-higher);
+  --action-tertiary-plainInverse-default-foreground: var(--fg-tertiary-low);
+  --action-tertiary-plainInverse-default-surface: var(--bg-common-transparent);
+  --action-tertiary-plainInverse-default-stroke: var(--bd-tertiary-low);
+  --action-tertiary-plainInverse-hover-foreground: var(--fg-tertiary-inverse);
+  --action-tertiary-plainInverse-hover-surface: var(--bg-common-transparent);
+  --action-tertiary-plainInverse-hover-stroke: var(--bd-tertiary-lower);
+  --action-tertiary-plainInverse-active-foreground: var(--fg-tertiary-lower);
+  --action-tertiary-plainInverse-active-surface: var(--bg-tertiary-higher);
+  --action-tertiary-plainInverse-active-stroke: var(--bd-tertiary-lower);
+  
+/* Danger Action Styles */
+  --action-danger-solid-default-foreground: var(--fg-danger-inverse);
+  --action-danger-solid-default-surface: var(--bg-danger-default);
+  --action-danger-solid-hover-foreground: var(--fg-danger-inverse);
+  --action-danger-solid-hover-surface: var(--bg-danger-high);
+  --action-danger-solid-active-foreground: var(--fg-danger-inverse);
+  --action-danger-solid-active-surface: var(--bg-danger-higher);
+  --action-danger-solidInverse-default-foreground: var(--fg-danger-higher);
+  --action-danger-solidInverse-default-surface: var(--bg-danger-lower);
+  --action-danger-solidInverse-hover-foreground: var(--fg-danger-higher);
+  --action-danger-solidInverse-hover-surface: var(--bg-danger-low);
+  --action-danger-solidInverse-active-foreground: var(--fg-danger-inverse);
+  --action-danger-solidInverse-active-surface: var(--bg-danger-default);
+  --action-danger-plain-default-foreground: var(--fg-danger-default);
+  --action-danger-plain-default-surface: var(--bg-common-transparent);
+  --action-danger-plain-default-stroke: var(--bd-danger-default);
+  --action-danger-plain-hover-foreground: var(--fg-danger-higher);
+  --action-danger-plain-hover-surface: var(--bg-common-default);
+  --action-danger-plain-hover-stroke: var(--bd-danger-higher);
+  --action-danger-plain-active-foreground: var(--fg-danger-higher);
+  --action-danger-plain-active-surface: var(--bg-danger-lower);
+  --action-danger-plain-active-stroke: var(--bd-danger-higher);
+  --action-danger-plainInverse-default-foreground: var(--fg-danger-low);
+  --action-danger-plainInverse-default-surface: var(--bg-common-transparent);
+  --action-danger-plainInverse-default-stroke: var(--bd-danger-low);
+  --action-danger-plainInverse-hover-foreground: var(--fg-danger-inverse);
+  --action-danger-plainInverse-hover-surface: var(--bg-common-transparent);
+  --action-danger-plainInverse-hover-stroke: var(--bd-danger-lower);
+  --action-danger-plainInverse-active-foreground: var(--fg-danger-lower);
+  --action-danger-plainInverse-active-surface: var(--bg-danger-higher);
+  --action-danger-plainInverse-active-stroke: var(--bd-danger-lower);
+  
+/* Success Action Styles */
+  --action-success-solid-default-foreground: var(--fg-success-inverse);
+  --action-success-solid-default-surface: var(--bg-success-default);
+  --action-success-solid-hover-foreground: var(--fg-success-inverse);
+  --action-success-solid-hover-surface: var(--bg-success-high);
+  --action-success-solid-active-foreground: var(--fg-success-inverse);
+  --action-success-solid-active-surface: var(--bg-success-higher);
+  --action-success-solidInverse-default-foreground: var(--fg-success-higher);
+  --action-success-solidInverse-default-surface: var(--bg-success-lower);
+  --action-success-solidInverse-hover-foreground: var(--fg-success-higher);
+  --action-success-solidInverse-hover-surface: var(--bg-success-low);
+  --action-success-solidInverse-active-foreground: var(--fg-success-inverse);
+  --action-success-solidInverse-active-surface: var(--bg-success-default);
+  --action-success-plain-default-foreground: var(--fg-success-default);
+  --action-success-plain-default-surface: var(--bg-common-transparent);
+  --action-success-plain-default-stroke: var(--bd-success-default);
+  --action-success-plain-hover-foreground: var(--fg-success-higher);
+  --action-success-plain-hover-surface: var(--bg-common-default);
+  --action-success-plain-hover-stroke: var(--bd-success-higher);
+  --action-success-plain-active-foreground: var(--fg-success-higher);
+  --action-success-plain-active-surface: var(--bg-success-lower);
+  --action-success-plain-active-stroke: var(--bd-success-higher);
+  --action-success-plainInverse-default-foreground: var(--fg-success-low);
+  --action-success-plainInverse-default-surface: var(--bg-common-transparent);
+  --action-success-plainInverse-default-stroke: var(--bd-success-low);
+  --action-success-plainInverse-hover-foreground: var(--fg-success-inverse);
+  --action-success-plainInverse-hover-surface: var(--bg-common-transparent);
+  --action-success-plainInverse-hover-stroke: var(--bd-success-lower);
+  --action-success-plainInverse-active-foreground: var(--fg-success-lower);
+  --action-success-plainInverse-active-surface: var(--bg-success-higher);
+  --action-success-plainInverse-active-stroke: var(--bd-success-lower);
+  
+/* Warning Action Styles */
+  --action-warning-solid-default-foreground: var(--fg-warning-inverse);
+  --action-warning-solid-default-surface: var(--bg-warning-default);
+  --action-warning-solid-hover-foreground: var(--fg-warning-inverse);
+  --action-warning-solid-hover-surface: var(--bg-warning-high);
+  --action-warning-solid-active-foreground: var(--fg-warning-inverse);
+  --action-warning-solid-active-surface: var(--bg-warning-higher);
+  --action-warning-solidInverse-default-foreground: var(--fg-warning-higher);
+  --action-warning-solidInverse-default-surface: var(--bg-warning-lower);
+  --action-warning-solidInverse-hover-foreground: var(--fg-warning-higher);
+  --action-warning-solidInverse-hover-surface: var(--bg-warning-low);
+  --action-warning-solidInverse-active-foreground: var(--fg-warning-inverse);
+  --action-warning-solidInverse-active-surface: var(--bg-warning-default);
+  --action-warning-plain-default-foreground: var(--fg-warning-default);
+  --action-warning-plain-default-surface: var(--bg-common-transparent);
+  --action-warning-plain-default-stroke: var(--bd-warning-default);
+  --action-warning-plain-hover-foreground: var(--fg-warning-higher);
+  --action-warning-plain-hover-surface: var(--bg-common-default);
+  --action-warning-plain-hover-stroke: var(--bd-warning-higher);
+  --action-warning-plain-active-foreground: var(--fg-warning-higher);
+  --action-warning-plain-active-surface: var(--bg-warning-lower);
+  --action-warning-plain-active-stroke: var(--bd-warning-higher);
+  --action-warning-plainInverse-default-foreground: var(--fg-warning-low);
+  --action-warning-plainInverse-default-surface: var(--bg-common-transparent);
+  --action-warning-plainInverse-default-stroke: var(--bd-warning-low);
+  --action-warning-plainInverse-hover-foreground: var(--fg-warning-inverse);
+  --action-warning-plainInverse-hover-surface: var(--bg-common-transparent);
+  --action-warning-plainInverse-hover-stroke: var(--bd-warning-lower);
+  --action-warning-plainInverse-active-foreground: var(--fg-warning-lower);
+  --action-warning-plainInverse-active-surface: var(--bg-warning-higher);
+  --action-warning-plainInverse-active-stroke: var(--bd-warning-lower);
+  
+/* Info Action Styles */
+  --action-info-solid-default-foreground: var(--fg-info-inverse);
+  --action-info-solid-default-surface: var(--bg-info-default);
+  --action-info-solid-hover-foreground: var(--fg-info-inverse);
+  --action-info-solid-hover-surface: var(--bg-info-high);
+  --action-info-solid-active-foreground: var(--fg-info-inverse);
+  --action-info-solid-active-surface: var(--bg-info-higher);
+  --action-info-solidInverse-default-foreground: var(--fg-info-higher);
+  --action-info-solidInverse-default-surface: var(--bg-info-lower);
+  --action-info-solidInverse-hover-foreground: var(--fg-info-higher);
+  --action-info-solidInverse-hover-surface: var(--bg-info-low);
+  --action-info-solidInverse-active-foreground: var(--fg-info-inverse);
+  --action-info-solidInverse-active-surface: var(--bg-info-default);
+  --action-info-plain-default-foreground: var(--fg-info-default);
+  --action-info-plain-default-surface: var(--bg-common-transparent);
+  --action-info-plain-default-stroke: var(--bd-info-default);
+  --action-info-plain-hover-foreground: var(--fg-info-higher);
+  --action-info-plain-hover-surface: var(--bg-common-default);
+  --action-info-plain-hover-stroke: var(--bd-info-higher);
+  --action-info-plain-active-foreground: var(--fg-info-higher);
+  --action-info-plain-active-surface: var(--bg-info-lower);
+  --action-info-plain-active-stroke: var(--bd-info-higher);
+  --action-info-plainInverse-default-foreground: var(--fg-info-low);
+  --action-info-plainInverse-default-surface: var(--bg-common-transparent);
+  --action-info-plainInverse-default-stroke: var(--bd-info-low);
+  --action-info-plainInverse-hover-foreground: var(--fg-info-inverse);
+  --action-info-plainInverse-hover-surface: var(--bg-common-transparent);
+  --action-info-plainInverse-hover-stroke: var(--bd-info-lower);
+  --action-info-plainInverse-active-foreground: var(--fg-info-lower);
+  --action-info-plainInverse-active-surface: var(--bg-info-higher);
+  --action-info-plainInverse-active-stroke: var(--bd-info-lower);
+  
+/* Disabled Action Styles */
+  --action-disabled-solid-foreground: var(--fg-common-disabled);
+  --action-disabled-solid-inverse-foreground: var(--fg-common-low);
+  --action-disabled-solid-inverse-surface: var(--bg-common-higher);
+  --action-disabled-plain-foreground: var(--fg-common-disabled);
+  --action-disabled-plain-surface: var(--bg-common-transparent);
+  --action-disabled-plain-stroke: var(--bd-common-default);
+  --action-disabled-solid-surface: var(--bg-common-disabled);
+  --action-disabled-plain-inverse-foreground: var(--fg-common-disabled);
+  --action-disabled-plain-inverse-surface: var(--bg-common-transparent);
+  --action-disabled-plain-inverse-stroke: var(--bd-common-default);
+/*
+      _         _                __   __ _      _     _ 
+ ___| |_ _   _| | ___  ___     / /  / _(_) ___| | __| |
+/ __| __| | | | |/ _ \/ __|   / /  | |_| |/ _ \ |/ _` |
+\__ \ |_| |_| | |  __/\__ \  / /   |  _| |  __/ | (_| |
+|___/\__|\__, |_|\___||___/ /_/    |_| |_|\___|_|\__,_|
+         |___/                                         
+  
+*/
+/* semantic-styles-input- */
+  
+/* foreground */
+  --field-foreground-label: var(--fg-common-high);
+  --field-foreground-required: var(--fg-danger-default);
+  --field-foreground-placeholder: var(--fg-common-low);
+  --field-foreground-value: var(--fg-common-default);
+  --field-foreground-editing: var(--fg-common-default);
+  --field-foreground-completed: var(--fg-common-default);
+  --field-foreground-disabled: var(--fg-common-low);
+  --field-foreground-read-only: var(--fg-common-default);
+  --field-foreground-error: var(--fg-common-default);
+  --field-foreground-success: var(--fg-common-default);
+  --field-foreground-validation: var(--fg-common-high);
+  --field-foreground-validation-error: var(--fg-danger-default);
+  --field-foreground-validation-success: var(--fg-success-default);
+  --field-foreground-validation-warning: var(--fg-warning-default);
+  --field-foreground-validation-info: var(--fg-info-default);
+  
+/* surface */
+  --field-surface-default: var(--bg-common-lower);
+  --field-surface-hover: var(--bg-common-lower);
+  --field-surface-focused: var(--bg-common-lower);
+  --field-surface-editing: var(--bg-common-lower);
+  --field-surface-completed: var(--bg-common-lower);
+  --field-surface-disabled: var(--bg-common-disabled);
+  --field-surface-readOnly: var(--bg-common-lower);
+  --field-surface-error: var(--bg-common-lower);
+  --field-surface-success: var(--bg-common-lower);
+  --field-stroke-default: var(--bd-common-low);
+  
+/* stroke */
+  --field-stroke-hover: var(--bd-common-higher);
+  --field-stroke-focused: var(--bd-common-low);
+  --field-stroke-editing: var(--bd-primary-default);
+  --field-stroke-completed: var(--bd-common-low);
+  --field-stroke-disabled: var(--bd-common-low);
+  --field-stroke-readOnly: var(--bd-common-low);
+  --field-stroke-error: var(--bd-danger-default);
+  --field-stroke-success: var(--bd-success-default);
+ 
+/* spec */
+ 
+  
+/* Input Specifications - Extra Small (XS) */
+  --field-unit-xs-radius: var(--border-radius-sm);
+  --field-unit-xs-paddingLeft: var(--spacing-sm);
+  --field-unit-xs-paddingRight: var(--spacing-sm);
+  --field-unit-xs-paddingTop: var(--spacing-xs);
+  --field-unit-xs-paddingBottom: var(--spacing-xs);
+  --field-unit-xs-marginTop: var(--spacing-xs);
+  --field-unit-xs-marginBottom: var(--spacing-xs);
+  --field-unit-xs-horizontalGap: var(--spacing-xs);
+  --field-unit-xs-textSize: var(--uitext-sm-size);
+  --field-unit-xs-LineHeight: var(--uitext-sm-height);
+  --field-unit-xs-fontWeight: var(--font-weight-base);
+  
+/* Input Specifications - Small (SM) */
+  --field-unit-sm-radius: var(--border-radius-md);
+  --field-unit-sm-paddingLeft: var(--spacing-sm);
+  --field-unit-sm-paddingRight: var(--spacing-sm);
+  --field-unit-sm-paddingTop: var(--spacing-sm-minus);
+  --field-unit-sm-paddingBottom: var(--spacing-sm-minus);
+  --field-unit-sm-marginTop: var(--spacing-xs);
+  --field-unit-sm-marginBottom: var(--spacing-xs);
+  --field-unit-sm-horizontalGap: var(--spacing-xs);
+  --field-unit-sm-textSize: var(--uitext-sm-size);
+  --field-unit-sm-LineHeight: var(--uitext-sm-height);
+  --field-unit-sm-fontWeight: var(--font-weight-base);
+  
+/* Input Specifications - Medium (MD) */
+  --field-unit-md-radius: var(--border-radius-md);
+  --field-unit-md-paddingLeft: var(--spacing-sm);
+  --field-unit-md-paddingRight: var(--spacing-sm);
+  --field-unit-md-paddingTop: var(--spacing-sm);
+  --field-unit-md-paddingBottom: var(--spacing-sm);
+  --field-unit-md-marginTop: var(--spacing-xs);
+  --field-unit-md-marginBottom: var(--spacing-xs);
+  --field-unit-md-horizontalGap: var(--spacing-xs);
+  --field-unit-md-textSize: var(--uitext-md-size);
+  --field-unit-md-LineHeight: var(--uitext-md-size); 
+  --field-unit-md-fontWeight: var(--font-weight-base);
+  
+/* Input Specifications - Large (LX) */
+  --field-unit-lx-radius: var(--border-radius-md);
+  --field-unit-lx-paddingLeft: var(--spacing-md);
+  --field-unit-lx-paddingRight: var(--spacing-md);
+  --field-unit-lx-paddingTop: var(--spacing-md-minus);
+  --field-unit-lx-paddingBottom: var(--spacing-md-minus);
+  --field-unit-lx-marginTop: var(--spacing-xs);
+  --field-unit-lx-marginBottom: var(--spacing-xs);
+  --field-unit-lx-horizontalGap: var(--spacing-xs);
+  --field-unit-lx-textSize: var(--uitext-md-size);
+  --field-unit-lx-LineHeight: var(--uitext-md-size); 
+  --field-unit-lx-fontWeight: var(--font-weight-base);
+/*
+                 _        _                 
+  ___ ___  _ __ | |_ __ _(_)_ __   ___ _ __ 
+ / __/ _ \| '_ \| __/ _` | | '_ \ / _ \ '__|
+| (_| (_) | | | | || (_| | | | | |  __/ |   
+ \___\___/|_| |_|\__\__,_|_|_| |_|\___|_|   
+*/
+ 
+  
+/* Container Surface */
+  --container-surface-main: var(--bg-common-lower);
+  --container-surface-subtle: var(--bg-common-low);
+  --container-surface-muted: var(--bg-common-default);
+  --container-surface-primary: var(--bg-primary-lower);
+  --container-surface-elevated: var(--bg-common-lower);
+  --container-surface-transparent: var(--bg-common-transparent);
+  --container-surface-hover: var(--bg-common-default);
+  --container-surface-selected: var(--bg-primary-lower);
+  --container-surface-inverse: var(--bg-primary-higher);
+  --container-surface-inverse-hover: var(--bg-primary-high);
+  --container-surface-inverse-selected: var(--bg-primary-default);
+  
+/* Container Foreground */
+  --container-foreground-main: var(--fg-common-default);
+  --container-foreground-subtle: var(--fg-common-high);
+  --container-foreground-primary: var(--fg-primary-higher);
+  --container-foreground-inverse: var(--fg-primary-inverse);
+  --container-foreground-inverse-subtle: var(--fg-primary-lower);
+  --container-foreground-inverse-muted: var(--fg-primary-low);
+  
+/* Container Stroke */
+  --container-stroke-main: var(--bd-common-default);
+  --container-stroke-emphasis: var(--bd-common-lower);
+  --container-stroke-selected: var(--bd-primary-default);
+  
+  
+/* Container Units */
+  --container-unit-border-width: var(--border-width-sm);
+  --container-unit-radius: var(--border-radius-md);
+  --container-unit-padding: var(--spacing-lg);
+  --container-unit-gap-x: var(--spacing-sm);
+  --container-unit-gap-y: var(--spacing-sm);
+}

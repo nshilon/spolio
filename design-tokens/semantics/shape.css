@@ -1,0 +1,64 @@
+/*
+     _                      
+ ___| |__   __ _ _ __   ___ 
+/ __| '_ \ / _` | '_ \ / _ \
+\__ \ | | | (_| | |_) |  __/
+|___/_| |_|\__,_| .__/ \___|
+                |_|         
+*/
+:root
+ {
+  
+/* Feedback Components (User feedback or status) */
+  --shape-alert: var(--border-radius-md);          
+/* 6px - Alerts or notifications */
+  --shape-badge: var(--border-radius-2xl);         
+/* 24px - Badges or indicators */
+  --shape-lozenge: var(--border-radius-sm);        
+/* 4px - Tags or lozenges */
+  --shape-lozenge-sm: var(--border-radius-xs);     
+/* 2px - Small lozenges */
+  --shape-section-message: var(--border-radius-sm); 
+/* 4px - Section messages or notices */
+  --shape-tooltip: var(--border-radius-sm);        
+/* 4px - Tooltips or hints */
+  
+/* Action Components */
+  --shape-button: var(--border-radius-md);         
+/* 6px - Default button */
+  --shape-button-sm: var(--border-radius-md);      
+/* 6px - Small button */
+  --shape-chip: var(--border-radius-md);           
+/* 6px - Default chip */
+  --shape-chip-sm: var(--border-radius-sm);        
+/* 4px - Small chip */
+  --shape-icon-button: var(--border-radius-sm);    
+/* 4px - Icon button (corrected from iconButton) */
+  --shape-slider: var(--border-radius-circle);     
+/* 999px(figma) 50% - Slider track/thumb */
+  --shape-stepper: var(--border-radius-circle);    
+/* 999px(figma) 50% - Stepper steps bubble*/
+  --shape-field: var(--border-radius-md);          
+/* 4px - Inputs, text areas & dropdown fields */
+  --shape-field-sm: var(--border-radius-sm);       
+/* 4px - Inputs, text areas & dropdown fields */
+  
+  
+/* Container Components */
+  --shape-card: var(--border-radius-md);           
+/* 6px - Cards */
+  --shape-modal: var(--border-radius-md);          
+/* 6px - Modals or dialogs */
+  --shape-navigation: var(--border-radius-none);   
+/* 0 - Navigation bars */
+  --shape-panel: var(--border-radius-md);          
+/* 6px - Main container panel */
+  
+/* General Components */
+  --shape-avatar: var(--border-radius-circle);     
+/* 999px(figma) 50% - User avatars */
+  --shape-list: var(--border-radius-none);         
+/* 0 - List containers */
+  --shape-menu: var(--border-radius-sm);           
+/* 4px - Menus or dropdowns */
+}
