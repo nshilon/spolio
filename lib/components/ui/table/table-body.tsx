@@ -5,7 +5,7 @@ export interface TableBodyProps extends ComponentProps<'tbody'> {}
 
 /**
  * TableBody component for the body section of a table
- * 
+ *
  * @example
  * ```tsx
  * <Table>

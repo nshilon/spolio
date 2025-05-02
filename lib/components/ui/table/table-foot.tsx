@@ -5,7 +5,7 @@ export interface TableFootProps extends ComponentProps<'tfoot'> {}
 
 /**
  * TableFoot component for the footer section of a table
- * 
+ *
  * @example
  * ```tsx
  * <Table>

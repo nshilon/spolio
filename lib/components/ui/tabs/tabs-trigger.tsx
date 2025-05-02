@@ -15,7 +15,7 @@ export interface TabsTriggerProps extends ComponentProps<'button'> {
 
 /**
  * TabsTrigger component for individual tab buttons
- * 
+ *
  * @example
  * ```tsx
  * <Tabs defaultValue="tab1">
@@ -30,41 +30,52 @@ export interface TabsTriggerProps extends ComponentProps<'button'> {
  */
 const TabsTrigger = forwardRef<HTMLButtonElement, TabsTriggerProps>(
   ({ className, value, disabled = false, children, ...props }, ref) => {
-    const { value: selectedValue, onValueChange, variant, size } = useTabsContext();
+    const {
+      value: selectedValue,
+      onValueChange,
+      variant,
+      size,
+    } = useTabsContext();
     const isSelected = selectedValue === value;
-    
+
     // Handle click
     const handleClick = () => {
       if (!disabled) {
         onValueChange(value);
       }
     };
-    
+
     // Determine size-specific classes
     const sizeClasses = {
       sm: 'text-[var(--tabs-size-sm-font-size)] px-[var(--tabs-size-sm-padding-x)] py-[var(--tabs-size-sm-padding-y)]',
       md: 'text-[var(--tabs-size-md-font-size)] px-[var(--tabs-size-md-padding-x)] py-[var(--tabs-size-md-padding-y)]',
       lg: 'text-[var(--tabs-size-lg-font-size)] px-[var(--tabs-size-lg-padding-x)] py-[var(--tabs-size-lg-padding-y)]',
     }[size || 'md'];
-    
+
     // Determine variant-specific classes
     const variantClasses = {
       default: cn(
-        isSelected && 'bg-[var(--tabs-trigger-active-background)] text-[var(--tabs-trigger-active-text)] border-[var(--tabs-trigger-active-border)]',
-        !isSelected && 'bg-[var(--tabs-trigger-default-background)] text-[var(--tabs-trigger-default-text)] hover:bg-[var(--tabs-trigger-hover-background)] hover:text-[var(--tabs-trigger-hover-text)]'
+        isSelected &&
+          'bg-[var(--tabs-trigger-active-background)] text-[var(--tabs-trigger-active-text)] border-[var(--tabs-trigger-active-border)]',
+        !isSelected &&
+          'bg-[var(--tabs-trigger-default-background)] text-[var(--tabs-trigger-default-text)] hover:bg-[var(--tabs-trigger-hover-background)] hover:text-[var(--tabs-trigger-hover-text)]'
       ),
       underline: cn(
         'border-b-[var(--tabs-underline-border-width)] border-transparent',
-        isSelected && 'border-b-[var(--tabs-underline-active-border-color)] text-[var(--tabs-trigger-active-text)]',
-        !isSelected && 'text-[var(--tabs-trigger-default-text)] hover:text-[var(--tabs-trigger-hover-text)]'
+        isSelected &&
+          'border-b-[var(--tabs-underline-active-border-color)] text-[var(--tabs-trigger-active-text)]',
+        !isSelected &&
+          'text-[var(--tabs-trigger-default-text)] hover:text-[var(--tabs-trigger-hover-text)]'
       ),
       pills: cn(
         'rounded-[var(--tabs-trigger-border-radius)]',
-        isSelected && 'bg-white dark:bg-gray-700 text-[var(--tabs-trigger-active-text)] shadow-sm',
-        !isSelected && 'text-[var(--tabs-trigger-default-text)] hover:text-[var(--tabs-trigger-hover-text)]'
+        isSelected &&
+          'bg-white dark:bg-gray-700 text-[var(--tabs-trigger-active-text)] shadow-sm',
+        !isSelected &&
+          'text-[var(--tabs-trigger-default-text)] hover:text-[var(--tabs-trigger-hover-text)]'
       ),
     }[variant || 'default'];
-    
+
     return (
       <button
         ref={ref}

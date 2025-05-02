@@ -15,7 +15,7 @@ export interface TabsContentProps extends ComponentProps<'div'> {
 
 /**
  * TabsContent component for tab panel content
- * 
+ *
  * @example
  * ```tsx
  * <Tabs defaultValue="tab1">
@@ -32,12 +32,12 @@ const TabsContent = forwardRef<HTMLDivElement, TabsContentProps>(
   ({ className, value, forceMount, children, ...props }, ref) => {
     const { value: selectedValue } = useTabsContext();
     const isSelected = selectedValue === value;
-    
+
     // If not selected and not forcing mount, don't render
     if (!isSelected && !forceMount) {
       return null;
     }
-    
+
     return (
       <div
         ref={ref}

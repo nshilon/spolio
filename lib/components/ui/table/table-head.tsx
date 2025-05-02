@@ -5,7 +5,7 @@ export interface TableHeadProps extends ComponentProps<'thead'> {}
 
 /**
  * TableHead component for the header section of a table
- * 
+ *
  * @example
  * ```tsx
  * <Table>

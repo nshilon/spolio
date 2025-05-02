@@ -1,6 +1,6 @@
-import React from 'react';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './index';
 import { Typography } from '@/components';
+import React from 'react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from './index';
 
 export const TabsExample: React.FC = () => {
   return (
@@ -33,7 +33,7 @@ export const TabsExample: React.FC = () => {
           </TabsContent>
         </Tabs>
       </div>
-      
+
       <div>
         <Typography variant="h2">Underline Tabs</Typography>
         <Tabs variant="underline" defaultValue="tab1" className="mt-4">
@@ -62,14 +62,16 @@ export const TabsExample: React.FC = () => {
           </TabsContent>
         </Tabs>
       </div>
-      
+
       <div>
         <Typography variant="h2">Pills Tabs</Typography>
         <Tabs variant="pills" defaultValue="tab1" className="mt-4">
           <TabsList>
             <TabsTrigger value="tab1">Account</TabsTrigger>
             <TabsTrigger value="tab2">Password</TabsTrigger>
-            <TabsTrigger value="tab3" disabled>Settings (Disabled)</TabsTrigger>
+            <TabsTrigger value="tab3" disabled>
+              Settings (Disabled)
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="tab1" className="mt-4">
             <Typography variant="h4">Account Settings</Typography>

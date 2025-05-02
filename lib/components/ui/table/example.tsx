@@ -1,5 +1,12 @@
 import React from 'react';
-import { Table, TableHead, TableBody, TableFoot, TableRow, TableCell } from './index';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableFoot,
+  TableHead,
+  TableRow,
+} from './index';
 
 interface User {
   id: number;
@@ -68,13 +75,17 @@ export const TableExample: React.FC = () => {
       </div>
 
       <div>
-        <h2 className="text-xl font-semibold mb-2">Small Table with Right-Aligned Cells</h2>
+        <h2 className="text-xl font-semibold mb-2">
+          Small Table with Right-Aligned Cells
+        </h2>
         <Table size="sm" variant="borderless">
           <TableHead>
             <TableRow>
               <TableCell as="th">ID</TableCell>
               <TableCell as="th">Name</TableCell>
-              <TableCell as="th" align="right">Role</TableCell>
+              <TableCell as="th" align="right">
+                Role
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

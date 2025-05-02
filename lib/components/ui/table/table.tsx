@@ -7,17 +7,14 @@ import '@/design-tokens/components/table.css';
 
 // Define the table variants using CVA
 const tableVariants = cva(
-  [
-    'w-full',
-    'border-collapse',
-    'text-left',
-    'overflow-hidden',
-  ],
+  ['w-full', 'border-collapse', 'text-left', 'overflow-hidden'],
   {
     variants: {
       variant: {
-        default: 'border border-[var(--table-border-color)] rounded-[var(--table-border-radius)]',
-        bordered: 'border border-[var(--table-border-color)] rounded-[var(--table-border-radius)]',
+        default:
+          'border border-[var(--table-border-color)] rounded-[var(--table-border-radius)]',
+        bordered:
+          'border border-[var(--table-border-color)] rounded-[var(--table-border-radius)]',
         borderless: '',
       },
       size: {
@@ -72,17 +69,20 @@ export interface TableProps extends ComponentProps<'table'>, TableVariants {
  * ```
  */
 const Table = forwardRef<HTMLTableElement, TableProps>(
-  ({
-    className,
-    variant,
-    size,
-    striped,
-    hoverable,
-    caption,
-    captionSide = 'bottom',
-    children,
-    ...props
-  }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      striped,
+      hoverable,
+      caption,
+      captionSide = 'bottom',
+      children,
+      ...props
+    },
+    ref
+  ) => {
     // Create context value from props
     const contextValue = {
       variant,
@@ -96,14 +96,19 @@ const Table = forwardRef<HTMLTableElement, TableProps>(
         <div className="overflow-x-auto">
           <table
             ref={ref}
-            className={cn(tableVariants({ variant, size, striped, hoverable }), className)}
+            className={cn(
+              tableVariants({ variant, size, striped, hoverable }),
+              className
+            )}
             {...props}
           >
             {caption && (
-              <caption className={cn(
-                'text-sm text-gray-500 dark:text-gray-400 p-2',
-                captionSide === 'top' ? 'caption-top' : 'caption-bottom'
-              )}>
+              <caption
+                className={cn(
+                  'text-sm text-gray-500 dark:text-gray-400 p-2',
+                  captionSide === 'top' ? 'caption-top' : 'caption-bottom'
+                )}
+              >
                 {caption}
               </caption>
             )}

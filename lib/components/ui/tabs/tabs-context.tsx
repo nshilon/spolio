@@ -19,7 +19,9 @@ interface TabsContextValue {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export const TabsContext = createContext<TabsContextValue | undefined>(undefined);
+export const TabsContext = createContext<TabsContextValue | undefined>(
+  undefined
+);
 
 export function useTabsContext() {
   const context = useContext(TabsContext);

@@ -1,5 +1,6 @@
-import React, { forwardRef } from 'react';
 import { cn } from '@/utils';
+import { type VariantProps, cva } from 'class-variance-authority';
+import React, { forwardRef } from 'react';
 import {
   Select,
   SelectContent,
@@ -8,7 +9,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from './dropdown';
-import { cva, type VariantProps } from 'class-variance-authority';
 
 export interface DropdownOption {
   value: string;

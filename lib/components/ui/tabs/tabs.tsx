@@ -6,30 +6,24 @@ import { TabsContext } from './tabs-context';
 import '@/design-tokens/components/tabs.css';
 
 // Define the tabs variants using CVA
-const tabsVariants = cva(
-  [
-    'tabs',
-    'w-full',
-  ],
-  {
-    variants: {
-      variant: {
-        default: 'tabs--default',
-        underline: 'tabs--underline',
-        pills: 'tabs--pills',
-      },
-      size: {
-        sm: 'tabs--sm',
-        md: 'tabs--md',
-        lg: 'tabs--lg',
-      },
+const tabsVariants = cva(['tabs', 'w-full'], {
+  variants: {
+    variant: {
+      default: 'tabs--default',
+      underline: 'tabs--underline',
+      pills: 'tabs--pills',
     },
-    defaultVariants: {
-      variant: 'default',
-      size: 'md',
+    size: {
+      sm: 'tabs--sm',
+      md: 'tabs--md',
+      lg: 'tabs--lg',
     },
-  }
-);
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'md',
+  },
+});
 
 export type TabsVariants = VariantProps<typeof tabsVariants>;
 
@@ -50,7 +44,7 @@ export interface TabsProps extends ComponentProps<'div'>, TabsVariants {
 
 /**
  * Tabs component for organizing content into separate views
- * 
+ *
  * @example
  * ```tsx
  * <Tabs defaultValue="tab1">
@@ -64,23 +58,26 @@ export interface TabsProps extends ComponentProps<'div'>, TabsVariants {
  * ```
  */
 const Tabs = forwardRef<HTMLDivElement, TabsProps>(
-  ({
-    className,
-    variant,
-    size,
-    value,
-    defaultValue,
-    onValueChange,
-    children,
-    ...props
-  }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      value,
+      defaultValue,
+      onValueChange,
+      children,
+      ...props
+    },
+    ref
+  ) => {
     // Use internal state if component is uncontrolled
     const [tabValue, setTabValue] = useState(defaultValue || '');
-    
+
     // Determine if component is controlled or uncontrolled
     const isControlled = value !== undefined;
     const currentValue = isControlled ? value : tabValue;
-    
+
     // Handle value change
     const handleValueChange = (newValue: string) => {
       if (!isControlled) {

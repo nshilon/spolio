@@ -1,8 +1,8 @@
-import React, { forwardRef, useState, useEffect, useRef } from 'react';
 import { cn } from '@/utils';
-import { cva, type VariantProps } from 'class-variance-authority';
 import * as PopoverPrimitive from '@radix-ui/react-popover';
-import { Search, X, ChevronDown } from 'lucide-react';
+import { type VariantProps, cva } from 'class-variance-authority';
+import { ChevronDown, Search, X } from 'lucide-react';
+import React, { forwardRef, useState, useEffect, useRef } from 'react';
 import { inputVariants } from '../input/input';
 
 import '@/design-tokens/components/autocomplete.css';
@@ -14,7 +14,10 @@ export interface AutocompleteOption {
 }
 
 export interface AutocompleteProps
-  extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'size' | 'value' | 'onChange'>,
+  extends Omit<
+      React.InputHTMLAttributes<HTMLInputElement>,
+      'size' | 'value' | 'onChange'
+    >,
     VariantProps<typeof autocompleteVariants> {
   /**
    * The options to display in the autocomplete
@@ -119,7 +122,10 @@ const autocompleteVariants = cva('autocomplete w-full', {
   },
 });
 
-const defaultFilterFunction = (option: AutocompleteOption, inputValue: string) => {
+const defaultFilterFunction = (
+  option: AutocompleteOption,
+  inputValue: string
+) => {
   return option.label.toLowerCase().includes(inputValue.toLowerCase());
 };
 
@@ -155,9 +161,10 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       value !== undefined ? value : defaultValue
     );
     const [open, setOpen] = useState(false);
-    const [filteredOptions, setFilteredOptions] = useState<AutocompleteOption[]>(options);
+    const [filteredOptions, setFilteredOptions] =
+      useState<AutocompleteOption[]>(options);
     const inputRef = useRef<HTMLInputElement>(null);
-    
+
     // Merge the forwarded ref with our local ref
     const mergedRef = (node: HTMLInputElement) => {
       if (typeof ref === 'function') {
@@ -193,10 +200,10 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
 
     // Filter options when input value changes
     useEffect(() => {
-      const filtered = options.filter((option) => 
-        filterFunction(option, inputValue)
-      ).slice(0, maxOptions);
-      
+      const filtered = options
+        .filter((option) => filterFunction(option, inputValue))
+        .slice(0, maxOptions);
+
       setFilteredOptions(filtered);
     }, [inputValue, options, filterFunction, maxOptions]);
 
@@ -204,12 +211,12 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const newValue = e.target.value;
       setInputValue(newValue);
-      
+
       // Open the popover when typing
       if (newValue && !open) {
         setOpen(true);
       }
-      
+
       // Call onValueChange if provided and allowFreeText is true
       if (allowFreeText && onValueChange) {
         onValueChange(newValue);
@@ -219,14 +226,14 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
     // Handle option selection
     const handleOptionSelect = (option: AutocompleteOption) => {
       if (option.disabled) return;
-      
+
       setInputValue(option.label);
       setOpen(false);
-      
+
       if (onValueChange) {
         onValueChange(option.value);
       }
-      
+
       // Focus the input after selection
       inputRef.current?.focus();
     };
@@ -234,11 +241,11 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
     // Handle clear button click
     const handleClear = () => {
       setInputValue('');
-      
+
       if (onValueChange) {
         onValueChange('');
       }
-      
+
       // Focus the input after clearing
       inputRef.current?.focus();
     };
@@ -254,7 +261,11 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
     };
 
     return (
-      <div className={cn(autocompleteVariants({ variant, size, fullWidth, className }))}>
+      <div
+        className={cn(
+          autocompleteVariants({ variant, size, fullWidth, className })
+        )}
+      >
         {label && (
           <label
             htmlFor={id}
@@ -264,23 +275,23 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
             {required && <span className="ml-1 text-danger-500">*</span>}
           </label>
         )}
-        
+
         <PopoverPrimitive.Root open={open} onOpenChange={setOpen}>
           <div className="relative">
             <div className="autocomplete-input-wrapper relative flex items-center">
               {showSearchIcon && (
                 <Search className="autocomplete-search-icon absolute left-3 h-4 w-4 text-neutral-500" />
               )}
-              
+
               <input
                 ref={mergedRef}
                 id={id}
                 type="text"
                 className={cn(
-                  inputVariants({ 
-                    variant: autocompleteVariant, 
-                    size, 
-                    fullWidth 
+                  inputVariants({
+                    variant: autocompleteVariant,
+                    size,
+                    fullWidth,
                   }),
                   'autocomplete-input',
                   showSearchIcon && 'pl-9',
@@ -301,7 +312,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
                 autoComplete="off"
                 {...props}
               />
-              
+
               {showClearButton && inputValue && (
                 <button
                   type="button"
@@ -313,20 +324,20 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
                   <X className="h-3 w-3" />
                 </button>
               )}
-              
+
               {showDropdownIcon && (
                 <button
                   type="button"
                   className="autocomplete-dropdown-button absolute right-3 flex h-5 w-5 items-center justify-center text-neutral-500 hover:text-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-500"
                   onClick={() => setOpen(!open)}
-                  aria-label={open ? "Close options" : "Show options"}
+                  aria-label={open ? 'Close options' : 'Show options'}
                   tabIndex={-1}
                 >
                   <ChevronDown className="h-4 w-4" />
                 </button>
               )}
             </div>
-            
+
             <PopoverPrimitive.Portal>
               <PopoverPrimitive.Content
                 className="autocomplete-content z-50 min-w-[var(--radix-popover-trigger-width)] overflow-hidden rounded-md border border-neutral-200 bg-white p-1 shadow-md animate-in fade-in-80 data-[side=bottom]:slide-in-from-top-1 data-[side=left]:slide-in-from-right-1 data-[side=right]:slide-in-from-left-1 data-[side=top]:slide-in-from-bottom-1 dark:border-neutral-700 dark:bg-neutral-800"
@@ -349,8 +360,10 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
                         aria-disabled={option.disabled}
                         className={cn(
                           'autocomplete-option relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors',
-                          inputValue === option.label && 'bg-primary-50 text-primary-900 dark:bg-primary-900 dark:text-primary-50',
-                          !option.disabled && 'hover:bg-neutral-100 dark:hover:bg-neutral-700',
+                          inputValue === option.label &&
+                            'bg-primary-50 text-primary-900 dark:bg-primary-900 dark:text-primary-50',
+                          !option.disabled &&
+                            'hover:bg-neutral-100 dark:hover:bg-neutral-700',
                           option.disabled && 'opacity-50 cursor-not-allowed'
                         )}
                         onClick={() => handleOptionSelect(option)}
@@ -368,7 +381,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
             </PopoverPrimitive.Portal>
           </div>
         </PopoverPrimitive.Root>
-        
+
         {helperText && !errorMessage && (
           <p
             id={helperTextId}
@@ -377,7 +390,7 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
             {helperText}
           </p>
         )}
-        
+
         {errorMessage && (
           <p
             id={errorId}

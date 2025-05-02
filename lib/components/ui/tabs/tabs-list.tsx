@@ -6,7 +6,7 @@ export interface TabsListProps extends ComponentProps<'div'> {}
 
 /**
  * TabsList component for containing tab triggers
- * 
+ *
  * @example
  * ```tsx
  * <Tabs defaultValue="tab1">
@@ -22,7 +22,7 @@ export interface TabsListProps extends ComponentProps<'div'> {}
 const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
   ({ className, ...props }, ref) => {
     const { variant } = useTabsContext();
-    
+
     return (
       <div
         ref={ref}
@@ -34,8 +34,10 @@ const TabsList = forwardRef<HTMLDivElement, TabsListProps>(
           'p-[var(--tabs-list-padding)]',
           'bg-[var(--tabs-list-background)]',
           'rounded-[var(--tabs-list-border-radius)]',
-          variant === 'underline' && 'border-b border-[var(--tabs-border-color)]',
-          variant === 'pills' && 'bg-gray-100 dark:bg-gray-800 p-1 rounded-[var(--tabs-border-radius)]',
+          variant === 'underline' &&
+            'border-b border-[var(--tabs-border-color)]',
+          variant === 'pills' &&
+            'bg-gray-100 dark:bg-gray-800 p-1 rounded-[var(--tabs-border-radius)]',
           className
         )}
         {...props}

@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from 'vitest';
 import { render, screen, waitFor } from '@/test/utils';
 import { axe } from 'jest-axe';
 import { Autocomplete } from './autocomplete';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 import { createRef } from 'react';
 
 const defaultOptions = [

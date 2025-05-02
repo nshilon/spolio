@@ -1,9 +1,9 @@
 import { cn } from '@/utils';
 import * as SelectPrimitive from '@radix-ui/react-select';
+import { type VariantProps, cva } from 'class-variance-authority';
 import { Check, ChevronDown } from 'lucide-react';
 import * as React from 'react';
 import { forwardRef } from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
 
 import '@/design-tokens/components/dropdown.css';
 
@@ -89,7 +89,10 @@ const SelectLabel = forwardRef<
 >(({ className, ...props }, ref) => (
   <SelectPrimitive.Label
     ref={ref}
-    className={cn('dropdown-label py-1.5 pl-8 pr-2 text-sm font-semibold', className)}
+    className={cn(
+      'dropdown-label py-1.5 pl-8 pr-2 text-sm font-semibold',
+      className
+    )}
     {...props}
   />
 ));

@@ -27,7 +27,7 @@ export interface TableCellProps extends ComponentProps<'td'> {
 
 /**
  * TableCell component for cells within a table row
- * 
+ *
  * @example
  * ```tsx
  * <TableRow>
@@ -37,14 +37,17 @@ export interface TableCellProps extends ComponentProps<'td'> {
  * ```
  */
 const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
-  ({ 
-    className, 
-    as: Component = 'td', 
-    isHeader = false,
-    align = 'left',
-    expand = false,
-    ...props 
-  }, ref) => {
+  (
+    {
+      className,
+      as: Component = 'td',
+      isHeader = false,
+      align = 'left',
+      expand = false,
+      ...props
+    },
+    ref
+  ) => {
     const { size } = useContext(TableContext);
 
     // Determine padding based on size

@@ -11,7 +11,7 @@ export interface TableRowProps extends ComponentProps<'tr'> {
 
 /**
  * TableRow component for rows within a table
- * 
+ *
  * @example
  * ```tsx
  * <Table>
