@@ -1,0 +1,75 @@
+/*
+ _              _ _   _       
+| |_ ___   ___ | | |_(_)_ __  
+| __/ _ \ / _ \| | __| | '_ \ 
+| || (_) | (_) | | |_| | |_) |
+ \__\___/ \___/|_|\__|_| .__/ 
+                        |_|    
+*/
+/* component-tooltip */
+:root {
+  /* Tooltip Layout */
+  --tooltip-border-width: 1px;
+  --tooltip-border-color: var(--color-gray-200);
+  --tooltip-border-radius: var(--shape-tooltip);
+  --tooltip-padding-x: var(--spacing-md);
+  --tooltip-padding-y: var(--spacing-sm);
+  --tooltip-max-width: 300px;
+  --tooltip-z-index: var(--z-index-tooltip);
+  
+  /* Tooltip Typography */
+  --tooltip-font-size: var(--font-size-sm);
+  --tooltip-line-height: var(--line-height-normal);
+  --tooltip-font-weight: var(--font-weight-normal);
+  
+  /* Tooltip Variants */
+  /* Default variant */
+  --tooltip-default-background: var(--color-gray-900);
+  --tooltip-default-text: var(--color-gray-50);
+  --tooltip-default-border: var(--color-gray-700);
+  
+  /* Light variant */
+  --tooltip-light-background: var(--color-gray-50);
+  --tooltip-light-text: var(--color-gray-900);
+  --tooltip-light-border: var(--color-gray-200);
+  
+  /* Primary variant */
+  --tooltip-primary-background: var(--color-primary-500);
+  --tooltip-primary-text: white;
+  --tooltip-primary-border: var(--color-primary-600);
+  
+  /* Success variant */
+  --tooltip-success-background: var(--color-success-500);
+  --tooltip-success-text: white;
+  --tooltip-success-border: var(--color-success-600);
+  
+  /* Warning variant */
+  --tooltip-warning-background: var(--color-warning-500);
+  --tooltip-warning-text: var(--color-gray-900);
+  --tooltip-warning-border: var(--color-warning-600);
+  
+  /* Danger variant */
+  --tooltip-danger-background: var(--color-danger-500);
+  --tooltip-danger-text: white;
+  --tooltip-danger-border: var(--color-danger-600);
+  
+  /* Tooltip Animation */
+  --tooltip-animation-duration: var(--transition-fast);
+  
+  /* Tooltip Arrow */
+  --tooltip-arrow-size: 8px;
+  
+  /* Dark Mode Overrides */
+  --tooltip-dark-border-color: var(--color-gray-700);
+  --tooltip-dark-light-background: var(--color-gray-800);
+  --tooltip-dark-light-text: var(--color-gray-100);
+  --tooltip-dark-light-border: var(--color-gray-700);
+}
+
+/* Dark mode overrides */
+.dark {
+  --tooltip-border-color: var(--tooltip-dark-border-color);
+  --tooltip-light-background: var(--tooltip-dark-light-background);
+  --tooltip-light-text: var(--tooltip-dark-light-text);
+  --tooltip-light-border: var(--tooltip-dark-light-border);
+}

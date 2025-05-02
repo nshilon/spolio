@@ -18,6 +18,17 @@ export type { PaginationProps } from './ui/paging';
 export { Progress } from './ui/progress';
 export type { ProgressProps } from './ui/progress';
 export {
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+  TooltipProvider,
+  TooltipComponent,
+} from './ui/tooltip';
+export type {
+  TooltipContentProps,
+  TooltipComponentProps,
+} from './ui/tooltip';
+export {
   Tabs,
   TabsList,
   TabsTrigger,
@@ -51,7 +62,10 @@ export {
   SelectItem,
   SelectSeparator,
 } from './ui/dropdown';
-export type { DropdownOption, DropdownProps } from './ui/dropdown/dropdown-component';
+export type {
+  DropdownOption,
+  DropdownProps,
+} from './ui/dropdown/dropdown-component';
 export { Autocomplete } from './ui/autocomplete';
 export type { AutocompleteOption, AutocompleteProps } from './ui/autocomplete';
 

@@ -1,0 +1,231 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as TooltipStories from './Tooltip.stories';
+
+<Meta title="Components/Tooltip/Documentation" />
+
+# Tooltip Component
+
+The Tooltip component provides a way to display additional information when users hover over an element. It's commonly used for providing context, explanations, or additional details about UI elements.
+
+## Features
+
+- Multiple styling variants (default, light, primary, success, warning, danger)
+- Customizable positioning (top, right, bottom, left)
+- Customizable alignment (start, center, end)
+- Optional arrow indicator
+- Customizable delay duration
+- Accessible with proper ARIA attributes
+- Support for rich content
+
+## Component Structure
+
+The Tooltip component system consists of several components that work together:
+
+- `TooltipProvider`: Provider component that should wrap your application or the section where tooltips are used
+- `Tooltip`: The main container component
+- `TooltipTrigger`: The element that triggers the tooltip
+- `TooltipContent`: The content of the tooltip
+- `TooltipComponent`: A convenient wrapper component that combines the above components
+
+## Basic Usage
+
+<Canvas of={TooltipStories.Default} />
+
+```tsx
+import { TooltipComponent, TooltipProvider } from '@/components';
+
+<TooltipProvider>
+  <TooltipComponent content="This is a tooltip">
+    <Button>Hover me</Button>
+  </TooltipComponent>
+</TooltipProvider>
+```
+
+## Tooltip Variants
+
+The Tooltip component supports multiple visual styles through the `variant` prop:
+
+<Canvas of={TooltipStories.Variants} />
+
+```tsx
+<TooltipComponent content="Default tooltip" variant="default">
+  <Button>Default</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Light tooltip" variant="light">
+  <Button>Light</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Primary tooltip" variant="primary">
+  <Button>Primary</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Success tooltip" variant="success">
+  <Button>Success</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Warning tooltip" variant="warning">
+  <Button>Warning</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Danger tooltip" variant="danger">
+  <Button>Danger</Button>
+</TooltipComponent>
+```
+
+## Tooltip Positions
+
+You can position the tooltip relative to the trigger using the `side` prop:
+
+<Canvas of={TooltipStories.Positions} />
+
+```tsx
+<TooltipComponent content="Top tooltip" side="top">
+  <Button>Top</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Left tooltip" side="left">
+  <Button>Left</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Right tooltip" side="right">
+  <Button>Right</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Bottom tooltip" side="bottom">
+  <Button>Bottom</Button>
+</TooltipComponent>
+```
+
+## Tooltip Alignment
+
+You can align the tooltip relative to the trigger using the `align` prop:
+
+<Canvas of={TooltipStories.Alignment} />
+
+```tsx
+<TooltipComponent content="Start aligned" side="bottom" align="start">
+  <Button>Start</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Center aligned" side="bottom" align="center">
+  <Button>Center</Button>
+</TooltipComponent>
+
+<TooltipComponent content="End aligned" side="bottom" align="end">
+  <Button>End</Button>
+</TooltipComponent>
+```
+
+## Tooltip Without Arrow
+
+You can hide the arrow indicator using the `hideArrow` prop:
+
+<Canvas of={TooltipStories.WithoutArrow} />
+
+```tsx
+<TooltipComponent content="Tooltip without arrow" hideArrow>
+  <Button>No Arrow</Button>
+</TooltipComponent>
+```
+
+## Tooltip with Icon
+
+Tooltips are commonly used with icon buttons to provide additional context:
+
+<Canvas of={TooltipStories.WithIcon} />
+
+```tsx
+<TooltipComponent content="Help information">
+  <Button variant="ghost" size="icon">
+    <Icon name="info" />
+  </Button>
+</TooltipComponent>
+```
+
+## Rich Content
+
+You can include rich content in tooltips by using the lower-level components:
+
+<Canvas of={TooltipStories.WithRichContent} />
+
+```tsx
+<Tooltip>
+  <TooltipTrigger asChild>
+    <Button>Rich Content</Button>
+  </TooltipTrigger>
+  <TooltipContent className="max-w-[300px] p-4">
+    <div className="flex flex-col gap-2">
+      <h3 className="text-sm font-semibold">Rich Tooltip Content</h3>
+      <p className="text-xs">
+        This tooltip contains rich content with multiple elements, including
+        text, headings, and even a button.
+      </p>
+      <Button size="small" variant="outline" className="mt-2">
+        Action
+      </Button>
+    </div>
+  </TooltipContent>
+</Tooltip>
+```
+
+## Delay Duration
+
+You can customize the delay before showing the tooltip using the `delayDuration` prop:
+
+<Canvas of={TooltipStories.DelayDuration} />
+
+```tsx
+<TooltipComponent content="No delay" delayDuration={0}>
+  <Button>No Delay</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Short delay (300ms)" delayDuration={300}>
+  <Button>Short Delay</Button>
+</TooltipComponent>
+
+<TooltipComponent content="Long delay (1000ms)" delayDuration={1000}>
+  <Button>Long Delay</Button>
+</TooltipComponent>
+```
+
+## Disabled Tooltip
+
+You can disable the tooltip using the `disabled` prop:
+
+<Canvas of={TooltipStories.Disabled} />
+
+```tsx
+<TooltipComponent content="You should not see this tooltip" disabled>
+  <Button>Disabled Tooltip</Button>
+</TooltipComponent>
+```
+
+## Accessibility
+
+The Tooltip component follows accessibility best practices:
+
+- Uses proper ARIA attributes
+- Supports keyboard navigation
+- Provides appropriate focus management
+- Includes appropriate timing delays
+
+## API Reference
+
+### TooltipComponent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `content` | `React.ReactNode` | - | The content to display in the tooltip |
+| `children` | `React.ReactNode` | - | The element that triggers the tooltip |
+| `variant` | `'default' \| 'light' \| 'primary' \| 'success' \| 'warning' \| 'danger'` | `'default'` | The visual style of the tooltip |
+| `hideArrow` | `boolean` | `false` | Whether to hide the arrow |
+| `delayDuration` | `number` | `300` | The delay in milliseconds before showing the tooltip |
+| `sideOffset` | `number` | `4` | The offset in pixels from the trigger |
+| `side` | `'top' \| 'right' \| 'bottom' \| 'left'` | `'top'` | The side of the trigger to show the tooltip |
+| `align` | `'start' \| 'center' \| 'end'` | `'center'` | The alignment of the tooltip relative to the trigger |
+| `defaultOpen` | `boolean` | - | Whether the tooltip is open by default |
+| `open` | `boolean` | - | Whether the tooltip is open (controlled) |
+| `onOpenChange` | `(open: boolean) => void` | - | Callback when the open state changes |
+| `className` | `string` | - | Additional class name for the tooltip content |
+| `disabled` | `boolean` | `false` | Whether to disable the tooltip |
