@@ -14,6 +14,13 @@ const meta = {
     }
   },
   tags: ['autodocs'],
+    args: {
+    activeStep: 0,
+    orientation: 'horizontal',
+    size: 'medium',
+    showConnectors: true,
+    children: undefined,
+  },
 } satisfies Meta<typeof Stepper>;
 
 export default meta;

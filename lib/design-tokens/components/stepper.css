@@ -12,10 +12,35 @@
   align-items: center;
 }
 
+.stepper--horizontal:before {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    border: 1px solid #ccc;
+    height: 1px;
+    display: inline-block;
+    content: ' ';
+    width: 100%;
+  pointer-events: none;
+}
+
 .stepper--vertical {
   flex-direction: column;
   align-items: flex-start;
 }
+
+.stepper--vertical:before {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    border: 1px solid #ccc;
+    width: 1px;
+    display: inline-block;
+    content: ' ';
+    height: 100%;
+  pointer-events: none;
+}
+
 
 /* Step styles */
 .stepper-step {

@@ -139,7 +139,11 @@ export const Stepper = forwardRef<HTMLDivElement, StepperProps>(
           aria-label="Progress"
           {...props}
         >
-          {children}
+          {
+            childrenArray.map((child, index) => <>
+              {child && React.cloneElement(child as React.ReactElement, { index, totalSteps })}
+            </>)
+          }
         </div>
       </StepperContext.Provider>
     );
