@@ -12,11 +12,11 @@ interface TabsContextValue {
   /**
    * The variant of the tabs
    */
-  variant?: 'default' | 'underline' | 'pills';
+  variant?: 'default' | 'underline' | 'pills' | null;
   /**
    * The size of the tabs
    */
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | null;
 }
 
 export const TabsContext = createContext<TabsContextValue | undefined>(

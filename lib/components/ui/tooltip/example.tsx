@@ -23,11 +23,11 @@ export const TooltipExample: React.FC = () => {
 
         <div className="flex gap-4">
           <TooltipComponent content="Success tooltip" variant="success">
-            <Button variant="success">Success</Button>
+            <Button variant="primary">Success</Button>
           </TooltipComponent>
 
           <TooltipComponent content="Warning tooltip" variant="warning">
-            <Button variant="warning">Warning</Button>
+            <Button variant="secondary">Warning</Button>
           </TooltipComponent>
 
           <TooltipComponent content="Danger tooltip" variant="danger">

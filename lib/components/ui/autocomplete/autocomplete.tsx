@@ -172,6 +172,8 @@ export const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(
       } else if (ref) {
         ref.current = node;
       }
+      // Also update our local ref
+      // @ts-ignore
       inputRef.current = node;
     };
 
