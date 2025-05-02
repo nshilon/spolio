@@ -1,0 +1,210 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as TableStories from './Table.stories';
+
+<Meta title="Components/Table/Documentation" />
+
+# Table Component
+
+The Table component provides a way to display tabular data with various styling options and accessibility features.
+
+## Features
+
+- Responsive design with horizontal scrolling for small screens
+- Multiple styling variants (default, bordered, borderless)
+- Size options (small, medium, large)
+- Striped rows option
+- Row hover effect (can be disabled)
+- Cell alignment options (left, center, right)
+- Support for captions
+- Fully accessible with proper ARIA attributes
+
+## Component Structure
+
+The Table component system consists of several components that work together:
+
+- `Table`: The main container component
+- `TableHead`: The header section of the table
+- `TableBody`: The body section of the table
+- `TableFoot`: The footer section of the table
+- `TableRow`: A row within the table
+- `TableCell`: A cell within a row (can be a header cell or a data cell)
+
+## Basic Usage
+
+<Canvas of={TableStories.Default} />
+
+```tsx
+import { Table, TableHead, TableBody, TableRow, TableCell } from '@/components';
+
+<Table caption="User Information">
+  <TableHead>
+    <TableRow>
+      <TableCell as="th">Name</TableCell>
+      <TableCell as="th">Email</TableCell>
+      <TableCell as="th">Role</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {users.map((user) => (
+      <TableRow key={user.id}>
+        <TableCell>{user.name}</TableCell>
+        <TableCell>{user.email}</TableCell>
+        <TableCell>{user.role}</TableCell>
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>
+```
+
+## With Footer
+
+Tables can include a footer section for totals or additional information.
+
+<Canvas of={TableStories.WithFooter} />
+
+```tsx
+<Table>
+  <TableHead>
+    {/* ... */}
+  </TableHead>
+  <TableBody>
+    {/* ... */}
+  </TableBody>
+  <TableFoot>
+    <TableRow>
+      <TableCell colSpan={3}>Total: {users.length} users</TableCell>
+    </TableRow>
+  </TableFoot>
+</Table>
+```
+
+## Styling Options
+
+### Striped Rows
+
+<Canvas of={TableStories.Striped} />
+
+```tsx
+<Table striped>
+  {/* ... */}
+</Table>
+```
+
+### Border Variants
+
+#### Bordered
+
+<Canvas of={TableStories.Bordered} />
+
+```tsx
+<Table variant="bordered">
+  {/* ... */}
+</Table>
+```
+
+#### Borderless
+
+<Canvas of={TableStories.Borderless} />
+
+```tsx
+<Table variant="borderless">
+  {/* ... */}
+</Table>
+```
+
+### Size Variants
+
+#### Small
+
+<Canvas of={TableStories.Small} />
+
+```tsx
+<Table size="sm">
+  {/* ... */}
+</Table>
+```
+
+#### Large
+
+<Canvas of={TableStories.Large} />
+
+```tsx
+<Table size="lg">
+  {/* ... */}
+</Table>
+```
+
+### Cell Alignment
+
+You can align the content of cells to the left, center, or right.
+
+<Canvas of={TableStories.WithAlignedCells} />
+
+```tsx
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell as="th">ID</TableCell>
+      <TableCell as="th" align="center">Name</TableCell>
+      <TableCell as="th" align="right">Role</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {users.map((user) => (
+      <TableRow key={user.id}>
+        <TableCell>{user.id}</TableCell>
+        <TableCell align="center">{user.name}</TableCell>
+        <TableCell align="right">{user.role}</TableCell>
+      </TableRow>
+    ))}
+  </TableBody>
+</Table>
+```
+
+### Disabling Row Hover Effect
+
+<Canvas of={TableStories.NonHoverable} />
+
+```tsx
+<Table hoverable={false}>
+  {/* ... */}
+</Table>
+```
+
+## Table Variants
+
+Here are some examples of different table styling combinations:
+
+<Canvas of={TableStories.TableVariants} />
+
+## Accessibility
+
+The Table component follows accessibility best practices:
+
+- Uses semantic HTML elements (`<table>`, `<thead>`, `<tbody>`, etc.)
+- Properly associates headers with data cells using `scope="col"` attributes
+- Supports keyboard navigation
+- Includes proper ARIA attributes
+- Provides caption support for table descriptions
+
+## API Reference
+
+### Table Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `variant` | `'default' \| 'bordered' \| 'borderless'` | `'default'` | The visual style of the table borders |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | The size of the table text and padding |
+| `striped` | `boolean` | `false` | Whether to apply striped rows |
+| `hoverable` | `boolean` | `true` | Whether to apply hover effect on rows |
+| `caption` | `string` | `undefined` | Optional caption for the table |
+| `captionSide` | `'top' \| 'bottom'` | `'bottom'` | Position of the caption |
+
+### TableCell Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `as` | `ElementType` | `'td'` | The element type to render as |
+| `isHeader` | `boolean` | `false` | Whether this cell is a header cell |
+| `align` | `'left' \| 'center' \| 'right'` | `'left'` | Alignment of the cell content |
+| `expand` | `boolean` | `false` | Whether this cell should take up the remaining space |

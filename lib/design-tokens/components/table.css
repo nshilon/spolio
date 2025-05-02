@@ -1,0 +1,65 @@
+/*
+ _        _     _      
+| |_ __ _| |__ | | ___ 
+| __/ _` | '_ \| |/ _ \
+| || (_| | |_) | |  __/
+ \__\__,_|_.__/|_|\___|
+*/
+/* component-table */
+:root {
+  /* Table Layout */
+  --table-border-width: 1px;
+  --table-border-color: var(--color-gray-200);
+  --table-border-radius: var(--border-radius-md);
+  --table-cell-padding: var(--spacing-md);
+  
+  /* Table Header */
+  --table-header-bg: var(--color-gray-50);
+  --table-header-text-color: var(--color-gray-700);
+  --table-header-font-weight: var(--font-weight-semibold);
+  
+  /* Table Body */
+  --table-body-bg: white;
+  --table-body-text-color: var(--color-gray-800);
+  
+  /* Table Footer */
+  --table-footer-bg: var(--color-gray-50);
+  --table-footer-text-color: var(--color-gray-700);
+  
+  /* Table Row Hover */
+  --table-row-hover-bg: var(--color-gray-50);
+  
+  /* Table Striped Rows */
+  --table-striped-bg: var(--color-gray-50);
+  
+  /* Table Border Variants */
+  --table-border-none: none;
+  --table-border-horizontal: 1px solid var(--table-border-color);
+  --table-border-vertical: 1px solid var(--table-border-color);
+  --table-border-all: 1px solid var(--table-border-color);
+  
+  /* Table Size Variants */
+  --table-size-sm-padding: var(--spacing-sm);
+  --table-size-md-padding: var(--spacing-md);
+  --table-size-lg-padding: var(--spacing-lg);
+  
+  /* Dark Mode Overrides */
+  --table-dark-border-color: var(--color-gray-700);
+  --table-dark-header-bg: var(--color-gray-800);
+  --table-dark-header-text-color: var(--color-gray-100);
+  --table-dark-body-bg: var(--color-gray-900);
+  --table-dark-body-text-color: var(--color-gray-200);
+  --table-dark-row-hover-bg: var(--color-gray-800);
+  --table-dark-striped-bg: var(--color-gray-800);
+}
+
+/* Dark mode overrides */
+.dark {
+  --table-border-color: var(--table-dark-border-color);
+  --table-header-bg: var(--table-dark-header-bg);
+  --table-header-text-color: var(--table-dark-header-text-color);
+  --table-body-bg: var(--table-dark-body-bg);
+  --table-body-text-color: var(--table-dark-body-text-color);
+  --table-row-hover-bg: var(--table-dark-row-hover-bg);
+  --table-striped-bg: var(--table-dark-striped-bg);
+}
