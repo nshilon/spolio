@@ -1,0 +1,153 @@
+/* Autocomplete component design tokens */
+
+/* Base styles */
+.autocomplete {
+  position: relative;
+  width: 100%;
+}
+
+/* Input wrapper styles */
+.autocomplete-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Input styles */
+.autocomplete-input {
+  width: 100%;
+  border-radius: var(--border-radius-m);
+  border: 1px solid var(--color-border-primary);
+  background-color: var(--color-background-primary);
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-foreground-primary);
+  transition: all 0.2s ease;
+}
+
+.autocomplete-input:hover {
+  border-color: var(--color-primary-300);
+}
+
+.autocomplete-input:focus {
+  outline: none;
+  border-color: var(--color-primary-300);
+  box-shadow: 0 0 0 2px var(--color-primary-50);
+}
+
+/* Icon styles */
+.autocomplete-search-icon {
+  color: var(--color-foreground-tertiary);
+}
+
+/* Clear button styles */
+.autocomplete-clear-button {
+  color: var(--color-foreground-tertiary);
+  transition: all 0.2s ease;
+}
+
+.autocomplete-clear-button:hover {
+  color: var(--color-foreground-secondary);
+  background-color: var(--color-background-secondary);
+}
+
+/* Dropdown button styles */
+.autocomplete-dropdown-button {
+  color: var(--color-foreground-tertiary);
+  transition: all 0.2s ease;
+}
+
+.autocomplete-dropdown-button:hover {
+  color: var(--color-foreground-secondary);
+}
+
+/* Content styles */
+.autocomplete-content {
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-m);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  overflow: hidden;
+}
+
+/* Options styles */
+.autocomplete-options {
+  max-height: 15rem;
+  overflow-y: auto;
+}
+
+/* Option styles */
+.autocomplete-option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.autocomplete-option:hover {
+  background-color: var(--color-background-secondary);
+}
+
+.autocomplete-option[aria-selected="true"] {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+
+.autocomplete-option[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* No results styles */
+.autocomplete-no-results {
+  padding: 0.5rem 1rem;
+  color: var(--color-foreground-tertiary);
+  text-align: center;
+}
+
+/* Autocomplete variants */
+.autocomplete--default .autocomplete-input {
+  border-color: var(--color-border-primary);
+}
+
+.autocomplete--ghost .autocomplete-input {
+  border-color: transparent;
+  background-color: var(--color-background-secondary);
+}
+
+.autocomplete--error .autocomplete-input {
+  border-color: var(--color-danger-300);
+  color: var(--color-danger-600);
+}
+
+.autocomplete--error .autocomplete-input:focus {
+  box-shadow: 0 0 0 2px var(--color-danger-50);
+}
+
+.autocomplete--success .autocomplete-input {
+  border-color: var(--color-success-300);
+  color: var(--color-success-600);
+}
+
+.autocomplete--success .autocomplete-input:focus {
+  box-shadow: 0 0 0 2px var(--color-success-50);
+}
+
+/* Autocomplete sizes */
+.autocomplete--sm .autocomplete-input {
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-size: var(--font-size-sm);
+}
+
+.autocomplete--md .autocomplete-input {
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  font-size: var(--font-size-base);
+}
+
+.autocomplete--lg .autocomplete-input {
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: var(--font-size-lg);
+}

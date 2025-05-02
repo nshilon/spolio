@@ -39,3 +39,5 @@ export {
   SelectSeparator,
 } from './ui/dropdown';
 export type { DropdownOption, DropdownProps } from './ui/dropdown/dropdown-component';
+export { Autocomplete } from './ui/autocomplete';
+export type { AutocompleteOption, AutocompleteProps } from './ui/autocomplete';
