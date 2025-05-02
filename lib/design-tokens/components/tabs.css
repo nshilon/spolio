@@ -1,0 +1,91 @@
+/*
+ _        _         
+| |_ __ _| |__  ___ 
+| __/ _` | '_ \/ __|
+| || (_| | |_) \__ \
+ \__\__,_|_.__/|___/
+*/
+/* component-tabs */
+:root {
+  /* Tabs Layout */
+  --tabs-border-width: 1px;
+  --tabs-border-color: var(--color-gray-200);
+  --tabs-border-radius: var(--border-radius-md);
+  --tabs-padding: var(--spacing-md);
+  
+  /* Tabs List */
+  --tabs-list-gap: var(--spacing-sm);
+  --tabs-list-padding: var(--spacing-sm);
+  --tabs-list-background: transparent;
+  --tabs-list-border-radius: var(--border-radius-md);
+  
+  /* Tab Trigger */
+  --tabs-trigger-padding-x: var(--spacing-md);
+  --tabs-trigger-padding-y: var(--spacing-sm);
+  --tabs-trigger-border-radius: var(--border-radius-md);
+  --tabs-trigger-font-weight: var(--font-weight-medium);
+  --tabs-trigger-transition: all 0.2s ease;
+  
+  /* Tab Trigger States */
+  --tabs-trigger-default-background: transparent;
+  --tabs-trigger-default-text: var(--color-gray-600);
+  --tabs-trigger-default-border: transparent;
+  
+  --tabs-trigger-hover-background: var(--color-gray-100);
+  --tabs-trigger-hover-text: var(--color-gray-800);
+  --tabs-trigger-hover-border: transparent;
+  
+  --tabs-trigger-active-background: var(--color-primary-50);
+  --tabs-trigger-active-text: var(--color-primary-500);
+  --tabs-trigger-active-border: var(--color-primary-500);
+  --tabs-trigger-active-border-width: 2px;
+  
+  --tabs-trigger-disabled-background: transparent;
+  --tabs-trigger-disabled-text: var(--color-gray-400);
+  --tabs-trigger-disabled-border: transparent;
+  
+  /* Tab Content */
+  --tabs-content-padding: var(--spacing-md);
+  --tabs-content-background: transparent;
+  --tabs-content-border-radius: var(--border-radius-md);
+  --tabs-content-border-color: var(--color-gray-200);
+  
+  /* Tab Variants */
+  --tabs-underline-border-width: 2px;
+  --tabs-underline-active-border-color: var(--color-primary-500);
+  
+  /* Tab Sizes */
+  --tabs-size-sm-padding-x: var(--spacing-sm);
+  --tabs-size-sm-padding-y: var(--spacing-xs);
+  --tabs-size-sm-font-size: var(--font-size-sm);
+  
+  --tabs-size-md-padding-x: var(--spacing-md);
+  --tabs-size-md-padding-y: var(--spacing-sm);
+  --tabs-size-md-font-size: var(--font-size-base);
+  
+  --tabs-size-lg-padding-x: var(--spacing-lg);
+  --tabs-size-lg-padding-y: var(--spacing-md);
+  --tabs-size-lg-font-size: var(--font-size-lg);
+  
+  /* Dark Mode Overrides */
+  --tabs-dark-border-color: var(--color-gray-700);
+  --tabs-dark-trigger-default-text: var(--color-gray-400);
+  --tabs-dark-trigger-hover-background: var(--color-gray-800);
+  --tabs-dark-trigger-hover-text: var(--color-gray-200);
+  --tabs-dark-trigger-active-background: var(--color-primary-900);
+  --tabs-dark-trigger-active-text: var(--color-primary-300);
+  --tabs-dark-trigger-active-border: var(--color-primary-300);
+  --tabs-dark-content-border-color: var(--color-gray-700);
+}
+
+/* Dark mode overrides */
+.dark {
+  --tabs-border-color: var(--tabs-dark-border-color);
+  --tabs-trigger-default-text: var(--tabs-dark-trigger-default-text);
+  --tabs-trigger-hover-background: var(--tabs-dark-trigger-hover-background);
+  --tabs-trigger-hover-text: var(--tabs-dark-trigger-hover-text);
+  --tabs-trigger-active-background: var(--tabs-dark-trigger-active-background);
+  --tabs-trigger-active-text: var(--tabs-dark-trigger-active-text);
+  --tabs-trigger-active-border: var(--tabs-dark-trigger-active-border);
+  --tabs-content-border-color: var(--tabs-dark-content-border-color);
+}

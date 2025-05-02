@@ -18,6 +18,19 @@ export type { PaginationProps } from './ui/paging';
 export { Progress } from './ui/progress';
 export type { ProgressProps } from './ui/progress';
 export {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from './ui/tabs';
+export type {
+  TabsProps,
+  TabsVariants,
+  TabsListProps,
+  TabsTriggerProps,
+  TabsContentProps,
+} from './ui/tabs';
+export {
   Dialog,
   DialogContent,
   DialogHeader,

@@ -1,0 +1,257 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as TabsStories from './Tabs.stories';
+
+<Meta title="Components/Tabs/Documentation" />
+
+# Tabs Component
+
+The Tabs component provides a way to organize content into separate views that are displayed one at a time. It's commonly used for navigation, settings panels, and other content that needs to be organized into discrete sections.
+
+## Features
+
+- Multiple styling variants (default, underline, pills)
+- Size options (small, medium, large)
+- Support for disabled tabs
+- Controlled and uncontrolled usage
+- Fully accessible with proper ARIA attributes
+- Support for icons and badges within tabs
+
+## Component Structure
+
+The Tabs component system consists of several components that work together:
+
+- `Tabs`: The main container component
+- `TabsList`: Container for the tab buttons
+- `TabsTrigger`: Individual tab button
+- `TabsContent`: Content panel for each tab
+
+## Basic Usage
+
+<Canvas of={TabsStories.Default} />
+
+```tsx
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components';
+
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1">Account</TabsTrigger>
+    <TabsTrigger value="tab2">Password</TabsTrigger>
+    <TabsTrigger value="tab3">Settings</TabsTrigger>
+  </TabsList>
+  <TabsContent value="tab1">
+    <h4>Account Settings</h4>
+    <p>Manage your account settings and preferences.</p>
+  </TabsContent>
+  <TabsContent value="tab2">
+    <h4>Password Settings</h4>
+    <p>Change your password and security settings.</p>
+  </TabsContent>
+  <TabsContent value="tab3">
+    <h4>General Settings</h4>
+    <p>Configure your application preferences.</p>
+  </TabsContent>
+</Tabs>
+```
+
+## Tab Variants
+
+The Tabs component supports multiple visual styles through the `variant` prop:
+
+<Canvas of={TabsStories.Variants} />
+
+```tsx
+// Default variant
+<Tabs variant="default">
+  {/* ... */}
+</Tabs>
+
+// Underline variant
+<Tabs variant="underline">
+  {/* ... */}
+</Tabs>
+
+// Pills variant
+<Tabs variant="pills">
+  {/* ... */}
+</Tabs>
+```
+
+## Tab Sizes
+
+The Tabs component supports different sizes through the `size` prop:
+
+<Canvas of={TabsStories.Sizes} />
+
+```tsx
+// Small size
+<Tabs size="sm">
+  {/* ... */}
+</Tabs>
+
+// Medium size (default)
+<Tabs size="md">
+  {/* ... */}
+</Tabs>
+
+// Large size
+<Tabs size="lg">
+  {/* ... */}
+</Tabs>
+```
+
+## Tabs with Icons
+
+You can include icons in your tabs for better visual cues:
+
+<Canvas of={TabsStories.WithIcons} />
+
+```tsx
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1" className="flex items-center gap-2">
+      <span className="i-lucide-user h-4 w-4" />
+      <span>Account</span>
+    </TabsTrigger>
+    <TabsTrigger value="tab2" className="flex items-center gap-2">
+      <span className="i-lucide-lock h-4 w-4" />
+      <span>Password</span>
+    </TabsTrigger>
+    <TabsTrigger value="tab3" className="flex items-center gap-2">
+      <span className="i-lucide-settings h-4 w-4" />
+      <span>Settings</span>
+    </TabsTrigger>
+  </TabsList>
+  {/* Tab content... */}
+</Tabs>
+```
+
+## Disabled Tabs
+
+You can disable specific tabs to prevent user interaction:
+
+<Canvas of={TabsStories.WithDisabledTab} />
+
+```tsx
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1">Account</TabsTrigger>
+    <TabsTrigger value="tab2">Password</TabsTrigger>
+    <TabsTrigger value="tab3" disabled>Settings</TabsTrigger>
+  </TabsList>
+  {/* Tab content... */}
+</Tabs>
+```
+
+## Tabs with Badges
+
+You can add badges to tabs to indicate notifications or status:
+
+<Canvas of={TabsStories.WithBadges} />
+
+```tsx
+<Tabs defaultValue="tab1">
+  <TabsList>
+    <TabsTrigger value="tab1" className="flex items-center gap-2">
+      Account
+      <Badge variant="soft" type="primary">New</Badge>
+    </TabsTrigger>
+    <TabsTrigger value="tab2" className="flex items-center gap-2">
+      Password
+      <Badge variant="soft" type="warning">2</Badge>
+    </TabsTrigger>
+    <TabsTrigger value="tab3">Settings</TabsTrigger>
+  </TabsList>
+  {/* Tab content... */}
+</Tabs>
+```
+
+## Controlled Tabs
+
+You can control the active tab from outside the component:
+
+<Canvas of={TabsStories.Controlled} />
+
+```tsx
+import { useState } from 'react';
+import { Tabs, TabsList, TabsTrigger, TabsContent, Button } from '@/components';
+
+function ControlledTabs() {
+  const [activeTab, setActiveTab] = useState('tab1');
+  
+  return (
+    <div className="space-y-4">
+      <div className="flex gap-2">
+        <Button onClick={() => setActiveTab('tab1')} variant={activeTab === 'tab1' ? 'primary' : 'secondary'}>
+          Show Account
+        </Button>
+        <Button onClick={() => setActiveTab('tab2')} variant={activeTab === 'tab2' ? 'primary' : 'secondary'}>
+          Show Password
+        </Button>
+        <Button onClick={() => setActiveTab('tab3')} variant={activeTab === 'tab3' ? 'primary' : 'secondary'}>
+          Show Settings
+        </Button>
+      </div>
+      
+      <Tabs value={activeTab} onValueChange={setActiveTab}>
+        <TabsList>
+          <TabsTrigger value="tab1">Account</TabsTrigger>
+          <TabsTrigger value="tab2">Password</TabsTrigger>
+          <TabsTrigger value="tab3">Settings</TabsTrigger>
+        </TabsList>
+        <TabsContent value="tab1">
+          {/* Account content... */}
+        </TabsContent>
+        <TabsContent value="tab2">
+          {/* Password content... */}
+        </TabsContent>
+        <TabsContent value="tab3">
+          {/* Settings content... */}
+        </TabsContent>
+      </Tabs>
+    </div>
+  );
+}
+```
+
+## Accessibility
+
+The Tabs component follows the WAI-ARIA Tabs Pattern for accessibility:
+
+- Proper ARIA roles are applied: `tablist`, `tab`, and `tabpanel`
+- Keyboard navigation is supported
+- Focus management is handled correctly
+- Proper labeling and relationships between tabs and panels
+
+## API Reference
+
+### Tabs
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | The controlled value of the tab to activate |
+| `defaultValue` | `string` | - | The default value of the tab to activate (uncontrolled) |
+| `onValueChange` | `(value: string) => void` | - | Callback when the active tab changes |
+| `variant` | `'default' \| 'underline' \| 'pills'` | `'default'` | The visual style of the tabs |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | The size of the tabs |
+
+### TabsList
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `className` | `string` | - | Additional CSS class for the tabs list |
+
+### TabsTrigger
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | The value of the tab |
+| `disabled` | `boolean` | `false` | Whether the tab is disabled |
+| `className` | `string` | - | Additional CSS class for the tab trigger |
+
+### TabsContent
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `string` | - | The value of the tab this content belongs to |
+| `forceMount` | `boolean` | `false` | Whether to force render the content even when not active |
+| `className` | `string` | - | Additional CSS class for the tab content |
