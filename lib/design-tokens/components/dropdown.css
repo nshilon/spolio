@@ -1,0 +1,143 @@
+/* Dropdown component design tokens */
+
+/* Base styles */
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+/* Trigger styles */
+.dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: var(--border-radius-m);
+  border: 1px solid var(--color-border-primary);
+  background-color: var(--color-background-primary);
+  padding: 0.5rem 1rem;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  color: var(--color-foreground-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-trigger:hover {
+  border-color: var(--color-primary-300);
+}
+
+.dropdown-trigger:focus {
+  outline: none;
+  border-color: var(--color-primary-300);
+  box-shadow: 0 0 0 2px var(--color-primary-50);
+}
+
+/* Trigger variants */
+.dropdown-trigger--default {
+  background-color: var(--color-background-primary);
+  border-color: var(--color-border-primary);
+  color: var(--color-foreground-primary);
+}
+
+.dropdown-trigger--outline {
+  background-color: transparent;
+  border-color: var(--color-border-primary);
+  color: var(--color-foreground-primary);
+}
+
+.dropdown-trigger--ghost {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-foreground-primary);
+}
+
+/* Trigger sizes */
+.dropdown-trigger--small {
+  height: 2rem;
+  padding: 0 0.5rem;
+  font-size: var(--font-size-sm);
+}
+
+.dropdown-trigger--medium {
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  font-size: var(--font-size-base);
+}
+
+.dropdown-trigger--large {
+  height: 3rem;
+  padding: 0 1rem;
+  font-size: var(--font-size-lg);
+}
+
+/* Content styles */
+.dropdown-content {
+  background-color: var(--color-background-primary);
+  border: 1px solid var(--color-border-primary);
+  border-radius: var(--border-radius-m);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+  overflow: hidden;
+}
+
+/* Item styles */
+.dropdown-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+  background-color: var(--color-background-secondary);
+}
+
+.dropdown-item[data-highlighted] {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-700);
+}
+
+.dropdown-item[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Label styles */
+.dropdown-label {
+  padding: 0.5rem 1rem;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-foreground-secondary);
+}
+
+/* Separator styles */
+.dropdown-separator {
+  height: 1px;
+  background-color: var(--color-border-primary);
+  margin: 0.25rem 0;
+}
+
+/* Dropdown variants */
+.dropdown--default {
+  /* Default styles */
+}
+
+.dropdown--outline {
+  /* Outline styles */
+}
+
+.dropdown--ghost {
+  /* Ghost styles */
+}
+
+/* Dropdown sizes */
+.dropdown--small {
+  /* Small styles */
+}
+
+.dropdown--medium {
+  /* Medium styles */
+}
+
+.dropdown--large {
+  /* Large styles */
+}

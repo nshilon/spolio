@@ -27,3 +27,15 @@ export {
   DialogTrigger,
   DialogClose,
 } from './ui/dialog';
+export {
+  Dropdown,
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+} from './ui/dropdown';
+export type { DropdownOption, DropdownProps } from './ui/dropdown/dropdown-component';
