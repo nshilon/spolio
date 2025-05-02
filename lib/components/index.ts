@@ -88,3 +88,12 @@ export type {
   TableRowProps,
   TableCellProps,
 } from './ui/table';
+
+export {
+  Stepper,
+  StepperStep,
+} from './ui/stepper';
+export type {
+  StepperProps,
+  StepperStepProps,
+} from './ui/stepper';
