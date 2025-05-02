@@ -54,6 +54,17 @@ const meta = {
       description: 'Whether to disable the tooltip',
     },
   },
+    args: {
+    content: 'This is a tooltip',
+    children: <Button>Hover me</Button>,
+    variant: 'default',
+    side: 'top',
+    align: 'center',
+    hideArrow: false,
+    delayDuration: 300,
+    sideOffset: 4,
+    disabled: false,
+  },
   decorators: [
     (Story) => (
       <TooltipProvider>
@@ -98,11 +109,11 @@ export const Variants: Story = {
       </TooltipComponent>
       
       <TooltipComponent content="Success tooltip" variant="success">
-        <Button variant="success">Success</Button>
+        <Button variant="primary">Success</Button>
       </TooltipComponent>
       
       <TooltipComponent content="Warning tooltip" variant="warning">
-        <Button variant="warning">Warning</Button>
+        <Button variant="secondary">Warning</Button>
       </TooltipComponent>
       
       <TooltipComponent content="Danger tooltip" variant="danger">
@@ -171,7 +182,7 @@ export const WithoutArrow: Story = {
 export const WithIcon: Story = {
   render: () => (
     <TooltipComponent content="Help information">
-      <Button variant="ghost" size="icon">
+      <Button variant="ghost" size="small">
         <Icon name="info" />
       </Button>
     </TooltipComponent>

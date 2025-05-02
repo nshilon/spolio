@@ -233,6 +233,11 @@ export const LimitedOptions: Story = {
 };
 
 export const Controlled: Story = {
+  args: {
+    options: defaultOptions,
+    label: 'Controlled Autocomplete',
+    placeholder: 'Search fruits...',
+  },
   render: () => {
     // Use a controlled component to demonstrate value changes
     const ControlledAutocomplete = () => {
@@ -256,11 +261,17 @@ export const Controlled: Story = {
 };
 
 export const CustomFilter: Story = {
+  args: {
+    options: defaultOptions,
+    label: 'Custom Filter',
+    placeholder: 'Type to filter...',
+    helperText: 'Only matches the beginning of words',
+  },
   render: () => {
     // Example with custom filter function
     const CustomFilterExample = () => {
       // Custom filter that only matches the beginning of words
-      const customFilter = (option, inputValue) => {
+      const customFilter = (option: { label: string; }, inputValue: string) => {
         return option.label.toLowerCase().startsWith(inputValue.toLowerCase());
       };
       
@@ -282,6 +293,12 @@ export const CustomFilter: Story = {
 };
 
 export const CountrySearch: Story = {
+  args: {
+    label: 'Country',
+    placeholder: 'Search for a country...',
+    helperText: 'Start typing to search for a country',
+    options: [],
+  },
   render: () => {
     const countries = [
       { value: 'us', label: 'United States' },

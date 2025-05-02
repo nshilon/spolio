@@ -54,6 +54,16 @@ const meta = {
       description: 'The options to display in the dropdown',
     },
   },
+  args: {
+    options: [
+      { value: 'apple', label: 'Apple' },
+      { value: 'banana', label: 'Banana' },
+      { value: 'orange', label: 'Orange' },
+      { value: 'grape', label: 'Grape' },
+      { value: 'strawberry', label: 'Strawberry' },
+    ],
+    placeholder: 'Select an option',
+  },
 } satisfies Meta<typeof Dropdown>;
 
 export default meta;
