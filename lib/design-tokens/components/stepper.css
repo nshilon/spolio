@@ -1,0 +1,178 @@
+/* Stepper component design tokens */
+
+/* Base styles */
+.stepper {
+  display: flex;
+  width: 100%;
+}
+
+/* Stepper variants */
+.stepper--horizontal {
+  flex-direction: row;
+  align-items: center;
+}
+
+.stepper--horizontal:before {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    border: 1px solid #ccc;
+    height: 1px;
+    display: inline-block;
+    content: ' ';
+    width: 100%;
+  pointer-events: none;
+}
+
+.stepper--vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stepper--vertical:before {
+    position: absolute;
+    top: 0;
+    left: 3rem;
+    border: 1px solid #ccc;
+    width: 1px;
+    display: inline-block;
+    content: ' ';
+    height: 100%;
+  pointer-events: none;
+}
+
+
+/* Step styles */
+.stepper-step {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.stepper--horizontal .stepper-step {
+  flex-direction: column;
+  flex: 1;
+}
+
+.stepper--vertical .stepper-step {
+  flex-direction: row;
+}
+
+/* Step indicator styles */
+.stepper-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all var(--transition-default);
+  z-index: 1;
+}
+
+/* Step indicator sizes */
+.stepper-indicator--small {
+  width: 24px;
+  height: 24px;
+  font-size: var(--font-size-sm);
+}
+
+.stepper-indicator--medium {
+  width: 32px;
+  height: 32px;
+  font-size: var(--font-size-base);
+}
+
+.stepper-indicator--large {
+  width: 40px;
+  height: 40px;
+  font-size: var(--font-size-lg);
+}
+
+/* Step indicator states */
+.stepper-indicator--completed {
+  background-color: var(--color-success-600);
+  color: var(--color-white);
+  border: 2px solid var(--color-success-600);
+}
+
+.stepper-indicator--current {
+  background-color: var(--color-primary-600);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary-600);
+}
+
+.stepper-indicator--upcoming {
+  background-color: var(--color-white);
+  color: var(--color-neutral-600);
+  border: 2px solid var(--color-neutral-300);
+}
+
+/* Step content styles */
+.stepper-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepper--horizontal .stepper-content {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.stepper--vertical .stepper-content {
+  margin-left: 1rem;
+}
+
+/* Step label styles */
+.stepper-label {
+  font-weight: 600;
+  color: var(--color-foreground-primary);
+}
+
+/* Step description styles */
+.stepper-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-foreground-secondary);
+}
+
+/* Connector styles */
+.stepper-connector {
+  flex: 1;
+  background-color: var(--color-neutral-300);
+  transition: background-color var(--transition-default);
+}
+
+.stepper--horizontal .stepper-connector {
+  height: 2px;
+}
+
+.stepper--vertical .stepper-connector {
+  width: 2px;
+  margin-left: calc(var(--stepper-indicator-size) / 2);
+}
+
+/* Connector states */
+.stepper-connector--completed {
+  background-color: var(--color-success-600);
+}
+
+.stepper-connector--current {
+  background-color: var(--color-primary-600);
+}
+
+.stepper-connector--upcoming {
+  background-color: var(--color-neutral-300);
+}
+
+/* Dark mode adjustments */
+.dark .stepper-indicator--upcoming {
+  background-color: var(--color-neutral-800);
+  border-color: var(--color-neutral-600);
+  color: var(--color-neutral-300);
+}
+
+.dark .stepper-connector {
+  background-color: var(--color-neutral-600);
+}
+
+.dark .stepper-connector--upcoming {
+  background-color: var(--color-neutral-600);
+}
