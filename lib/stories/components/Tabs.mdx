@@ -30,7 +30,7 @@ The Tabs component system consists of several components that work together:
 <Canvas of={TabsStories.Default} />
 
 ```tsx
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components';
+import { Tabs, TabsList, TabsTrigger, TabsContent, Icon } from '@/components';
 
 <Tabs defaultValue="tab1">
   <TabsList>
@@ -106,17 +106,19 @@ You can include icons in your tabs for better visual cues:
 <Canvas of={TabsStories.WithIcons} />
 
 ```tsx
+
 <Tabs defaultValue="tab1">
   <TabsList>
     <TabsTrigger value="tab1" className="flex items-center gap-2">
-      <span className="i-lucide-user h-4 w-4" />
+        <Icon name="info" size="small" />
       <span>Account</span>
     </TabsTrigger>
     <TabsTrigger value="tab2" className="flex items-center gap-2">
-      <span className="i-lucide-lock h-4 w-4" />
+<Icon name="warning" size="small" />
       <span>Password</span>
     </TabsTrigger>
     <TabsTrigger value="tab3" className="flex items-center gap-2">
+<Icon name="check" size="small" />
       <span className="i-lucide-settings h-4 w-4" />
       <span>Settings</span>
     </TabsTrigger>

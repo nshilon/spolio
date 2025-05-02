@@ -8,7 +8,7 @@ import {
   Button,
   Typography,
   Alert,
-  Badge,
+  Badge, Icon, Dropdown,
 } from '@/components';
 
 const meta = {
@@ -255,15 +255,15 @@ export const WithIcons: Story = {
     <Tabs defaultValue="tab1" className="w-[500px]">
       <TabsList>
         <TabsTrigger value="tab1" className="flex items-center gap-2">
-          <span className="i-lucide-user h-4 w-4" />
+          <Icon name="check" size="small" />
           <span>Account</span>
         </TabsTrigger>
         <TabsTrigger value="tab2" className="flex items-center gap-2">
-          <span className="i-lucide-lock h-4 w-4" />
+          <Icon name="warning" size="small" />
           <span>Password</span>
         </TabsTrigger>
         <TabsTrigger value="tab3" className="flex items-center gap-2">
-          <span className="i-lucide-settings h-4 w-4" />
+          <Icon name="moon" size="small" />
           <span>Settings</span>
         </TabsTrigger>
       </TabsList>
@@ -325,11 +325,11 @@ export const WithBadges: Story = {
       <TabsList>
         <TabsTrigger value="tab1" className="flex items-center gap-2">
           Account
-          <Badge variant="soft" type="primary">New</Badge>
+          <Badge variant="soft" type="primary" size="small">New</Badge>
         </TabsTrigger>
         <TabsTrigger value="tab2" className="flex items-center gap-2">
           Password
-          <Badge variant="soft" type="warning">2</Badge>
+          <Badge variant="soft" type="warning" size="small">2</Badge>
         </TabsTrigger>
         <TabsTrigger value="tab3">Settings</TabsTrigger>
       </TabsList>
@@ -363,23 +363,21 @@ export const Controlled: Story = {
     return (
       <div className="space-y-4 w-[500px]">
         <Typography variant="h4">Controlled Tabs Example</Typography>
-        <div className="flex gap-2">
-          <Button onClick={() => setActiveTab('tab1')} variant={activeTab === 'tab1' ? 'primary' : 'secondary'}>
-            Show Account
-          </Button>
-          <Button onClick={() => setActiveTab('tab2')} variant={activeTab === 'tab2' ? 'primary' : 'secondary'}>
-            Show Password
-          </Button>
-          <Button onClick={() => setActiveTab('tab3')} variant={activeTab === 'tab3' ? 'primary' : 'secondary'}>
-            Show Settings
-          </Button>
-        </div>
-        
+
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsList>
             <TabsTrigger value="tab1">Account</TabsTrigger>
             <TabsTrigger value="tab2">Password</TabsTrigger>
             <TabsTrigger value="tab3">Settings</TabsTrigger>
+            <Dropdown
+            value={activeTab}
+            onValueChange={setActiveTab}
+            options={[
+              { value: 'tab1', label: 'Account' },
+              { value: 'tab2', label: 'Password' },
+              { value: 'tab3', label: 'Settings' },
+            ]}
+          />
           </TabsList>
           <TabsContent value="tab1" className="mt-4">
             <Alert title="Account Settings" type="info">
