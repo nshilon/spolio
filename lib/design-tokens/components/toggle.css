@@ -1,0 +1,59 @@
+/*
+ _                    _      
+| |_ ___   __ _  __ _| | ___ 
+| __/ _ \ / _` |/ _` | |/ _ \
+| || (_) | (_| | (_| | |  __/
+ \__\___/ \__, |\__, |_|\___|
+          |___/ |___/        
+*/
+
+:root {
+  /* Toggle Base */
+  --toggle-height-sm: 1.25rem;  /* 20px */
+  --toggle-width-sm: 2.25rem;   /* 36px */
+  --toggle-height-md: 1.5rem;   /* 24px */
+  --toggle-width-md: 2.75rem;   /* 44px */
+  --toggle-height-lg: 1.75rem;  /* 28px */
+  --toggle-width-lg: 3.25rem;   /* 52px */
+  
+  /* Toggle Track */
+  --toggle-track-padding: 0.125rem; /* 2px */
+  --toggle-track-border-radius: 9999px;
+  --toggle-track-border-width: 1px;
+  --toggle-track-transition: all 0.2s ease-in-out;
+  
+  /* Toggle Thumb */
+  --toggle-thumb-border-radius: 9999px;
+  --toggle-thumb-transition: transform 0.2s ease-in-out;
+  --toggle-thumb-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  
+  /* Toggle Colors - Default */
+  --toggle-track-bg-unchecked: var(--color-gray-200);
+  --toggle-track-bg-checked: var(--color-primary-500);
+  --toggle-track-border-unchecked: var(--color-gray-300);
+  --toggle-track-border-checked: var(--color-primary-600);
+  --toggle-thumb-bg: white;
+  
+  /* Toggle Colors - Disabled */
+  --toggle-track-bg-disabled: var(--color-gray-100);
+  --toggle-track-border-disabled: var(--color-gray-200);
+  --toggle-thumb-bg-disabled: var(--color-gray-300);
+  
+  /* Toggle Focus */
+  --toggle-focus-ring-color: var(--color-primary-200);
+  --toggle-focus-ring-width: 3px;
+}
+
+/* Dark mode overrides */
+.dark {
+  --toggle-track-bg-unchecked: var(--color-gray-700);
+  --toggle-track-bg-checked: var(--color-primary-600);
+  --toggle-track-border-unchecked: var(--color-gray-600);
+  --toggle-track-border-checked: var(--color-primary-500);
+  --toggle-thumb-bg: var(--color-gray-100);
+  
+  /* Toggle Colors - Disabled */
+  --toggle-track-bg-disabled: var(--color-gray-800);
+  --toggle-track-border-disabled: var(--color-gray-700);
+  --toggle-thumb-bg-disabled: var(--color-gray-600);
+}

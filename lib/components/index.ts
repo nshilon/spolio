@@ -17,6 +17,8 @@ export { Pagination, usePagination } from './ui/paging';
 export type { PaginationProps } from './ui/paging';
 export { Progress } from './ui/progress';
 export type { ProgressProps } from './ui/progress';
+export { Toggle } from './ui/toggle';
+export type { ToggleProps } from './ui/toggle';
 export {
   Tooltip,
   TooltipTrigger,
