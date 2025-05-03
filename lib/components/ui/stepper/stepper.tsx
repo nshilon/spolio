@@ -235,6 +235,10 @@ export const StepperStep = forwardRef<HTMLDivElement, StepperStepProps>(
         aria-current={state === 'current' ? 'step' : undefined}
         {...props}
       >
+          {showConnectors && index < totalSteps - 1 && (
+            <div className={cn(connectorVariants({ state }))} />
+          )}
+
         <div className="stepper-step-header">
           <div
             className={cn(stepIndicatorVariants({ size, state }))}
@@ -242,9 +246,6 @@ export const StepperStep = forwardRef<HTMLDivElement, StepperStepProps>(
           >
             {indicatorContent()}
           </div>
-          {showConnectors && index < totalSteps - 1 && (
-            <div className={cn(connectorVariants({ state }))} />
-          )}
         </div>
         <div className="stepper-content">
           <div className="stepper-label">{label}</div>
