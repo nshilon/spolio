@@ -157,9 +157,10 @@ const Toggle = forwardRef<
           <SwitchPrimitive.Thumb
             className={cn(
               thumbVariants({ size }),
-              'block translate-x-[var(--toggle-track-padding)]',
-              'data-[state=checked]:[&]:data-[state=checked]',
-              `data-[state=checked]:${thumbTransform}`
+              'block ',
+              'transform-origin-left translate-0',
+              `data-[state=checked]:transform-origin-right`,
+              `data-[state=checked]:translate-x-[100%]`
             )}
           />
         </SwitchPrimitive.Root>
